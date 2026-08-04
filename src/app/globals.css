@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', sans-serif;
+    --font-outfit: 'Outfit', sans-serif;
+  }
+  
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased selection:bg-orange-500 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-slate-950;
+  }
+
+  p {
+    @apply text-slate-700;
+  }
+}
+
+.glass-panel {
+  @apply bg-white border border-slate-200/90 shadow-xl text-slate-900;
+}
+
+.glass-card {
+  @apply bg-white border border-slate-200 shadow-md hover:border-orange-500 hover:shadow-xl transition-all duration-300 text-slate-900;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-900 via-navy-800 to-orange-600 font-extrabold;
+}
+
+.gradient-orange-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 font-extrabold;
+}
+
+.gradient-blue-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-950 via-blue-900 to-indigo-900 font-extrabold;
+}
