@@ -46,29 +46,29 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="glass-panel p-6 sm:p-10 rounded-3xl space-y-6">
-      <h2 className="text-2xl font-bold text-navy-950">Send Message / Request Quote</h2>
-      <p className="text-sm text-slate-600">
+    <form onSubmit={handleSubmit} className="glass-panel p-[1.8vw] rounded-[1.2vw] space-y-[2vh]">
+      <h2 className="text-[1.4vw] font-semibold text-navy-950">Send Message / Request Quote</h2>
+      <p className="text-[0.85vw] text-slate-600">
         Fill in your requirements below. Our medical sales team in Coimbatore will get in touch with you shortly.
       </p>
 
       {status === 'success' && (
-        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-3 text-sm font-medium">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+        <div className="p-[0.8vw] rounded-[0.6vw] bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-[0.6vw] text-[0.85vw] font-medium">
+          <CheckCircle2 className="w-[1.2vw] h-[1.2vw] min-w-[16px] min-h-[16px] text-emerald-600 flex-shrink-0" />
           <span>Thank you! Your message has been sent successfully. We will get back to you shortly.</span>
         </div>
       )}
 
       {status === 'error' && (
-        <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 flex items-center gap-3 text-sm font-medium">
-          <AlertCircle className="w-5 h-5 text-rose-600 flex-shrink-0" />
+        <div className="p-[0.8vw] rounded-[0.6vw] bg-rose-50 border border-rose-200 text-rose-800 flex items-center gap-[0.6vw] text-[0.85vw] font-medium">
+          <AlertCircle className="w-[1.2vw] h-[1.2vw] min-w-[16px] min-h-[16px] text-rose-600 flex-shrink-0" />
           <span>{errorMessage}</span>
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-[1.5vh]">
         <div>
-          <label htmlFor="name" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+          <label htmlFor="name" className="block text-[0.75vw] font-semibold text-slate-700 uppercase mb-[0.5vh]">
             Name *
           </label>
           <input
@@ -79,13 +79,13 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+            className="w-full px-[0.8vw] py-[1vh] rounded-[0.6vw] bg-slate-50 border border-slate-300 text-slate-900 text-[0.85vw] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[1vw]">
           <div>
-            <label htmlFor="phone" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+            <label htmlFor="phone" className="block text-[0.75vw] font-semibold text-slate-700 uppercase mb-[0.5vh]">
               Phone Number *
             </label>
             <input
@@ -96,12 +96,12 @@ export function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+91 98422 12345"
-              className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+              className="w-full px-[0.8vw] py-[1vh] rounded-[0.6vw] bg-slate-50 border border-slate-300 text-slate-900 text-[0.85vw] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+            <label htmlFor="email" className="block text-[0.75vw] font-semibold text-slate-700 uppercase mb-[0.5vh]">
               Email Address *
             </label>
             <input
@@ -112,13 +112,13 @@ export function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="name@hospital.com"
-              className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+              className="w-full px-[0.8vw] py-[1vh] rounded-[0.6vw] bg-slate-50 border border-slate-300 text-slate-900 text-[0.85vw] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="product" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+          <label htmlFor="product" className="block text-[0.75vw] font-semibold text-slate-700 uppercase mb-[0.5vh]">
             Product / Category
           </label>
           <select
@@ -126,7 +126,7 @@ export function ContactForm() {
             name="product"
             value={formData.product}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+            className="w-full px-[0.8vw] py-[1vh] rounded-[0.6vw] bg-slate-50 border border-slate-300 text-slate-900 text-[0.85vw] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
           >
             <option value="">Select Category</option>
             <option value="Hospital Beds">Hospital Beds (ICU / Electric / Fowler)</option>
@@ -141,7 +141,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+          <label htmlFor="message" className="block text-[0.75vw] font-semibold text-slate-700 uppercase mb-[0.5vh]">
             Message *
           </label>
           <textarea
@@ -152,13 +152,13 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Specify required quantity, hospital location in Tamil Nadu, or custom specifications..."
-            className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+            className="w-full px-[0.8vw] py-[1vh] rounded-[0.6vw] bg-slate-50 border border-slate-300 text-slate-900 text-[0.85vw] focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
           />
         </div>
       </div>
 
-      <Button type="submit" variant="primary" size="lg" isLoading={status === 'loading'} className="w-full bg-navy-800 hover:bg-slate-900 text-white font-bold shadow-md">
-        Send Message <Send className="w-4 h-4 ml-2 text-orange-400" />
+      <Button type="submit" variant="primary" size="lg" isLoading={status === 'loading'} className="w-full bg-navy-800 hover:bg-slate-900 text-white font-semibold text-[0.9vw] py-[1.2vh] rounded-[0.6vw] shadow-md">
+        Send Message <Send className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px] ml-[0.5vw] text-orange-400" />
       </Button>
     </form>
   );

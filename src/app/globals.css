@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --font-inter: 'Inter', sans-serif;
-    --font-outfit: 'Outfit', sans-serif;
+    --font-outfit: 'Inter', sans-serif;
   }
   
   html.lenis, html.lenis body {
@@ -33,7 +33,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-slate-950;
+    @apply font-heading text-slate-950;
   }
 
   p {
@@ -50,13 +50,39 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-900 via-navy-800 to-orange-600 font-extrabold;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-900 via-navy-800 to-orange-600 font-semibold;
 }
 
 .gradient-orange-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 font-extrabold;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 font-semibold;
 }
 
 .gradient-blue-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-950 via-blue-900 to-indigo-900 font-extrabold;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-navy-950 via-blue-900 to-indigo-900 font-semibold;
+}
+
+@keyframes silverShine {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes moveRightInfinite {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.35vw);
+  }
+}
+
+.animate-silver-shine {
+  animation: silverShine 2.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-move-right-infinite {
+  animation: moveRightInfinite 1.4s infinite ease-in-out;
 }

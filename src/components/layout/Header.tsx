@@ -1,51 +1,90 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { ChevronRight } from 'lucide-react';
 
 export function Header() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === '/') return pathname === '/';
+    return pathname.startsWith(path);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-200 shadow-sm">
       {/* Main header navbar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="px-[3vw]">
+        <div className="flex items-center justify-between h-[8vh]">
           
-          {/* Logo with Orange Double-M Icon */}
-          <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="flex items-center gap-2">
-              <svg className="w-10 h-10 text-orange-500" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M10 85 L10 25 L35 55 L50 35 L65 55 L90 25 L90 85 L72 85 L72 50 L58 70 L50 58 L42 70 L28 50 L28 85 Z" />
-              </svg>
-              <div>
-                <span className="font-heading font-black text-xl tracking-tight text-navy-950 block leading-tight">
-                  SRI MATHURAMS
-                </span>
-                <span className="text-[9px] uppercase font-extrabold tracking-widest text-slate-500 block">
-                  MEDICAL ENGINEERING
-                </span>
-              </div>
+          {/* Logo using /images/logo.png */}
+          <Link href="/" className="flex items-center gap-[0.8vw] group focus:outline-none">
+            <div className="relative h-[10vh] mt-[01vh] w-auto sm:w-[15vw] overflow-hidden">
+              <Image
+                src="/images/logo.png"
+                alt="Sri Mathurams Medical Engineering Logo"
+                fill
+                priority
+                className="object-contain object-left"
+              />
             </div>
           </Link>
 
           {/* Navigation Links */}
-          <nav aria-label="Main Navigation" className="hidden lg:flex items-center space-x-9">
-            <Link href="/" className="text-xs font-bold uppercase tracking-wider text-orange-600 border-b-2 border-orange-500 pb-1">
+          <nav aria-label="Main Navigation" className="hidden lg:flex items-center space-x-[2vw]">
+            <Link
+              href="/"
+              className={`text-[0.8vw] font-bold uppercase transition-colors pb-[0.3vh] ${
+                isActive('/') && pathname === '/'
+                  ? 'text-orange-600 border-b-2 border-orange-500'
+                  : 'text-slate-800 hover:text-orange-600'
+              }`}
+            >
               HOME
             </Link>
-            <Link href="/about" className="text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-orange-600 transition-colors pb-1">
+            <Link
+              href="/about"
+              className={`text-[0.8vw] font-bold uppercase transition-colors pb-[0.3vh] ${
+                isActive('/about')
+                  ? 'text-orange-600 border-b-2 border-orange-500'
+                  : 'text-slate-800 hover:text-orange-600'
+              }`}
+            >
               ABOUT US
             </Link>
-            <Link href="/products" className="text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-orange-600 transition-colors pb-1">
+            <Link
+              href="/products"
+              className={`text-[0.8vw] font-bold uppercase transition-colors pb-[0.3vh] ${
+                isActive('/products')
+                  ? 'text-orange-600 border-b-2 border-orange-500'
+                  : 'text-slate-800 hover:text-orange-600'
+              }`}
+            >
               PRODUCTS
             </Link>
-            <Link href="/contact" className="text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-orange-600 transition-colors pb-1">
+            <Link
+              href="/contact"
+              className={`text-[0.8vw] font-bold uppercase transition-colors pb-[0.3vh] ${
+                isActive('/contact')
+                  ? 'text-orange-600 border-b-2 border-orange-500'
+                  : 'text-slate-800 hover:text-orange-600'
+              }`}
+            >
               CONTACT US
             </Link>
           </nav>
 
-          {/* Right Orange Button */}
-          <div className="hidden lg:flex items-center">
+          {/* Right Button with Smooth Silver Shimmer & Infinite Arrow Animation */}
+          <div>
             <Link href="/contact">
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-xs font-extrabold px-5 py-2.5 rounded-full uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center gap-1.5">
-                REQUEST A QUOTE <ChevronRight className="w-4 h-4 bg-white/20 rounded-full p-0.5" />
+              <button className="group relative inline-flex items-center gap-[0.5vw] bg-slate-900/80 backdrop-blur-sm text-white text-[0.8vw] font-semibold px-[1.2vw] py-[1vh] rounded-[0.6vw] shadow-md hover:bg-orange-600 hover:shadow-orange-500/25 hover:shadow-lg active:scale-95 transition-all duration-300 border border-slate-800 hover:border-orange-500 overflow-hidden">
+                {/* Silver running shine beam effect */}
+                <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-slate-100/40 to-transparent pointer-events-none animate-silver-shine" />
+
+                <span className="relative z-10">Request a quote</span>
+                <ChevronRight className="relative z-10 w-[1vw] h-[1vw] min-w-[14px] min-h-[14px] bg-white/20 rounded-full p-[0.1vw] group-hover:bg-white group-hover:text-orange-600 transition-all duration-300 animate-move-right-infinite" />
               </button>
             </Link>
           </div>
