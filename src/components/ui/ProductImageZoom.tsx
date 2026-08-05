@@ -28,7 +28,7 @@ export function ProductImageZoom({ src, alt, category }: ProductImageZoomProps) 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className="relative h-full w-full rounded-lg  overflow-hidden  border border-slate-200  p-4 flex items-center justify-center cursor-crosshair group select-none"
+      className="relative h-full w-full rounded-lg  overflow-hidden  border border-slate-200  p-4 flex items-center justify-center cursor-[zoom-in] group select-none"
     >
       <Image
         src={src}

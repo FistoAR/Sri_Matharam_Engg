@@ -1,85 +1,100 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import Image from 'next/image';
+import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-navy-950 text-slate-400 border-t border-slate-800 pt-[3vh] pb-[2vh]">
+    <footer className="w-full bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-[4vh] pb-[2.5vh]">
       <div className="w-full px-[3vw]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-[2vw] mb-[2vh]">
+        {/* Full width 5-column grid layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[2.5vw] mb-[4vh] items-start">
           
-          {/* Col 1 Logo & Description */}
-          <div className="lg:col-span-1 space-y-[1vh]">
-            <div className="flex items-center gap-[0.5vw]">
-              <svg className="w-[1.8vw] h-[1.8vw] min-w-[20px] min-h-[20px] text-orange-500" viewBox="0 0 100 100" fill="currentColor">
-                <path d="M10 85 L10 25 L35 55 L50 35 L65 55 L90 25 L90 85 L72 85 L72 50 L58 70 L50 58 L42 70 L28 50 L28 85 Z" />
-              </svg>
-              <div>
-                <span className="font-heading font-semibold text-[0.9vw] text-white block">MATHURAMS</span>
+          {/* Column 1: Brand & Logo (3 cols) */}
+          <div className="lg:col-span-3 space-y-[1.5vh]">
+            <Link href="/" className="inline-block focus:outline-none">
+              <div className="relative h-[8vh] w-[14vw] min-w-[160px] overflow-hidden bg-white/95 rounded-[0.6vw] p-[0.4vw]">
+                <Image
+                  src="/images/logo.png"
+                  alt="Sri Mathurams Medical Engineering Logo"
+                  fill
+                  priority
+                  className="object-contain object-left p-[0.3vw]"
+                />
               </div>
-            </div>
-            <p className="text-[0.75vw] text-slate-400 leading-relaxed">
-              Sri Mathurams Medical Engineering is a leading manufacturer of hospital furniture and medical equipment committed to quality, innovation, and customer satisfaction.
+            </Link>
+            <p className="text-[0.85vw] text-slate-400 leading-relaxed font-medium">
+              Sri Mathurams Medical Engineering is a premier manufacturer of hospital furniture and medical equipment operating from Coimbatore since 1997.
             </p>
-            <div className="flex space-x-[0.5vw] text-slate-400">
-              <span className="p-[0.4vw] bg-slate-900 rounded-full hover:text-white cursor-pointer"><Facebook className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" /></span>
-              <span className="p-[0.4vw] bg-slate-900 rounded-full hover:text-white cursor-pointer"><Instagram className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" /></span>
-              <span className="p-[0.4vw] bg-slate-900 rounded-full hover:text-white cursor-pointer"><Linkedin className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" /></span>
-              <span className="p-[0.4vw] bg-slate-900 rounded-full hover:text-white cursor-pointer"><Youtube className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" /></span>
+            <div className="flex items-center space-x-[0.6vw] pt-[0.5vh]">
+              <a href="#" aria-label="Facebook" className="p-[0.5vw] bg-slate-900 hover:bg-orange-500 text-slate-300 hover:text-white rounded-full transition-colors border border-slate-800">
+                <Facebook className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" />
+              </a>
+              <a href="#" aria-label="Instagram" className="p-[0.5vw] bg-slate-900 hover:bg-orange-500 text-slate-300 hover:text-white rounded-full transition-colors border border-slate-800">
+                <Instagram className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="p-[0.5vw] bg-slate-900 hover:bg-orange-500 text-slate-300 hover:text-white rounded-full transition-colors border border-slate-800">
+                <Linkedin className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" />
+              </a>
+              <a href="#" aria-label="YouTube" className="p-[0.5vw] bg-slate-900 hover:bg-orange-500 text-slate-300 hover:text-white rounded-full transition-colors border border-slate-800">
+                <Youtube className="w-[1vw] h-[1vw] min-w-[14px] min-h-[14px]" />
+              </a>
             </div>
           </div>
 
-          {/* Col 2 Quick Links */}
-          <div>
-            <h3 className="text-[0.75vw] font-bold text-white uppercase mb-[1vh]">QUICK LINKS</h3>
-            <ul className="space-y-[0.6vh] text-[0.75vw]">
-              <li><Link href="/" className="hover:text-white">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-              <li><Link href="/products" className="hover:text-white">Products</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
+          {/* Column 2: Quick Links (2 cols) */}
+          <div className="lg:col-span-2 space-y-[1.2vh]">
+            <h3 className="text-[0.9vw] font-bold text-white uppercase tracking-wider border-b border-orange-500/40 pb-[0.6vh] inline-block">
+              QUICK LINKS
+            </h3>
+            <ul className="space-y-[0.8vh] text-[0.85vw] font-medium">
+              <li><Link href="/" className="hover:text-orange-400 transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-orange-400 transition-colors">About Us</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Products Catalog</Link></li>
+              <li><Link href="/contact" className="hover:text-orange-400 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Col 3 Products */}
-          <div>
-            <h3 className="text-[0.75vw] font-bold text-white uppercase mb-[1vh]">PRODUCTS</h3>
-            <ul className="space-y-[0.6vh] text-[0.75vw]">
-              <li><Link href="/products" className="hover:text-white">Hospital Beds</Link></li>
-              <li><Link href="/products" className="hover:text-white">Stretchers</Link></li>
-              <li><Link href="/products" className="hover:text-white">Wheelchairs</Link></li>
-              <li><Link href="/products" className="hover:text-white">Medical Trolleys</Link></li>
-              <li><Link href="/products" className="hover:text-white">Donor Chairs</Link></li>
-              <li><Link href="/products" className="hover:text-white">Surgical Sinks</Link></li>
-              <li><Link href="/products" className="hover:text-white">IV Stands</Link></li>
-              <li><Link href="/products" className="hover:text-white">Hospital Furniture</Link></li>
+          {/* Column 3: Medical Products (3 cols) */}
+          <div className="lg:col-span-3 space-y-[1.2vh]">
+            <h3 className="text-[0.9vw] font-bold text-white uppercase tracking-wider border-b border-orange-500/40 pb-[0.6vh] inline-block">
+              PRODUCTS
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-[1vw] gap-y-[0.8vh] text-[0.85vw] font-medium">
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Hospital Beds</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">ICU Cots</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Stretchers</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Medical Trolleys</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Wheelchairs</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Donor Chairs</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">Surgical Sinks</Link></li>
+              <li><Link href="/products" className="hover:text-orange-400 transition-colors">IV Stands</Link></li>
             </ul>
           </div>
 
-          {/* Col 4 Services */}
-          <div>
-            <h3 className="text-[0.75vw] font-bold text-white uppercase mb-[1vh]">SERVICES</h3>
-            <ul className="space-y-[0.6vh] text-[0.75vw]">
-              <li>Custom Manufacturing</li>
-              <li>Installation & Setup</li>
-              <li>AMC & Maintenance</li>
-              <li>Repair & Servicing</li>
-              <li>Project Consultation</li>
-            </ul>
-          </div>
-
-          {/* Col 5 Contact Info */}
-          <div>
-            <h3 className="text-[0.75vw] font-bold text-white uppercase mb-[1vh]">CONTACT INFO</h3>
-            <ul className="space-y-[0.8vh] text-[0.75vw]">
-              <li className="flex items-center gap-[0.4vw]">
-                <span className="text-orange-400 font-bold">📞</span> +91 98422 12345
+          {/* Column 4: Contact Info & Address (4 cols) */}
+          <div className="lg:col-span-4 space-y-[1.2vh]">
+            <h3 className="text-[0.9vw] font-bold text-white uppercase tracking-wider border-b border-orange-500/40 pb-[0.6vh] inline-block">
+              CONTACT INFO
+            </h3>
+            <ul className="space-y-[1vh] text-[0.85vw] font-medium">
+              <li className="flex items-center gap-[0.6vw]">
+                <div className="w-[1.8vw] h-[1.8vw] min-w-[24px] min-h-[24px] rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                  <Phone className="w-[0.9vw] h-[0.9vw] min-w-[12px] min-h-[12px]" />
+                </div>
+                <a href="tel:+919842212345" className="hover:text-orange-400 transition-colors">+91 98422 12345 / +91 422 2571234</a>
               </li>
-              <li className="flex items-center gap-[0.4vw]">
-                <span className="text-orange-400 font-bold">✉️</span> info@srimathuramsmedical.com
+              <li className="flex items-center gap-[0.6vw]">
+                <div className="w-[1.8vw] h-[1.8vw] min-w-[24px] min-h-[24px] rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-orange-400 shrink-0">
+                  <Mail className="w-[0.9vw] h-[0.9vw] min-w-[12px] min-h-[12px]" />
+                </div>
+                <a href="mailto:info@srimathuramsmedical.com" className="hover:text-orange-400 transition-colors">info@srimathuramsmedical.com</a>
               </li>
-              <li className="flex items-start gap-[0.4vw]">
-                <span className="text-orange-400 font-bold mt-[0.2vh]">📍</span>
+              <li className="flex items-start gap-[0.6vw]">
+                <div className="w-[1.8vw] h-[1.8vw] min-w-[24px] min-h-[24px] rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-orange-400 shrink-0 mt-[0.2vh]">
+                  <MapPin className="w-[0.9vw] h-[0.9vw] min-w-[12px] min-h-[12px]" />
+                </div>
                 <span>Peelamedu, Coimbatore - 641 004, Tamil Nadu, India</span>
               </li>
             </ul>
@@ -87,12 +102,15 @@ export function Footer() {
 
         </div>
 
-        <div className="pt-[1.5vh] border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center text-[0.7vw] text-slate-500 gap-[1vw]">
+        {/* Bottom copyright & links bar */}
+        <div className="pt-[2vh] border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-[0.8vw] text-slate-400 gap-[1vw] font-medium">
           <p>© {currentYear} Sri Mathurams Medical Engineering. All Rights Reserved.</p>
-          <div className="flex space-x-[1vw]">
-            <Link href="/contact" className="hover:text-slate-400">Contact Us</Link>
-            <span>|</span>
-            <Link href="/about" className="hover:text-slate-400">About Us</Link>
+          <div className="flex items-center space-x-[1vw]">
+            <Link href="/products" className="hover:text-orange-400 transition-colors">Products</Link>
+            <span>•</span>
+            <Link href="/about" className="hover:text-orange-400 transition-colors">About Us</Link>
+            <span>•</span>
+            <Link href="/contact" className="hover:text-orange-400 transition-colors">Contact Us</Link>
           </div>
         </div>
 

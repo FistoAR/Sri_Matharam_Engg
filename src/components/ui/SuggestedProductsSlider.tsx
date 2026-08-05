@@ -71,7 +71,7 @@ export function SuggestedProductsSlider({ products }: SuggestedProductsSliderPro
       {/* Slider Track */}
       <div
         ref={containerRef}
-        className="flex gap-[1vw] overflow-x-auto no-scrollbar scrollbar-none py-[1vh] px-[0.2vw]"
+        className="flex gap-[1vw] overflow-hidden py-[1vh] px-[0.2vw]"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {displayProducts.map((p, idx) => (
