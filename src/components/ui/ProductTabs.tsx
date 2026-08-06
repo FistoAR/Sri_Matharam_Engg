@@ -105,8 +105,9 @@ export function ProductTabs({ product }: ProductTabsProps) {
                       ["Load Capacity", "Up to 150 kg"],
                     ]
                 ).reduce<[string, string][][]>((acc, curr, i) => {
-                  if (i % 2 === 0) acc.push([curr]);
-                  else acc[acc.length - 1].push(curr);
+                  const pair = curr as [string, string];
+                  if (i % 2 === 0) acc.push([pair]);
+                  else acc[acc.length - 1].push(pair);
                   return acc;
                 }, []).map((row, rowIdx) => (
                   <tr key={rowIdx} className="border-b border-slate-200 last:border-b-0 even:bg-slate-50/60 hover:bg-slate-100/40 transition-colors">
