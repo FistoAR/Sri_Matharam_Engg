@@ -3,7 +3,7 @@ import { Product, Category } from '@/types';
 export interface MedicalProduct extends Product {
   price?: string;
   moq?: string;
-  materialDetails: string;
+  materialDetails?: string;
   availableSizes?: string;
   relatedProductSlugs?: string[];
   tradeInfo?: {
