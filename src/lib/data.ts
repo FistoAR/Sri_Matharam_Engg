@@ -251,7 +251,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'Stretcher Trolley MS',
     category: 'Emergency & Patient Transfer',
     description: 'Heavy duty MS emergency stretcher trolley for casualty and ward transfers.',
-    image: '/images/Product Assets/Stretchers/Attender-Cot-Bed.webp',
+    image: '/images/Product Assets/Stretchers/Plain-Stretcher.webp',
     features: ['Removable Stretcher Top', 'Pre-treated Epoxy Finish', 'Utility Storage Tray'],
     specifications: {
       'Accessories': 'Stretcher Canvas Top',
@@ -321,7 +321,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'SS Revolving Stool Cushion',
     category: 'Examination & Consultation',
     description: 'Height-adjustable stainless steel revolving doctor examination stool with padded seat.',
-    image: '/images/Product Assets/HospitalStoolandchair/Revolving-Stool.webp',
+    image: '/images/Product Assets/Hospital Stool and chair/Revolving-Stool.webp',
     features: ['Cushioned Top Seat', 'Screw Thread Height Adjustment', '5-Leg Heavy Base'],
     specifications: {
       'Accessories': 'High Density Cushion Seat',
@@ -367,7 +367,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'Instrument Trolley 24 × 18',
     category: 'Medical Trolleys',
     description: 'Stainless steel two-tier surgical instrument trolley (24 x 18 inches).',
-    image: '/images/Product Assets/HospitalTrolley/Dressing-Trolley.webp',
+    image: '/images/Product Assets/HospitalTrolley/Theatre-Drug-Trolley.webp',
     features: ['Double Stainless Steel Shelves', 'Guard Rails on Top Shelf', 'Quiet Swivel Castors'],
     specifications: {
       'Accessories': '3-Side Railing Shelves',
@@ -389,7 +389,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'Crash Cart MS',
     category: 'Medical Trolleys',
     description: 'Emergency resuscitation crash cart with color-coded modular drawers.',
-    image: '/images/Product Assets/HospitalTrolley/Crash-Cart.webp',
+    image: '/images/Product Assets/HospitalTrolley/Hospital-Crash-Cart-Trolley.webp',
     features: ['5 Modular Storage Drawers', 'IV Pole & Oxygen Cylinder Holder', 'Cardiac Board Attachment'],
     specifications: {
       'Accessories': 'IV Pole, Cardiac Board',
@@ -435,7 +435,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'OT Light Ceiling LED',
     category: 'OT Equipment',
     description: 'Shadowless LED surgical ceiling light fixture for operation theaters.',
-    image: '/images/Product Assets/SurgicalSink/OT-Scrub-Sink.webp',
+    image: '/images/Product Assets/SurgicalSink/OT-Surgical-Scrub-Sink.webp',
     features: ['Shadowless LED Technology', 'Adjustable Color Temperature', 'Sterilizable Handle'],
     specifications: {
       'Accessories': 'Sterilizable Center Handle',
@@ -459,7 +459,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'IV Stand Full SS',
     category: 'Stainless Steel Furniture & Ward Accessories',
     description: 'Telescopic height adjustable stainless steel IV drip stand with 5-star base.',
-    image: '/images/Product Assets/IVStands/IV-Stand.webp',
+    image: '/images/Product Assets/IVStands/-IV-Stand.webp',
     features: ['Full Stainless Steel Body', '4-Hook Drip Top', 'Heavy 5-Star Base Wheels'],
     specifications: {
       'Accessories': '4 Stainless Steel Hooks',
@@ -481,7 +481,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'Double Foot Step MS',
     category: 'Stainless Steel Furniture & Ward Accessories',
     description: 'Two-step patient bed entry step stool with anti-skid rubber mats.',
-    image: '/images/Product Assets/HospitalStoolandchair/Revolving-Stool.webp',
+    image: '/images/Product Assets/Hospital Stool and chair/Revolving-Stool.webp',
     features: ['Two Tier Step Platform', 'Non-Slip Ribbed Rubber Tops', 'Rubber Leg Shoes'],
     specifications: {
       'Accessories': 'Anti-Skid Ribbed Mats',
@@ -527,7 +527,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: 'Hospital Castors 5 Inches',
     category: 'Accessories',
     description: 'Heavy duty silent polyurethane hospital bed wheels with total lock brakes.',
-    image: '/images/Product Assets/Furnitures/Wheel.webp',
+    image: '/images/Product Assets/Furnitures/Hospital-Foot-Stool.webp',
     features: ['5 Inch Polyurethane Wheels', 'Swivel & Total Lock Brake', 'Non-Marking Tread'],
     specifications: {
       'Accessories': 'Threaded Stem & Brake Pedal',
@@ -551,7 +551,7 @@ export const PRODUCTS: MedicalProduct[] = [
     name: '3 Seater Waiting Chair',
     category: 'General Furniture',
     description: 'Perforated metal 3-seater bench chair for hospital visitor waiting lobbies.',
-    image: '/images/Product Assets/Furnitures/Waiting-Chair.webp',
+    image: '/images/Product Assets/Furnitures/Hospital-Revolving-Stool.webp',
     features: ['Perforated Steel Back & Seat', 'Chrome Plated Armrests & Legs', 'Heavy Beam Support'],
     specifications: {
       'Accessories': 'Chrome Armrests & Legs',

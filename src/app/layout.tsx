@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
@@ -33,6 +34,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { InquiryModalProvider } from '@/components/ui/InquiryModalContext';
+
 export default function RootLayout({
   children,
 }: {
@@ -42,24 +45,26 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <head>
-        <script
+      <head />
+      <body className="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+        <Script
+          id="organization-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
-      </head>
-      <body className="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-orange-500 text-white px-4 py-2 rounded-lg font-bold shadow-lg"
-        >
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content" className="flex-1 bg-slate-50">
-          {children}
-        </main>
-        <Footer />
+        <InquiryModalProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-orange-500 text-white px-4 py-2 rounded-lg font-bold shadow-lg"
+          >
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content" className="flex-1 bg-slate-50">
+            {children}
+          </main>
+          <Footer />
+        </InquiryModalProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import { PRODUCTS, MedicalProduct } from '@/lib/data';
 import { constructMetadata, generateProductSchema } from '@/lib/seo';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
@@ -10,6 +11,7 @@ import { SuggestedProductsSlider } from '@/components/ui/SuggestedProductsSlider
 import { ProductTabs } from '@/components/ui/ProductTabs';
 import { FadeIn } from '@/components/ui/FadeIn';
 import { SpecificationVariantSelector } from '@/components/ui/SpecificationVariantSelector';
+import { ProductDetailQuoteButton } from '@/components/ui/ProductDetailQuoteButton';
 import { Tag, Send, PhoneCall, ShieldCheck, Truck, Package, ArrowRight, Sparkles, Award, CheckCircle2 } from 'lucide-react';
 
 interface ProductDetailProps {
@@ -62,7 +64,8 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
 
   return (
     <>
-      <script
+      <Script
+        id={`product-schema-${product.slug}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
@@ -106,139 +109,92 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
           {/* Right Side Content Panel (Slightly Tightened Vertical Spacing) */}
           <div className="lg:col-span-6 space-y-[3.8vh]">
 
-            <div className="space-y-[1vh]">
-
-              <FadeIn direction="up" delay={0.1} duration={0.4}>
-              <h1 className="text-[1.8vw] min-text-[22px] font-extrabold text-[#0B3C83] tracking-tight leading-tight">
-                {product.name}
-              </h1>
-            </FadeIn>
-
-            {/* MOQ Row */}
-            <FadeIn direction="up" delay={0.15} duration={0.4} className="space-y-[0.8vh]">
-              <div className="flex flex-wrap items-baseline justify-between gap-[1vw]">
-                <div>
-                  <div className="inline-flex items-center gap-[0.5vw] bg-blue-50/80 text-[#0B3C83] text-[0.8vw] min-text-[11px] font-semibold px-[0.8vw] py-[0.4vh] rounded-[0.5vw] border border-blue-200/80">
-                    <Package className="w-[0.9vw] h-[0.9vw] min-w-[13px] min-h-[13px] text-[#0B3C83]" />
-                    <span>MOQ: <strong className="text-slate-900 font-semibold">1 Unit</strong></span>
-                  </div>
+            <FadeIn direction="up" delay={0.05} duration={0.4}>
+              <div className="flex items-center justify-between gap-[1vw] flex-wrap">
+                <h1 className="text-[22px] sm:text-[1.8vw] font-bold text-[#0B3C83] tracking-tight ">
+                  {product.name}
+                </h1>
+                <div className="inline-flex items-center gap-[6px] sm:gap-[0.5vw] bg-blue-50/90 text-[#0B3C83] text-[13px] sm:text-[0.8vw] font-bold px-[10px] sm:px-[0.8vw] py-[5px] sm:py-[0.4vh] rounded-lg sm:rounded-[0.5vw] border border-blue-200/90 shrink-0">
+                  <Package className="w-[16px] h-[16px] sm:w-[0.9vw] sm:h-[0.9vw] text-[#0B3C83]" />
+                  <span>MOQ: <strong className="text-slate-900 font-bold">1 Unit</strong></span>
                 </div>
               </div>
             </FadeIn>
 
-            </div>
-
-
             <div className='space-y-[2vh]'>
-
               {/* Interactive Specification Variant Selector Toggle Buttons */}
-              <FadeIn direction="up" delay={0.18} duration={0.4}>
+              <FadeIn direction="up" delay={0.1} duration={0.4}>
                 <SpecificationVariantSelector product={product} />
               </FadeIn>
 
-              {/* Quick Trust & Guarantee Badges */}
-            <FadeIn direction="up" delay={0.2} duration={0.4} className="grid grid-cols-3 gap-[0.6vw]">
-              <div className="bg-blue-50/80 border border-blue-200/80 p-[0.6vw] rounded-[0.6vw] flex items-center gap-[0.9vw]">
-                <ShieldCheck className="w-[1.5vw] h-[1.5vw] min-w-[15px] min-h-[15px] text-[#0B3C83] shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[0.75vw] min-text-[11px] font-extrabold text-slate-900 leading-none">ISO Certified</span>
-                  <span className="text-[0.7vw] min-text-[9px] font-medium text-slate-600 mt-[0.5vh]">Tested Quality</span>
+              {/* Hospital Procurement Benefits */}
+              <FadeIn direction="up" delay={0.15} duration={0.4} className="bg-white border border-slate-200/90 rounded-[12px] sm:rounded-[0.8vw] p-[16px] sm:p-[1vw] space-y-[10px]">
+                <div className="flex items-center justify-between border-b border-slate-200/70 pb-[6px]">
+                  <span className="text-[14px] sm:text-[0.85vw] font-bold text-[#0B3C83]">Hospital Procurement Benefits</span>
+                  <span className="text-[12px] sm:text-[0.8vw] font-bold text-orange-600">Sri Mathurams Advantage</span>
                 </div>
-              </div>
-
-              <div className="bg-orange-50/80 border border-orange-200/80 p-[0.6vw] rounded-[0.6vw] flex items-center gap-[0.9vw]">
-                <Sparkles className="w-[1.5vw] h-[1.5vw] min-w-[15px] min-h-[15px] text-orange-600 shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[0.75vw] min-text-[11px] font-extrabold text-slate-900 leading-none">Direct Factory</span>
-                  <span className="text-[0.7vw] min-text-[9px] font-medium text-slate-600 mt-[0.2vh]">Best Pricing</span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-[10px] sm:gap-[0.8vw] text-[13px] sm:text-[0.8vw] py-[4px]">
+                  <div className="flex items-start gap-[8px] sm:gap-[0.3vw]">
+                    <CheckCircle2 className="w-[16px] h-[16px] sm:w-[0.95vw] sm:h-[0.95vw] text-orange-500 shrink-0 mt-[2px]" />
+                    <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">Bulk Quotation</strong> Institutional pricing</span>
+                  </div>
+                  <div className="flex items-start gap-[8px] sm:gap-[0.3vw]">
+                    <CheckCircle2 className="w-[16px] h-[16px] sm:w-[0.95vw] sm:h-[0.95vw] text-orange-500 shrink-0 mt-[2px]" />
+                    <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">Custom Specs</strong> Dimension & color options</span>
+                  </div>
+                  <div className="flex items-start gap-[8px] sm:gap-[0.3vw]">
+                    <CheckCircle2 className="w-[16px] h-[16px] sm:w-[0.95vw] sm:h-[0.95vw] text-orange-500 shrink-0 mt-[2px]" />
+                    <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">On-Site Setup</strong> Turnkey installation</span>
+                  </div>
                 </div>
-              </div>
-
-              <div className="bg-blue-50/80 border border-blue-200/80 p-[0.6vw] rounded-[0.6vw] flex items-center gap-[0.9vw]">
-                <Award className="w-[1.5vw] h-[1.5vw] min-w-[15px] min-h-[15px] text-[#0B3C83] shrink-0" />
-                <div className="flex flex-col">
-                  <span className="text-[0.75vw] min-text-[11px] font-extrabold text-slate-900 leading-none">1 Year Warranty</span>
-                  <span className="text-[0.7vw] min-text-[9px] font-medium text-slate-600 mt-[0.5vh]">Full Support</span>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Hospital Procurement Benefits */}
-            <FadeIn direction="up" delay={0.25} duration={0.4} className="bg-white border border-slate-200/90 rounded-[0.8vw] p-[1vw] space-y-[0.6vh]">
-              <div className="flex items-center justify-between border-b border-slate-200/70 pb-[0.4vh]">
-                <span className="text-[0.85vw] min-text-[11px] font-extrabold text-[#0B3C83] ">Hospital Procurement Benefits</span>
-                <span className="text-[0.8vw] min-text-[9px] font-bold text-orange-600">Sri Mathurams Advantage</span>
-              </div>
-              <div className="grid grid-cols-3 gap-[0.6vw] text-[0.8vw] min-text-[10px] py-[0.4vw]">
-                <div className="flex items-start gap-[0.3vw]">
-                  <CheckCircle2 className="w-[0.95vw] h-[0.95vw] min-w-[12px] min-h-[12px] text-orange-500 shrink-0 mt-[0.1vh mr-[0.4vw]" />
-                  <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">Bulk Quotation</strong> Institutional pricing</span>
-                </div>
-                <div className="flex items-start gap-[0.3vw]">
-                  <CheckCircle2 className="w-[0.95vw] h-[0.95vw] min-w-[12px] min-h-[12px] text-orange-500 shrink-0 mt-[0.1vh mr-[0.4vw]" />
-                  <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">Custom Specs</strong> Dimension & color options</span>
-                </div>
-                <div className="flex items-start gap-[0.3vw]">
-                  <CheckCircle2 className="w-[0.95vw] h-[0.95vw] min-w-[12px] min-h-[12px] text-orange-500 shrink-0 mt-[0.1vh] mr-[0.4vw]" />
-                  <span className="text-slate-700 font-medium leading-snug"><strong className="text-slate-900 font-bold block">On-Site Setup</strong> Turnkey installation</span>
-                </div>
-              </div>
-            </FadeIn>
-
+              </FadeIn>
             </div>
             
-
-            
-
-            
             {/* Trade & Supply Information Card */}
-            <FadeIn direction="up" delay={0.35} duration={0.4} className="bg-slate-50/90 rounded-[0.8vw] border border-slate-200/90 p-[1vw] space-y-[0.8vh]">
-              <h2 className="text-[0.95vw] min-text-[13px] font-bold text-[#0B3C83] flex items-center gap-[0.5vw] border-b border-slate-200/80 pb-[0.6vh]">
-                <Truck className="w-[1.1vw] h-[1.1vw] min-w-[15px] min-h-[15px] text-orange-500" /> Trade & Supply Information
+            <FadeIn direction="up" delay={0.2} duration={0.4} className="bg-slate-50/90 rounded-[12px] sm:rounded-[0.8vw] border border-slate-200/90 p-[16px] sm:p-[1vw] space-y-[10px]">
+              <h2 className="text-[15px] sm:text-[0.95vw] font-bold text-[#0B3C83] flex items-center gap-[8px] sm:gap-[0.5vw] border-b border-slate-200/80 pb-[6px]">
+                <Truck className="w-[18px] h-[18px] sm:w-[1.1vw] sm:h-[1.1vw] text-orange-500" /> Trade & Supply Information
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-[0.7vw] text-[0.78vw] min-text-[11px]">
-                <div className="bg-white p-[0.6vw] rounded-[0.5vw] border border-slate-200 shadow-2xs">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-[8px] sm:gap-[0.7vw] text-[12px] sm:text-[0.78vw]">
+                <div className="bg-white p-[10px] sm:p-[0.6vw] rounded-[8px] sm:rounded-[0.5vw] border border-slate-200 shadow-2xs">
                   <span className="text-slate-600 font-semibold block">Supply Ability</span>
-                  <span className="font-bold text-slate-950 text-[0.85vw] min-text-[12px] mt-[0.2vh] block">350 Units / Mo</span>
+                  <span className="font-bold text-slate-950 text-[14px] sm:text-[0.85vw] mt-[2px] block">350 Units / Mo</span>
                 </div>
-                <div className="bg-white p-[0.6vw] rounded-[0.5vw] border border-slate-200 shadow-2xs">
+                <div className="bg-white p-[10px] sm:p-[0.6vw] rounded-[8px] sm:rounded-[0.5vw] border border-slate-200 shadow-2xs">
                   <span className="text-slate-600 font-semibold block">Delivery Time</span>
-                  <span className="font-bold text-slate-950 text-[0.85vw] min-text-[12px] mt-[0.2vh] block">30 Days</span>
+                  <span className="font-bold text-slate-950 text-[14px] sm:text-[0.85vw] mt-[2px] block">30 Days</span>
                 </div>
-                <div className="bg-white p-[0.6vw] rounded-[0.5vw] border border-slate-200 shadow-2xs">
+                <div className="bg-white p-[10px] sm:p-[0.6vw] rounded-[8px] sm:rounded-[0.5vw] border border-slate-200 shadow-2xs">
                   <span className="text-slate-600 font-semibold block">Payment Terms</span>
-                  <span className="font-bold text-slate-950 text-[0.85vw] min-text-[12px] mt-[0.2vh] block">Cash Advance</span>
+                  <span className="font-bold text-slate-950 text-[14px] sm:text-[0.85vw] mt-[2px] block">Cash Advance</span>
                 </div>
-                <div className="bg-white p-[0.6vw] rounded-[0.5vw] border border-slate-200 shadow-2xs">
+                <div className="bg-white p-[10px] sm:p-[0.6vw] rounded-[8px] sm:rounded-[0.5vw] border border-slate-200 shadow-2xs">
                   <span className="text-slate-600 font-semibold block">Market</span>
-                  <span className="font-bold text-slate-950 text-[0.85vw] min-text-[12px] mt-[0.2vh] block">Tamil Nadu</span>
+                  <span className="font-bold text-slate-950 text-[14px] sm:text-[0.85vw] mt-[2px] block">Tamil Nadu</span>
                 </div>
               </div>
             </FadeIn>
 
             {/* Deal Notice Badge - Regional Service Area Location */}
-            <FadeIn direction="up" delay={0.3} duration={0.4} className="relative overflow-hidden bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/5 border border-orange-500/30 text-orange-950 text-[0.8vw] min-text-[11px] font-bold px-[0.9vw] py-[0.7vh] rounded-lg flex items-center justify-between shadow-xs">
-              <div className="flex items-center gap-[0.5vw]">
+            <FadeIn direction="up" delay={0.25} duration={0.4} className="relative overflow-hidden bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-orange-500/5 border border-orange-500/30 text-orange-950 text-[13px] sm:text-[0.8vw] font-bold px-[14px] sm:px-[0.9vw] py-[10px] sm:py-[0.7vh] rounded-lg flex items-center justify-between shadow-xs">
+              <div className="flex items-center gap-[6px] sm:gap-[0.5vw]">
                 <span className="tracking-wide">Regional Service Area:</span>
-                <span className="text-orange-600 font-extrabold">Tamil Nadu Only</span>
+                <span className="text-orange-600 font-bold">Tamil Nadu Only</span>
               </div>
-              <span className="bg-orange-500 text-white text-[0.6vw] min-text-[10px] px-[0.6vw] py-[0.4vh] rounded-lg uppercase tracking-wider font-semibold">
+              <span className="bg-orange-500 text-white text-[10px] sm:text-[0.6vw] px-[8px] sm:px-[0.6vw] py-[4px] sm:py-[0.4vh] rounded-lg uppercase tracking-wider font-bold">
                 DIRECT DELIVERY
               </span>
             </FadeIn>
 
-
             {/* Action Buttons Right After Trade & Supply Information */}
-            <FadeIn direction="up" delay={0.4} duration={0.4} className="pt-[0.2vh]">
-              <div className="flex flex-col sm:flex-row gap-[0.8vw]">
-                <Link href="/contact" className="flex-1">
-                  <button className="w-full inline-flex items-center justify-center gap-[0.5vw] px-[1.2vw] py-[1.1vh] rounded-[0.7vw] bg-orange-500 hover:bg-orange-600 text-white text-[0.88vw] min-text-[13px] font-bold shadow-md shadow-orange-500/20 active:scale-95 transition-all">
-                    Get a Price / Quote <Send className="w-[0.9vw] h-[0.9vw] min-w-[13px] min-h-[13px]" />
-                  </button>
-                </Link>
+            <FadeIn direction="up" delay={0.3} duration={0.4} className="pt-[0.2vh]">
+              <div className="flex flex-col sm:flex-row gap-[10px] sm:gap-[0.8vw]">
+                <div className="flex-1">
+                  <ProductDetailQuoteButton product={product} />
+                </div>
                 <a href="tel:+919842212345" className="flex-1">
-                  <button className="w-full inline-flex items-center justify-center gap-[0.5vw] px-[1.2vw] py-[1.1vh] rounded-[0.7vw] bg-[#0B3C83] hover:bg-[#062454] text-white text-[0.88vw] min-text-[13px] font-bold shadow-md active:scale-95 transition-all">
-                    <PhoneCall className="w-[0.9vw] h-[0.9vw] min-w-[13px] min-h-[13px] text-white" /> Call Sales
+                  <button className="w-full inline-flex items-center justify-center gap-[8px] sm:gap-[0.5vw] px-[16px] sm:px-[1.2vw] py-[12px] sm:py-[1.1vh] rounded-lg sm:rounded-[0.7vw] bg-[#0B3C83] hover:bg-[#062454] text-white text-[15px] sm:text-[0.88vw] font-bold shadow-md active:scale-95 transition-all">
+                    <PhoneCall className="w-[18px] h-[18px] sm:w-[0.9vw] sm:h-[0.9vw] text-white" /> Call Sales
                   </button>
                 </a>
               </div>
@@ -246,15 +202,15 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
           </div>
         </div>
 
-        {/* Tabbed Product Information Below (Matching 2nd Image: Product Description, Specifications, Trade Info, FAQ) */}
+        {/* Tabbed Product Information Below */}
         <ProductTabs product={product} />
 
         {/* Related Products from the Same Category */}
         {relatedProducts.length > 0 && (
-          <FadeIn direction="up" delay={0.1} duration={0.5} className="space-y-[1vh] py-[4vh]">
+          <div className="space-y-[1vh] py-[4vh]">
             <div className="flex justify-between items-center">
               <div>
-                <h2 className="text-[1.5vw] min-text-[18px] font-extrabold tracking-tight">
+                <h2 className="text-[1.5vw] min-text-[18px] font-bold tracking-tight">
                   <span className="text-[#0B3C83]">Related Products in </span>
                   <span className="text-orange-600">{product.category}</span>
                 </h2>
@@ -267,7 +223,7 @@ export default function ProductDetailPage({ params }: ProductDetailProps) {
               </Link>
             </div>
             <SuggestedProductsSlider products={relatedProducts} />
-          </FadeIn>
+          </div>
         )}
       </div>
     </>
