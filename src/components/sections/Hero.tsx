@@ -184,7 +184,7 @@ export function Hero() {
           animation: outFrame 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards;
           position: absolute; bottom: 0; left: 0;
         }
-        @keyframes outFrame { to { width: 13vw; height: 18vh; bottom: 13vh; left: 55vw; border-radius: 1.2vw; } }
+        @keyframes outFrame { to { width: 13vw; height: 18vh; bottom: 22vh; left: 55vw; border-radius: 1.2vw; } }
         .slider.prev .thumbnail .item:nth-child(1) { overflow: hidden; opacity: 0; animation: showThumbnail 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1 forwards; }
         .slider.next .nextPrevArrows button, .slider.prev .nextPrevArrows button { pointer-events: none; }
         
