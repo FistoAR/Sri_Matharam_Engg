@@ -11,6 +11,7 @@ import {
   Send,
 } from "lucide-react";
 import { useInquiryModal } from "@/components/ui/InquiryModalContext";
+import { getCategoryTheme } from "@/lib/data";
 
 interface SlideData {
   id: string;
@@ -85,6 +86,23 @@ const slideData: SlideData[] = [
     category: "OT Equipment",
   },
 ];
+
+const CATEGORY_TITLE_COLORS: Record<string, string> = {
+  "Labour & Maternity": "#E05A85",           // Interchanged: darker vibrant rose pink for top
+};
+
+const CATEGORY_TAGLINE_COLORS: Record<string, string> = {
+  "Ward Furniture": "#38A169",               // Softer fresh emerald green
+  "ICU & Critical Care": "#0284C7",          // Match with first line color
+  "Emergency & Patient Transfer": "#795548", // Softer warm mocha brown
+  "Labour & Maternity": "#E05A85",           // Matches vibrant rose pink of first line
+  "Examination & Consultation": "#525252",   // Lighter slate graphite
+  "OT Equipment": "#104272",                 // Match with first line color
+  "Medical Trolleys": "#68D391",             // Lighter sage green
+  "Stainless Steel Furniture & Ward Accessories": "#E05A85",
+  "Accessories": "#0D9488",
+  "General Furniture": "#8D6E63",
+};
 
 export function Hero() {
   const { openInquiryModal } = useInquiryModal();
@@ -246,6 +264,9 @@ export function Hero() {
   };
 
   const activeItem = slideData[currentSlide];
+  const activeTheme = getCategoryTheme(activeItem.category);
+  const titleColor = CATEGORY_TITLE_COLORS[activeItem.category] || activeTheme.bg;
+  const taglineColor = CATEGORY_TAGLINE_COLORS[activeItem.category] || activeTheme.bg;
 
   return (
     <section className={`hero-section ${isInitial ? "initial-load" : ""} relative w-full h-[90vh] md:h-[91.5vh] overflow-hidden bg-[#f7f5ef] text-slate-900`}>
@@ -538,11 +559,17 @@ export function Hero() {
                 className={`hero-title flex flex-col gap-2 sm:gap-2.5 md:gap-3 ${isTextVisible ? "line-reveal" : "line-exit"}`}
                 style={{ animationDelay: isTextVisible ? "0.25s" : "0.05s" }}
               >
-                <h1 className="text-[7vw] sm:text-[5.5vw] md:text-[3.2vw] font-Montserrat font-extrabold text-[#E86D24] tracking-wider uppercase leading-[1.08] font-heading">
+                <h1 
+                  className="text-[7vw] sm:text-[5.5vw] md:text-[3.2vw] font-Montserrat font-extrabold tracking-wider uppercase leading-[1.08] font-heading transition-colors duration-500"
+                  style={{ color: titleColor }}
+                >
                   {activeItem.titleOrange}
                 </h1>
                 {activeItem.tagline && (
-                  <h2 className="text-[4.2vw] sm:text-[3vw] md:text-[2.1vw] font-Montserrat font-semibold text-[#104272] tracking-wider leading-snug">
+                  <h2 
+                    className="text-[4.2vw] sm:text-[3vw] md:text-[2.1vw] font-Montserrat font-semibold tracking-wider leading-snug transition-colors duration-500"
+                    style={{ color: taglineColor }}
+                  >
                     {activeItem.tagline}
                   </h2>
                 )}
@@ -580,7 +607,14 @@ export function Hero() {
                 </button>
 
                 <Link href={`/products?category=${encodeURIComponent(activeItem.category)}`}>
-                  <button className="bg-[#E86D24] hover:bg-orange-600 text-white font-bold text-[3.5vw] sm:text-[2.2vw] md:text-[0.85vw] px-[5vw] sm:px-[3.5vw] md:px-[1.4vw] py-[1.8vh] md:py-[1.3vh] rounded-md uppercase shadow-md hover:shadow-lg transition-all flex items-center gap-[1.5vw] md:gap-[0.5vw]">
+                  <button 
+                    className="font-bold text-[3.5vw] sm:text-[2.2vw] md:text-[0.85vw] px-[5vw] sm:px-[3.5vw] md:px-[1.4vw] py-[1.8vh] md:py-[1.3vh] rounded-md uppercase shadow-md hover:shadow-lg hover:brightness-105 transition-all flex items-center gap-[1.5vw] md:gap-[0.5vw]"
+                    style={{
+                      backgroundColor: activeTheme.bg,
+                      color: activeTheme.text,
+                      boxShadow: `0 4px 14px ${activeTheme.bg}40`,
+                    }}
+                  >
                     EXPLORE PRODUCTS{" "}
                     <ArrowRight className="w-[4vw] sm:w-[2.5vw] md:w-[1vw] h-[4vw] sm:h-[2.5vw] md:h-[1vw] hero-button-arrow" />
                   </button>
