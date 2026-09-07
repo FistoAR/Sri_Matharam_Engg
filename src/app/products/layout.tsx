@@ -499,7 +499,10 @@ function ProductsLayoutContent({
 
                     {/* Accordion Dropdown Products List with Inside Scrolling */}
                     {isSidebarExpanded && isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
-                      <div className="pl-3 pr-2 py-2.5 bg-white border-x border-b border-slate-200 rounded-b-xl -mt-1 shadow-2xs space-y-1.5 max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain">
+                      <div 
+                        className="pl-3 pr-2 py-2.5 bg-white border-x border-b rounded-b-xl -mt-1 shadow-2xs space-y-1.5 max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain"
+                        style={{ borderColor: theme.border }}
+                      >
                         {productsInCat.map((prod, idx) => {
                           const isProdActive = pathname.endsWith(`/${prod.slug}`);
                           return (
@@ -509,18 +512,18 @@ function ProductsLayoutContent({
                               scroll={false}
                               className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-bold transition-all text-left leading-normal border ${
                                 isProdActive
-                                  ? "bg-white shadow-xs border-2"
-                                  : "bg-slate-50 border-slate-200/60 text-slate-600 hover:text-[#0B3C83] hover:bg-[#0B3C83]/5 hover:border-[#0B3C83]/20"
+                                  ? "shadow-xs border-2"
+                                  : "bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                               }`}
-                              style={
-                                isProdActive
+                              style={{
+                                borderColor: theme.border,
+                                ...(isProdActive
                                   ? {
-                                      backgroundColor: "#FFFFFF",
-                                      borderColor: theme.bg,
+                                      backgroundColor: `${theme.bg}1A`,
                                       color: theme.isLight ? theme.text : theme.bg,
                                     }
-                                  : undefined
-                              }
+                                  : {}),
+                              }}
                             >
                               <span
                                 className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[11px] font-black ${
@@ -666,7 +669,10 @@ function ProductsLayoutContent({
 
                   {/* Nested Products with Inside Scrolling */}
                   {isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
-                    <div className="pl-3 pr-2 py-2 bg-white border border-slate-200/80 rounded-b-xl -mt-1 space-y-1.5 max-h-[260px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain">
+                    <div 
+                      className="pl-3 pr-2 py-2 bg-white border rounded-b-xl -mt-1 space-y-1.5 max-h-[260px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain"
+                      style={{ borderColor: theme.border }}
+                    >
                       {productsInCat.map((prod, idx) => {
                         const isProdActive = pathname.endsWith(`/${prod.slug}`);
                         return (
@@ -677,18 +683,18 @@ function ProductsLayoutContent({
                             onClick={() => setIsMobileDrawerOpen(false)}
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-bold transition-all text-left leading-normal border ${
                               isProdActive
-                                ? "bg-white shadow-xs border-2"
-                                : "bg-slate-50 border-slate-200/60 text-slate-600"
+                                ? "shadow-xs border-2"
+                                : "bg-slate-50 text-slate-600 hover:bg-slate-100"
                             }`}
-                            style={
-                              isProdActive
+                            style={{
+                              borderColor: theme.border,
+                              ...(isProdActive
                                 ? {
-                                    backgroundColor: "#FFFFFF",
-                                    borderColor: theme.bg,
+                                    backgroundColor: `${theme.bg}1A`,
                                     color: theme.isLight ? theme.text : theme.bg,
                                   }
-                                : undefined
-                            }
+                                : {}),
+                            }}
                           >
                             <span
                               className={`w-5 h-5 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black ${
