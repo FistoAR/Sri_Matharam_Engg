@@ -26,6 +26,7 @@ export interface Category {
   description: string;
   icon: string;
   banner?: string;
+  color?: string;
 }
 
 export interface ContactFormData {

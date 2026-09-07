@@ -11,7 +11,7 @@ import {
   ChevronsDown,
   ChevronsUp,
 } from "lucide-react";
-import { PRODUCTS, CATEGORIES } from "@/lib/data";
+import { PRODUCTS, CATEGORIES, getCategoryTheme } from "@/lib/data";
 
 export default function ProductsLayout({
   children,
@@ -67,6 +67,26 @@ function ProductsLayoutContent({
   const [canScrollDown, setCanScrollDown] = useState(false);
   const [canScrollUp, setCanScrollUp] = useState(false);
   const sidebarNavRef = useRef<HTMLDivElement>(null);
+  const categoryItemRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const scrollCategoryIntoView = useCallback((catName: string) => {
+    const parentEl = categoryItemRefs.current[catName];
+    const navEl = sidebarNavRef.current;
+    if (!parentEl || !navEl) return;
+
+    const parentTop = parentEl.offsetTop;
+    const navScrollTop = navEl.scrollTop;
+    const navHeight = navEl.clientHeight;
+
+    // If the parent button is scrolled above the visible area or below the viewport,
+    // scroll so the parent button is placed comfortably near the top of the sidebar
+    if (parentTop < navScrollTop || parentTop > navScrollTop + navHeight - 80) {
+      navEl.scrollTo({
+        top: Math.max(0, parentTop - 12),
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
   useEffect(() => {
     setIsMounted(true);
@@ -117,12 +137,23 @@ function ProductsLayoutContent({
     return searchParams.get("category") || "All Products";
   }, [pathname, searchParams]);
 
-  // Sync accordion expansion state with active category selection
+  // Check if current page is a child product detail page
+  const isDetailPage = useMemo(() => {
+    const pathParts = pathname.split("/");
+    const lastPart = pathParts[pathParts.length - 1];
+    return pathParts.length > 2 && lastPart !== "products";
+  }, [pathname]);
+
+  // Sync accordion expansion state and scroll selected category into view
   useEffect(() => {
     if (activeCategory && activeCategory !== "All Products") {
       setExpandedCategory(activeCategory);
+      const timer = setTimeout(() => {
+        scrollCategoryIntoView(activeCategory);
+      }, 100);
+      return () => clearTimeout(timer);
     }
-  }, [activeCategory]);
+  }, [activeCategory, scrollCategoryIntoView]);
 
   const handleCategoryClick = (catName: string) => {
     if (!isSidebarExpanded) {
@@ -131,6 +162,11 @@ function ProductsLayoutContent({
       window.dispatchEvent(new Event("sidebarToggle"));
     }
     setExpandedCategory((prev) => (prev === catName ? null : catName));
+
+    // Ensure parent category button remains visible and never scrolls off the top
+    setTimeout(() => {
+      scrollCategoryIntoView(catName);
+    }, 50);
   };
 
   // Determine breadcrumb nodes
@@ -243,7 +279,12 @@ function ProductsLayoutContent({
         </button>
         <div className="flex items-center gap-1.5 text-slate-500 text-xs font-bold bg-white border border-slate-200 px-3 py-2 rounded-xl">
           <span className="text-slate-400">Viewing:</span>
-          <span className="text-[#0B3C83] max-w-[120px] truncate">{activeCategory}</span>
+          <span
+            className="max-w-[120px] truncate font-extrabold"
+            style={{ color: getCategoryTheme(activeCategory).bg }}
+          >
+            {activeCategory}
+          </span>
         </div>
       </div>
 
@@ -312,18 +353,37 @@ function ProductsLayoutContent({
                 const isExpanded = expandedCategory === catName;
                 const productsInCat = PRODUCTS.filter((p) => p.category === catName);
                 const categoryObj = CATEGORIES.find((c) => c.name === catName);
+                const theme = getCategoryTheme(catName);
 
                 return (
-                  <div key={catName} className="space-y-1">
+                  <div
+                    key={catName}
+                    ref={(el) => { categoryItemRefs.current[catName] = el; }}
+                    className="space-y-1 relative"
+                  >
                     <Link
                       href={`/products?category=${encodeURIComponent(catName)}`}
                       scroll={false}
                       onClick={() => handleCategoryClick(catName)}
-                      className={`w-full flex items-center justify-between px-4 rounded-xl py-3 text-base font-bold transition-all text-left group relative ${
+                      className={`w-full flex items-center justify-between px-4 rounded-xl py-3 text-base font-bold transition-all text-left group relative border ${
                         isActive
-                          ? "bg-[#0B3C83] text-white shadow-md border border-[#0B3C83]"
-                          : "bg-white text-slate-700 hover:text-[#0B3C83] hover:bg-slate-100/80 border border-slate-200/60 shadow-2xs"
-                      } ${isExpanded && catName !== "All Products" && isSidebarExpanded ? "rounded-b-none border-b-0" : ""}`}
+                          ? "shadow-md"
+                          : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200/60 shadow-2xs"
+                      } ${
+                        isExpanded && catName !== "All Products" && isSidebarExpanded
+                          ? "rounded-b-none border-b-0"
+                          : ""
+                      }`}
+                      style={
+                        isActive
+                          ? {
+                              backgroundColor: theme.bg,
+                              borderColor: theme.border,
+                              color: theme.text,
+                              boxShadow: `0 4px 14px ${theme.bg}40`,
+                            }
+                          : undefined
+                      }
                     >
                       <div className="flex items-center gap-4 min-w-0 flex-1">
                         <div className="relative w-6 h-6 shrink-0">
@@ -332,7 +392,7 @@ function ProductsLayoutContent({
                               src={isActive ? "/images/Product Assets/selected.webp" : "/images/Product Assets/unselected.webp"}
                               alt="All Products icon"
                               fill
-                              className={`object-contain ${isActive ? "brightness-0 invert" : ""}`}
+                              className={`object-contain ${isActive ? (theme.isLight ? "brightness-0" : "brightness-0 invert") : ""}`}
                             />
                           ) : (
                             <Image
@@ -340,7 +400,11 @@ function ProductsLayoutContent({
                               alt={`${catName} icon`}
                               fill
                               className={`object-contain transition-all duration-300 ${
-                                isActive ? "brightness-0 invert" : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
+                                isActive
+                                  ? theme.isLight
+                                    ? "brightness-0"
+                                    : "brightness-0 invert"
+                                  : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
                               }`}
                             />
                           )}
@@ -352,11 +416,21 @@ function ProductsLayoutContent({
                         )}
                       </div>
                       {isSidebarExpanded && (
-                        <span className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0 transition-all ${
-                          isActive
-                            ? "bg-white text-[#0B3C83] shadow-xs font-black"
-                            : "bg-slate-100 text-slate-600 group-hover:bg-[#0B3C83]/10 group-hover:text-[#0B3C83]"
-                        }`}>
+                        <span
+                          className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0 transition-all ${
+                            isActive
+                              ? "shadow-xs font-black"
+                              : "bg-slate-100 text-slate-600 group-hover:bg-slate-200"
+                          }`}
+                          style={
+                            isActive
+                              ? {
+                                  backgroundColor: theme.badgeBg,
+                                  color: theme.badgeText,
+                                }
+                              : undefined
+                          }
+                        >
                           {categoryCounts[catName] || 0}
                         </span>
                       )}
@@ -372,9 +446,9 @@ function ProductsLayoutContent({
                       )}
                     </Link>
 
-                    {/* Accordion Dropdown Products List */}
+                    {/* Accordion Dropdown Products List with Inside Scrolling */}
                     {isSidebarExpanded && isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
-                      <div className="pl-4 pr-3 py-3 bg-white border-x border-b border-slate-200 rounded-b-lg -mt-1 shadow-2xs space-y-1.5 transition-all duration-300">
+                      <div className="pl-3 pr-2 py-2.5 bg-white border-x border-b border-slate-200 rounded-b-xl -mt-1 shadow-2xs space-y-1.5 max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain">
                         {productsInCat.map((prod, idx) => {
                           const isProdActive = pathname.endsWith(`/${prod.slug}`);
                           return (
@@ -382,15 +456,34 @@ function ProductsLayoutContent({
                               key={prod.id}
                               href={`/products/${prod.slug}`}
                               scroll={false}
-                              className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-bold transition-all border text-left leading-normal ${
+                              className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-bold transition-all text-left leading-normal border ${
                                 isProdActive
-                                  ? "bg-[#FFF0E6] border-[#E87325] text-[#E87325] shadow-2xs"
+                                  ? "bg-white shadow-xs border-2"
                                   : "bg-slate-50 border-slate-200/60 text-slate-600 hover:text-[#0B3C83] hover:bg-[#0B3C83]/5 hover:border-[#0B3C83]/20"
                               }`}
+                              style={
+                                isProdActive
+                                  ? {
+                                      backgroundColor: "#FFFFFF",
+                                      borderColor: theme.bg,
+                                      color: theme.isLight ? theme.text : theme.bg,
+                                    }
+                                  : undefined
+                              }
                             >
-                              <span className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[11px] font-black ${
-                                isProdActive ? "bg-[#E87325] text-white" : "bg-slate-200 text-slate-500"
-                              }`}>
+                              <span
+                                className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[11px] font-black ${
+                                  isProdActive ? "" : "bg-slate-200 text-slate-500"
+                                }`}
+                                style={
+                                  isProdActive
+                                    ? {
+                                        backgroundColor: theme.bg,
+                                        color: theme.text,
+                                      }
+                                    : undefined
+                                }
+                              >
                                 {idx + 1}
                               </span>
                               <span className="flex-1 whitespace-normal break-words">{prod.name}</span>
@@ -456,9 +549,11 @@ function ProductsLayoutContent({
               const isActive = activeCategory === catName;
               const isExpanded = expandedCategory === catName;
               const productsInCat = PRODUCTS.filter((p) => p.category === catName);
+              const categoryObj = CATEGORIES.find((c) => c.name === catName);
+              const theme = getCategoryTheme(catName);
 
               return (
-                <div key={catName} className="space-y-1.5">
+                <div key={catName} className="space-y-1.5 relative">
                   <Link
                     href={`/products?category=${encodeURIComponent(catName)}`}
                     scroll={false}
@@ -470,31 +565,57 @@ function ProductsLayoutContent({
                     }}
                     className={`w-full flex items-center justify-between px-4 rounded-xl py-3.5 text-sm font-black transition-all text-left border relative ${
                       isActive
-                        ? "bg-[#0B3C83] text-white border-[#0B3C83] shadow-md"
-                        : "bg-white border-slate-200/60 text-slate-700 hover:text-[#0B3C83]"
+                        ? "shadow-md"
+                        : "bg-white border-slate-200/60 text-slate-700 hover:bg-slate-50"
+                    } ${
+                      isExpanded && catName !== "All Products"
+                        ? "rounded-b-none border-b-0"
+                        : ""
                     }`}
+                    style={
+                      isActive
+                        ? {
+                            backgroundColor: theme.bg,
+                            borderColor: theme.border,
+                            color: theme.text,
+                            boxShadow: `0 4px 14px ${theme.bg}40`,
+                          }
+                        : undefined
+                    }
                   >
                     <div className="flex items-center gap-4 min-w-0 flex-1">
                       <div className="relative w-4 h-4 shrink-0">
                         <Image
-                          src={isActive ? "/images/Product Assets/selected.webp" : "/images/Product Assets/unselected.webp"}
+                          src={isActive ? "/images/Product Assets/selected.webp" : (categoryObj?.icon || "/images/Product Assets/unselected.webp")}
                           alt="category icon"
                           fill
-                          className={`object-contain ${isActive ? "brightness-0 invert" : ""}`}
+                          className={`object-contain ${
+                            isActive ? (theme.isLight ? "brightness-0" : "brightness-0 invert") : ""
+                          }`}
                         />
                       </div>
                       <span className="flex-1 pr-1">{catName}</span>
                     </div>
-                    <span className={`text-[10px] font-black px-2 py-0.3 rounded-full shrink-0 ${
-                      isActive ? "bg-white text-[#0B3C83]" : "bg-slate-200 text-slate-500"
-                    }`}>
+                    <span
+                      className={`text-[10px] font-black px-2 py-0.3 rounded-full shrink-0 ${
+                        isActive ? "" : "bg-slate-200 text-slate-500"
+                      }`}
+                      style={
+                        isActive
+                          ? {
+                              backgroundColor: theme.badgeBg,
+                              color: theme.badgeText,
+                            }
+                          : undefined
+                      }
+                    >
                       {categoryCounts[catName] || 0}
                     </span>
                   </Link>
 
-                  {/* Nested Products */}
+                  {/* Nested Products with Inside Scrolling */}
                   {isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
-                    <div className="pl-4 pr-1 py-2 bg-white border border-slate-200/80 rounded-b-lg -mt-1 space-y-1.5">
+                    <div className="pl-3 pr-2 py-2 bg-white border border-slate-200/80 rounded-b-xl -mt-1 space-y-1.5 max-h-[260px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain">
                       {productsInCat.map((prod, idx) => {
                         const isProdActive = pathname.endsWith(`/${prod.slug}`);
                         return (
@@ -503,15 +624,34 @@ function ProductsLayoutContent({
                             href={`/products/${prod.slug}`}
                             scroll={false}
                             onClick={() => setIsMobileDrawerOpen(false)}
-                            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-bold transition-all border text-left leading-normal ${
+                            className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-bold transition-all text-left leading-normal border ${
                               isProdActive
-                                ? "bg-[#FFF0E6] border-[#E87325] text-[#E87325]"
+                                ? "bg-white shadow-xs border-2"
                                 : "bg-slate-50 border-slate-200/60 text-slate-600"
                             }`}
+                            style={
+                              isProdActive
+                                ? {
+                                    backgroundColor: "#FFFFFF",
+                                    borderColor: theme.bg,
+                                    color: theme.isLight ? theme.text : theme.bg,
+                                  }
+                                : undefined
+                            }
                           >
-                            <span className={`w-5 h-5 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black ${
-                              isProdActive ? "bg-[#E87325] text-white" : "bg-slate-200 text-slate-500"
-                            }`}>
+                            <span
+                              className={`w-5 h-5 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black ${
+                                isProdActive ? "" : "bg-slate-200 text-slate-500"
+                              }`}
+                              style={
+                                isProdActive
+                                  ? {
+                                      backgroundColor: theme.bg,
+                                      color: theme.text,
+                                    }
+                                  : undefined
+                              }
+                            >
                               {idx + 1}
                             </span>
                             <span className="truncate flex-1">{prod.name}</span>

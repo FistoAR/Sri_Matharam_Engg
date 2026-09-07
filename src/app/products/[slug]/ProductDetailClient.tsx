@@ -213,7 +213,7 @@ export function ProductDetailClient({
         {/* Left Side: Product Gallery */}
         <FadeIn direction="left" duration={0.6} className="h-full">
           <div className="flex flex-col justify-between space-y-4 h-full min-w-0">
-            <div className="relative flex-1 min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] w-full overflow-hidden flex items-center justify-center group bg-white rounded-2xl border border-slate-100 p-2">
+            <div className="relative flex-1 min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] w-full overflow-hidden flex items-center justify-center group bg-[#efefef] rounded-2xl border border-slate-100 p-2">
               {/* Back Button inside the image card at top-left */}
               <Link
                 href={`/products?category=${encodeURIComponent(product.category)}`}
@@ -253,7 +253,7 @@ export function ProductDetailClient({
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative w-24 sm:w-28 h-full rounded-xl border-2 overflow-hidden bg-white shrink-0 transition-all ${
+                  className={`relative w-24 sm:w-28 h-full rounded-xl border-2 overflow-hidden bg-[#ebebeb] shrink-0 transition-all ${
                     idx === activeImageIndex
                       ? "border-[#E87325] scale-[1.03] shadow-sm"
                       : "border-slate-200 hover:border-slate-300 opacity-70 hover:opacity-100"
@@ -597,9 +597,105 @@ export function ProductDetailClient({
         </div>
       )}
 
+      {/* Related Products Section */}
+      <div className="space-y-6 pt-8 border-t border-slate-100 font-montserrat pb-8">
+        <FadeIn direction="up" duration={0.6}>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-4">
+            <div className="space-y-2 text-left">
+              <h2 className="text-[#E87325] text-2xl md:text-3xl font-black tracking-tight">
+                Related Products
+              </h2>
+              <p className="text-slate-500 text-sm font-semibold leading-relaxed">
+                Explore premium hospital furniture and medical equipment under this category.
+              </p>
+            </div>
+            
+            {/* Carousel Navigation Buttons */}
+            {relatedProducts.length > 0 && (
+              <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 pb-1">
+                <button
+                  onClick={() => handleScroll("left")}
+                  className="bg-white border border-slate-200 hover:border-[#E87325] text-slate-700 hover:text-[#E87325] w-9 h-9 rounded-full shadow-2xs hover:shadow-sm flex items-center justify-center transition-all active:scale-90"
+                  title="Scroll Left"
+                >
+                  <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+                </button>
+                <button
+                  onClick={() => handleScroll("right")}
+                  className="bg-white border border-slate-200 hover:border-[#E87325] text-slate-700 hover:text-[#E87325] w-9 h-9 rounded-full shadow-2xs hover:shadow-sm flex items-center justify-center transition-all active:scale-90"
+                  title="Scroll Right"
+                >
+                  <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+                </button>
+              </div>
+            )}
+          </div>
+        </FadeIn>
+
+        {/* Smooth Scrolling Carousel */}
+        <div
+          ref={sliderRef}
+          onMouseEnter={() => setIsSliderHovered(true)}
+          onMouseLeave={() => setIsSliderHovered(false)}
+          onWheel={(e) => {
+            // Always let vertical scroll pass through to the page
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+              window.scrollBy({ top: e.deltaY, behavior: "auto" });
+            }
+          }}
+          className="flex gap-6 overflow-x-auto py-2 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full"
+        >
+          {duplicatedProducts.map((p, idx) => (
+            <div key={`${p.id}-dup-${idx}`} className="w-[280px] shrink-0 h-full">
+              <div className="group/related bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md hover:-translate-y-1 hover:border-[#E87325]/30 transition-all duration-300 flex flex-col justify-between p-3.5 cursor-pointer h-[400px]">
+                <div className="relative aspect-[1.3/1] w-full bg-slate-50/50 rounded-xl overflow-hidden mb-3.5">
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    sizes="240px"
+                    className="object-contain p-2 transition-transform duration-500 group-hover/related:scale-105"
+                  />
+                </div>
+                <div className="space-y-1.5 flex-1 flex flex-col justify-between">
+                  <div className="space-y-1">
+                    <h3 className="text-[#092347] font-black text-sm md:text-base leading-tight whitespace-normal break-words">
+                      {p.name}
+                    </h3>
+                    <p className="text-slate-500 text-[11px] font-medium leading-normal line-clamp-3">
+                      {p.description || "Designed for patient comfort, safety, and efficient caregiving with a durable and ergonomic structure."}
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 pt-3 border-t border-slate-100 mt-3.5 w-full">
+                    <Link href={`/products/${p.slug}`} scroll={false} className="w-full">
+                      <button className="w-full border border-[#0B3C83] text-[#0B3C83] hover:bg-[#0B3C83]/5 rounded-lg py-2 px-1 text-[10px] md:text-xs font-bold transition-all text-center whitespace-nowrap">
+                        View Details
+                      </button>
+                    </Link>
+                    <button
+                      onClick={() => openInquiryModal(p)}
+                      className="w-full bg-[#E87325] hover:bg-[#D0621B] text-white rounded-lg py-2 px-1 text-[10px] md:text-xs font-bold transition-all text-center flex items-center justify-center gap-1 active:scale-95 whitespace-nowrap"
+                    >
+                      <span>Send Enquiry</span>
+                      <ChevronRight className="w-3 h-3 text-white shrink-0" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Reliable Bottom SVG Banner Section */}
       <FadeIn direction="up" duration={0.7} delay={0.2}>
-        <div className="mt-8">
+        <div
+          className="mt-8"
+          onWheel={(e) => {
+            // Always pass scroll through to the page so the user can reach the footer
+            window.scrollBy({ top: e.deltaY, behavior: "auto" });
+          }}
+        >
           {/* Desktop & Tablet View (Exact SVG Banner with native button scaling and zero misalignment) */}
           <ProductBottomBanner
             onQuoteClick={() => openInquiryModal(product)}
@@ -672,90 +768,6 @@ export function ProductDetailClient({
           </div>
         </div>
       </FadeIn>
-
-      {/* Related Products Section */}
-      <div className="space-y-6 pt-8 border-t border-slate-100 font-montserrat pb-8">
-        <FadeIn direction="up" duration={0.6}>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-100 pb-4">
-            <div className="space-y-2 text-left">
-              <h2 className="text-[#E87325] text-2xl md:text-3xl font-black tracking-tight">
-                Related Products
-              </h2>
-              <p className="text-slate-500 text-sm font-semibold leading-relaxed">
-                Explore premium hospital furniture and medical equipment under this category.
-              </p>
-            </div>
-            
-            {/* Carousel Navigation Buttons */}
-            {relatedProducts.length > 0 && (
-              <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 pb-1">
-                <button
-                  onClick={() => handleScroll("left")}
-                  className="bg-white border border-slate-200 hover:border-[#E87325] text-slate-700 hover:text-[#E87325] w-9 h-9 rounded-full shadow-2xs hover:shadow-sm flex items-center justify-center transition-all active:scale-90"
-                  title="Scroll Left"
-                >
-                  <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
-                </button>
-                <button
-                  onClick={() => handleScroll("right")}
-                  className="bg-white border border-slate-200 hover:border-[#E87325] text-slate-700 hover:text-[#E87325] w-9 h-9 rounded-full shadow-2xs hover:shadow-sm flex items-center justify-center transition-all active:scale-90"
-                  title="Scroll Right"
-                >
-                  <ChevronRight className="w-5 h-5 stroke-[2.5]" />
-                </button>
-              </div>
-            )}
-          </div>
-        </FadeIn>
-
-        {/* Smooth Scrolling Carousel */}
-        <div
-          ref={sliderRef}
-          onMouseEnter={() => setIsSliderHovered(true)}
-          onMouseLeave={() => setIsSliderHovered(false)}
-          className="flex gap-6 overflow-x-auto py-2 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full"
-        >
-          {duplicatedProducts.map((p, idx) => (
-            <div key={`${p.id}-dup-${idx}`} className="w-[280px] shrink-0 h-full">
-              <div className="group/related bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md hover:-translate-y-1 hover:border-[#E87325]/30 transition-all duration-300 flex flex-col justify-between p-3.5 cursor-pointer h-[400px]">
-                <div className="relative aspect-[1.3/1] w-full bg-slate-50/50 rounded-xl overflow-hidden mb-3.5">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    sizes="240px"
-                    className="object-contain p-2 transition-transform duration-500 group-hover/related:scale-105"
-                  />
-                </div>
-                <div className="space-y-1.5 flex-1 flex flex-col justify-between">
-                  <div className="space-y-1">
-                    <h3 className="text-[#092347] font-black text-sm md:text-base leading-tight whitespace-normal break-words">
-                      {p.name}
-                    </h3>
-                    <p className="text-slate-500 text-[11px] font-medium leading-normal line-clamp-3">
-                      {p.description || "Designed for patient comfort, safety, and efficient caregiving with a durable and ergonomic structure."}
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-2 pt-3 border-t border-slate-100 mt-3.5 w-full">
-                    <Link href={`/products/${p.slug}`} scroll={false} className="w-full">
-                      <button className="w-full border border-[#0B3C83] text-[#0B3C83] hover:bg-[#0B3C83]/5 rounded-lg py-2 px-1 text-[10px] md:text-xs font-bold transition-all text-center whitespace-nowrap">
-                        View Details
-                      </button>
-                    </Link>
-                    <button
-                      onClick={() => openInquiryModal(p)}
-                      className="w-full bg-[#E87325] hover:bg-[#D0621B] text-white rounded-lg py-2 px-1 text-[10px] md:text-xs font-bold transition-all text-center flex items-center justify-center gap-1 active:scale-95 whitespace-nowrap"
-                    >
-                      <span>Send Enquiry</span>
-                      <ChevronRight className="w-3 h-3 text-white shrink-0" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </main>
   );
 }

@@ -428,6 +428,65 @@ export function Hero() {
           from { width: 0%; }
           to { width: 100%; }
         }
+
+        /* Thumbnail smooth enter/exit transitions */
+        .thumbnail .item {
+          -webkit-tap-highlight-color: transparent;
+          -webkit-touch-callout: none;
+          user-select: none;
+          outline: none;
+          transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                      border-color 0.3s ease,
+                      opacity 0.35s ease;
+        }
+        .thumbnail .item:focus {
+          outline: none;
+        }
+        .thumbnail .item:focus-visible {
+          outline: 2px solid #E86D24;
+          outline-offset: 2px;
+        }
+        /* Entering thumbnail — slides in from right and fades up */
+        .slider.next .thumbnail .item:last-child {
+          animation: thumbEnterRight 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .slider.prev .thumbnail .item:first-child {
+          animation: thumbEnterLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        /* Exiting thumbnail (the one that just left the front) */
+        .slider.next .thumbnail .item:nth-child(2) {
+          animation: thumbShift 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .slider.prev .thumbnail .item:nth-last-child(2) {
+          animation: thumbShift 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes thumbEnterRight {
+          from { opacity: 0; transform: translateX(60px) scale(0.92); filter: blur(4px); }
+          to   { opacity: 1; transform: translateX(0)   scale(1);    filter: blur(0); }
+        }
+        @keyframes thumbEnterLeft {
+          from { opacity: 0; transform: translateX(-60px) scale(0.92); filter: blur(4px); }
+          to   { opacity: 1; transform: translateX(0)    scale(1);    filter: blur(0); }
+        }
+        @keyframes thumbShift {
+          from { opacity: 0.5; transform: translateX(-12px) scale(0.97); }
+          to   { opacity: 1;   transform: translateX(0)     scale(1);   }
+        }
+
+        /* Main background image cross-fade on slide change */
+        .slider .list .item:nth-child(1) {
+          z-index: 1;
+          transition: opacity 0.5s ease;
+        }
+        .slider.next .list .item:nth-child(1),
+        .slider.prev .list .item:nth-child(1) {
+          animation: bgFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes bgFadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
       `}</style>
 
       <div ref={sliderRef} className="slider">
@@ -441,18 +500,18 @@ export function Hero() {
                 className="opacity-40 md:opacity-100"
               />
               {/* Soft light backdrop gradient with reduced opacity */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/65 to-transparent w-full md:w-[58%] backdrop-blur-[1px]" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/95 to-transparent w-full md:w-[58%] backdrop-blur-[1px]" />
             </div>
           ))}
         </div>
 
         {/* Dedicated Staggered Text Content Overlay */}
-        <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-start pt-[2vh] h-full">
-          <div className="w-full px-[5vw] md:px-[4vw] pb-[12vh] md:pb-[14vh] pt-[4vh]">
+        <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-center h-full">
+          <div className="w-full px-[5vw] md:px-[4vw] pb-[12vh] md:pb-[14vh]">
             <div 
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="w-full lg:max-w-[45vw] flex flex-col gap-4 sm:gap-5 md:gap-5 lg:gap-6 pointer-events-auto"
+              className="w-full lg:max-w-[45vw] flex flex-col gap-5 sm:gap-6 md:gap-6 lg:gap-8 pointer-events-auto"
             >
               {/* Line 1: Badge with Trusted Logo & Bottom Orange Accent Line */}
               <div
@@ -558,7 +617,7 @@ export function Hero() {
               key={item.id}
               data-id={item.id}
               onClick={() => handleThumbnailClick(item.id)}
-              className="item group relative cursor-pointer flex-shrink-0 w-[50vw] sm:w-[38vw] md:w-[17vw] min-w-[210px] md:min-w-[245px] h-[11vh] md:h-[18vh] min-h-[80px] md:min-h-[140px] rounded-xl md:rounded-[1.2vw] overflow-hidden border border-white/80 shadow-xl transition-all duration-300 hover:scale-105 hover:border-orange-500 hover:shadow-2xl bg-white will-change-transform"
+              className="item group relative cursor-pointer flex-shrink-0 w-[50vw] sm:w-[38vw] md:w-[17vw] min-w-[210px] md:min-w-[245px] h-[11vh] md:h-[18vh] min-h-[80px] md:min-h-[140px] rounded-xl md:rounded-[1.2vw] overflow-hidden border border-white/80 shadow-xl transition-all duration-300 hover:scale-105 hover:border-orange-500 hover:shadow-2xl active:scale-[0.97] bg-white will-change-transform select-none outline-none"
             >
               <img
                 src={item.image}
