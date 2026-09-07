@@ -69,24 +69,45 @@ function ProductsLayoutContent({
   const sidebarNavRef = useRef<HTMLDivElement>(null);
   const categoryItemRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
+  // Smoothly slide a category parent button to the top of the sidebar view
+  const slideCategoryToTop = useCallback((catName: string) => {
+    const parentEl = categoryItemRefs.current[catName];
+    const navEl = sidebarNavRef.current;
+    if (!parentEl || !navEl) return;
+
+    const parentRect = parentEl.getBoundingClientRect();
+    const navRect = navEl.getBoundingClientRect();
+    const relativeTop = parentRect.top - navRect.top;
+
+    // Place the parent button comfortably at the top of the sidebar view (10px from top)
+    const targetScrollTop = navEl.scrollTop + relativeTop - 10;
+    navEl.scrollTo({
+      top: Math.max(0, targetScrollTop),
+      behavior: "smooth",
+    });
+  }, []);
+
   const scrollCategoryIntoView = useCallback((catName: string) => {
     const parentEl = categoryItemRefs.current[catName];
     const navEl = sidebarNavRef.current;
     if (!parentEl || !navEl) return;
 
-    const parentTop = parentEl.offsetTop;
-    const navScrollTop = navEl.scrollTop;
+    const parentRect = parentEl.getBoundingClientRect();
+    const navRect = navEl.getBoundingClientRect();
+    const relativeTop = parentRect.top - navRect.top;
     const navHeight = navEl.clientHeight;
 
-    // If the parent button is scrolled above the visible area or below the viewport,
-    // scroll so the parent button is placed comfortably near the top of the sidebar
-    if (parentTop < navScrollTop || parentTop > navScrollTop + navHeight - 80) {
-      navEl.scrollTo({
-        top: Math.max(0, parentTop - 12),
-        behavior: "smooth",
-      });
+    // If the parent button is scrolled above or situated in the lower/bottom portion of the sidebar
+    if (
+      relativeTop < 0 ||
+      relativeTop > navHeight * 0.3 ||
+      relativeTop > 130 ||
+      parentRect.bottom > navRect.bottom - 60
+    ) {
+      slideCategoryToTop(catName);
     }
-  }, []);
+  }, [slideCategoryToTop]);
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -161,12 +182,44 @@ function ProductsLayoutContent({
       localStorage.setItem("sidebarExpanded", "true");
       window.dispatchEvent(new Event("sidebarToggle"));
     }
+
+    const parentEl = categoryItemRefs.current[catName];
+    const navEl = sidebarNavRef.current;
+    let shouldSlideToTop = false;
+
+    if (parentEl && navEl) {
+      const parentRect = parentEl.getBoundingClientRect();
+      const navRect = navEl.getBoundingClientRect();
+      const relativeTop = parentRect.top - navRect.top;
+      const navHeight = navEl.clientHeight;
+
+      // If the parent button is in the bottom area or below the top portion
+      if (
+        relativeTop > navHeight * 0.3 ||
+        relativeTop > 130 ||
+        relativeTop < 0 ||
+        parentRect.bottom > navRect.bottom - 60
+      ) {
+        shouldSlideToTop = true;
+      }
+    }
+
     setExpandedCategory((prev) => (prev === catName ? null : catName));
 
-    // Ensure parent category button remains visible and never scrolls off the top
-    setTimeout(() => {
-      scrollCategoryIntoView(catName);
-    }, 50);
+    if (shouldSlideToTop) {
+      // Smoothly auto-slide to top view after DOM updates
+      setTimeout(() => {
+        slideCategoryToTop(catName);
+      }, 50);
+      // Secondary check once any accordion collapses complete
+      setTimeout(() => {
+        slideCategoryToTop(catName);
+      }, 180);
+    } else {
+      setTimeout(() => {
+        scrollCategoryIntoView(catName);
+      }, 50);
+    }
   };
 
   // Determine breadcrumb nodes
@@ -342,9 +395,7 @@ function ProductsLayoutContent({
               ref={sidebarNavRef}
               className={`p-3 space-y-2 flex-1 relative ${
                 isSidebarExpanded 
-                  ? `overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${
-                      (canScrollDown || canScrollUp) ? "pb-10" : ""
-                    }` 
+                  ? "overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pb-[360px]" 
                   : "overflow-visible"
               }`}
             >

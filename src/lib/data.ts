@@ -69,18 +69,18 @@ export interface CategoryTheme {
 
 export const CATEGORY_COLORS: Record<string, CategoryTheme> = {
   "Ward Furniture": {
-    bg: "#50C878",
+    bg: "#27AE60",
     text: "#FFFFFF",
     badgeBg: "#FFFFFF",
-    badgeText: "#1A5C30",
-    border: "#50C878",
+    badgeText: "#196F3D",
+    border: "#27AE60",
   },
   "ICU & Critical Care": {
-    bg: "#5BC0EB",
+    bg: "#0284C7",
     text: "#FFFFFF",
     badgeBg: "#FFFFFF",
-    badgeText: "#0C5070",
-    border: "#5BC0EB",
+    badgeText: "#0369A1",
+    border: "#0284C7",
   },
   "Emergency & Patient Transfer": {
     bg: "#4E342E",
@@ -162,7 +162,7 @@ export const CATEGORIES: Category[] = [
     "description": "Bedside lockers, overbed tables, attender cots, and ward hospital beds.",
     "icon": "/images/Product Assets/Icons/Ward Furniture.webp",
     "banner": "/images/Product Assets/Banners/Ward Furniture.webp",
-    "color": "#50C878"
+    "color": "#27AE60"
   },
   {
     "id": "icu-critical-care",
@@ -171,7 +171,7 @@ export const CATEGORIES: Category[] = [
     "description": "Manual and motorized ICU beds with remote control and safety side rails.",
     "icon": "/images/Product Assets/Icons/ICU & Critical Care .webp",
     "banner": "/images/Product Assets/Banners/ICU & Critical Care.webp",
-    "color": "#5BC0EB"
+    "color": "#0284C7"
   },
   {
     "id": "emergency-patient-transfer",
