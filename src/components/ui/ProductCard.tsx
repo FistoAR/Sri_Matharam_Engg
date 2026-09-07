@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { MedicalProduct } from "@/lib/data";
+import { MedicalProduct, getCategoryTheme } from "@/lib/data";
 import { useInquiryModal } from "@/components/ui/InquiryModalContext";
 
 interface ProductCardProps {
@@ -17,6 +17,7 @@ export function ProductCard({
   hideDetails = false,
 }: ProductCardProps) {
   const { openInquiryModal } = useInquiryModal();
+  const theme = getCategoryTheme(product.category);
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between p-3 h-full group relative font-montserrat">
@@ -27,7 +28,7 @@ export function ProductCard({
         className="space-y-3 flex-1 block group/link cursor-pointer"
       >
         {/* Product Image Frame */}
-        <div className="relative aspect-[16/10] w-full bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-center overflow-hidden">
+        <div className="relative aspect-[16/10] w-full bg-[#efefef] rounded-xl border border-slate-100 flex items-center justify-center overflow-hidden">
           {product.needsDetails && (
             <div className="absolute top-2 left-2 bg-amber-600/90 text-white text-[9px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider shadow-sm z-10">
               Details Pending
@@ -61,13 +62,24 @@ export function ProductCard({
             scroll={false}
             className="w-full"
           >
-            <button className="w-full text-center border border-slate-200 hover:border-slate-300 text-slate-700 font-bold py-2 px-3 rounded-lg text-xs transition-all hover:bg-slate-50 whitespace-nowrap">
+            <button
+              className="w-full text-center border font-bold py-2 px-3 rounded-lg text-xs transition-all hover:bg-slate-50 whitespace-nowrap"
+              style={{
+                borderColor: `${theme.bg}40`,
+                color: theme.isLight ? theme.text : (theme.bg === "#2E2E2E" ? "#1E293B" : theme.bg),
+              }}
+            >
               View Details
             </button>
           </Link>
           <button
             onClick={() => openInquiryModal(product)}
-            className="w-full bg-[#E87325] hover:bg-[#D0621B] text-white text-xs font-bold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-1 shadow-md shadow-orange-500/10 active:scale-95 whitespace-nowrap"
+            className="w-full text-xs font-bold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-1 shadow-md active:scale-95 whitespace-nowrap"
+            style={{
+              backgroundColor: theme.bg,
+              color: theme.text,
+              boxShadow: `0 4px 12px ${theme.bg}35`,
+            }}
           >
             <span>Send Enquiry</span>
             <ArrowRight className="w-3.5 h-3.5 shrink-0" />

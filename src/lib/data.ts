@@ -58,6 +58,102 @@ export const TIMELINE_EVENTS = [
   { year: '2024', title: 'Tamil Nadu Trust', description: 'Serving 500+ major hospitals & healthcare centers across Tamil Nadu.' },
 ];
 
+export interface CategoryTheme {
+  bg: string;
+  text: string;
+  badgeBg: string;
+  badgeText: string;
+  border: string;
+  isLight?: boolean;
+}
+
+export const CATEGORY_COLORS: Record<string, CategoryTheme> = {
+  "Ward Furniture": {
+    bg: "#50C878",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#1A5C30",
+    border: "#50C878",
+  },
+  "ICU & Critical Care": {
+    bg: "#5BC0EB",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#0C5070",
+    border: "#5BC0EB",
+  },
+  "Emergency & Patient Transfer": {
+    bg: "#4E342E",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#4E342E",
+    border: "#4E342E",
+  },
+  "Labour & Maternity": {
+    bg: "#FD8CAE",
+    text: "#5C152B",
+    badgeBg: "#5C152B",
+    badgeText: "#FFFFFF",
+    border: "#FD8CAE",
+    isLight: true,
+  },
+  "Examination & Consultation": {
+    bg: "#2E2E2E",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#2E2E2E",
+    border: "#2E2E2E",
+  },
+  "Medical Trolleys": {
+    bg: "#B8D8A3",
+    text: "#1E3B12",
+    badgeBg: "#1E3B12",
+    badgeText: "#FFFFFF",
+    border: "#B8D8A3",
+    isLight: true,
+  },
+  "OT Equipment": {
+    bg: "#104272",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#104272",
+    border: "#104272",
+  },
+  "Stainless Steel Furniture & Ward Accessories": {
+    bg: "#C44569",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#C44569",
+    border: "#C44569",
+  },
+  "Accessories": {
+    bg: "#008C95",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#008C95",
+    border: "#008C95",
+  },
+  "General Furniture": {
+    bg: "#6F4E37",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#6F4E37",
+    border: "#6F4E37",
+  },
+  "All Products": {
+    bg: "#0B3C83",
+    text: "#FFFFFF",
+    badgeBg: "#FFFFFF",
+    badgeText: "#0B3C83",
+    border: "#0B3C83",
+  },
+};
+
+export function getCategoryTheme(categoryName?: string): CategoryTheme {
+  if (!categoryName) return CATEGORY_COLORS["All Products"];
+  return CATEGORY_COLORS[categoryName] || CATEGORY_COLORS["All Products"];
+}
+
 export const CATEGORIES: Category[] = [
   {
     "id": "ward-furniture",
@@ -65,7 +161,8 @@ export const CATEGORIES: Category[] = [
     "name": "Ward Furniture",
     "description": "Bedside lockers, overbed tables, attender cots, and ward hospital beds.",
     "icon": "/images/Product Assets/Icons/Ward Furniture.webp",
-    "banner": "/images/Product Assets/Banners/Ward Furniture.webp"
+    "banner": "/images/Product Assets/Banners/Ward Furniture.webp",
+    "color": "#50C878"
   },
   {
     "id": "icu-critical-care",
@@ -73,7 +170,8 @@ export const CATEGORIES: Category[] = [
     "name": "ICU & Critical Care",
     "description": "Manual and motorized ICU beds with remote control and safety side rails.",
     "icon": "/images/Product Assets/Icons/ICU & Critical Care .webp",
-    "banner": "/images/Product Assets/Banners/ICU & Critical Care.webp"
+    "banner": "/images/Product Assets/Banners/ICU & Critical Care.webp",
+    "color": "#5BC0EB"
   },
   {
     "id": "emergency-patient-transfer",
@@ -81,7 +179,8 @@ export const CATEGORIES: Category[] = [
     "name": "Emergency & Patient Transfer",
     "description": "Stretcher trolleys, wheelchairs, transfer trolleys and patient shifters.",
     "icon": "/images/Product Assets/Icons/Emergency & Patient Transfer.webp",
-    "banner": "/images/Product Assets/Banners/Emergency & Patient Transfer.webp"
+    "banner": "/images/Product Assets/Banners/Emergency & Patient Transfer.webp",
+    "color": "#4E342E"
   },
   {
     "id": "labour-maternity",
@@ -89,7 +188,8 @@ export const CATEGORIES: Category[] = [
     "name": "Labour & Maternity",
     "description": "Baby cradles, remote & manual labor cots, and pediatric beds.",
     "icon": "/images/Product Assets/Icons/Labour & Maternity.webp",
-    "banner": "/images/Product Assets/Banners/Labour & Maternity.webp"
+    "banner": "/images/Product Assets/Banners/Labour & Maternity.webp",
+    "color": "#FD8CAE"
   },
   {
     "id": "examination-consultation",
@@ -97,7 +197,8 @@ export const CATEGORIES: Category[] = [
     "name": "Examination & Consultation",
     "description": "Revolving stools, examination couches, gynec tables, and X-ray lobbies.",
     "icon": "/images/Product Assets/Icons/Examination & Consultation.webp",
-    "banner": "/images/Product Assets/Banners/Examination & Consultation.webp"
+    "banner": "/images/Product Assets/Banners/Examination & Consultation.webp",
+    "color": "#2E2E2E"
   },
   {
     "id": "medical-trolleys",
@@ -105,7 +206,8 @@ export const CATEGORIES: Category[] = [
     "name": "Medical Trolleys",
     "description": "Instrument trolleys, Mayo trolleys, ECG carts, crash carts, and linen trolleys.",
     "icon": "/images/Product Assets/Icons/Medical Trolleys.webp",
-    "banner": "/images/Product Assets/Banners/Medical Trolleys.webp"
+    "banner": "/images/Product Assets/Banners/Medical Trolleys.webp",
+    "color": "#B8D8A3"
   },
   {
     "id": "ot-equipment",
@@ -113,7 +215,8 @@ export const CATEGORIES: Category[] = [
     "name": "OT Equipment",
     "description": "Operation theater tables, lights, anesthesia machines, foggers, and autoclaves.",
     "icon": "/images/Product Assets/Icons/OT Equipment.webp",
-    "banner": "/images/Product Assets/Banners/OT Equipment.webp"
+    "banner": "/images/Product Assets/Banners/OT Equipment.webp",
+    "color": "#104272"
   },
   {
     "id": "ss-furniture-ward-accessories",
@@ -121,7 +224,8 @@ export const CATEGORIES: Category[] = [
     "name": "Stainless Steel Furniture & Ward Accessories",
     "description": "IV stands, foot steps, kick buckets, wash basins, and 3-fold screens.",
     "icon": "/images/Product Assets/Icons/Stainless Steel Furniture & Ward Accessories.webp",
-    "banner": "/images/Product Assets/Banners/Stainless Steel Furniture.webp"
+    "banner": "/images/Product Assets/Banners/Stainless Steel Furniture & Ward Accessories.webp",
+    "color": "#C44569"
   },
   {
     "id": "accessories",
@@ -129,7 +233,8 @@ export const CATEGORIES: Category[] = [
     "name": "Accessories",
     "description": "Hospital mattresses, pillows, side rails, castors, actuators, and control boxes.",
     "icon": "/images/Product Assets/Icons/Accessories.webp",
-    "banner": "/images/Product Assets/Banners/Accessories.webp"
+    "banner": "/images/Product Assets/Banners/Accessories.webp",
+    "color": "#008C95"
   },
   {
     "id": "general-furniture",
@@ -137,7 +242,8 @@ export const CATEGORIES: Category[] = [
     "name": "General Furniture",
     "description": "Waiting area seater chairs, two-tier cots, and closed pharmacy trolleys.",
     "icon": "/images/Product Assets/Icons/General Furniture.webp",
-    "banner": "/images/Product Assets/Banners/General Furniture.webp"
+    "banner": "/images/Product Assets/Banners/General Furniture.webp",
+    "color": "#6F4E37"
   }
 ];
 

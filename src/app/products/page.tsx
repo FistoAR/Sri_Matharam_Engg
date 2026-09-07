@@ -4,7 +4,7 @@ import React, { useState, useMemo, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ProductCard } from "@/components/ui/ProductCard";
-import { PRODUCTS, CATEGORIES } from "@/lib/data";
+import { PRODUCTS, CATEGORIES, getCategoryTheme } from "@/lib/data";
 import {
   Search,
   ChevronRight,
@@ -137,16 +137,7 @@ function ProductsPageContent() {
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      if (
-        currentCategory !== "All Products" &&
-        mainRef.current &&
-        productsStartRef.current
-      ) {
-        mainRef.current.scrollTo({
-          top: productsStartRef.current.offsetTop,
-          behavior: "smooth",
-        });
-      } else if (mainRef.current) {
+      if (mainRef.current) {
         mainRef.current.scrollTo({
           top: 0,
           behavior: "smooth",
@@ -170,15 +161,26 @@ function ProductsPageContent() {
       }`}
     >
       {/* Category Banner Card */}
-      <div className="hidden lg:block relative rounded-2xl overflow-hidden border border-slate-200/90 w-full shadow-2xs">
+      <style>{`
+        @keyframes bannerSlideIn {
+          from { opacity: 0; transform: translateX(-48px) scale(0.98); filter: blur(3px); }
+          to   { opacity: 1; transform: translateX(0)     scale(1);    filter: blur(0); }
+        }
+        .banner-slide-in {
+          animation: bannerSlideIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+      `}</style>
+      <div
+        key={bannerImage}
+        className="banner-slide-in hidden lg:block relative rounded-2xl overflow-hidden border border-slate-200/90 w-full shadow-2xs"
+      >
         <Image
-          key={bannerImage}
           src={bannerImage}
           alt={`${currentCategory} Banner`}
           width={1200}
           height={160}
           sizes="100vw"
-          className="w-full h-auto object-cover transition-opacity duration-300"
+          className="w-full h-auto object-cover"
           priority
         />
       </div>
@@ -200,13 +202,24 @@ function ProductsPageContent() {
             const catProducts = filteredProducts.filter(
               (p) => p.category === catName,
             );
+            const catTheme = getCategoryTheme(catName);
             return (
               <div key={catName} className="space-y-4">
                 <div className="flex items-center gap-2 border-b border-slate-200/60 pb-2 pt-2">
-                  <h2 className="text-sm font-extrabold text-[#0B3C83] tracking-wide uppercase font-montserrat">
+                  <h2
+                    className="text-sm font-extrabold tracking-wide uppercase font-montserrat"
+                    style={{ color: catTheme.bg }}
+                  >
                     {catName}
                   </h2>
-                  <span className="bg-[#0B3C83]/10 text-[#0B3C83] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                  <span
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-full"
+                    style={{
+                      backgroundColor: `${catTheme.bg}1A`,
+                      color: catTheme.bg,
+                      border: `1px solid ${catTheme.bg}33`,
+                    }}
+                  >
                     {catProducts.length}
                   </span>
                 </div>

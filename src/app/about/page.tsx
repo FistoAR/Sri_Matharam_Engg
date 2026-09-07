@@ -44,7 +44,7 @@ export default function AboutPage() {
   return (
     <div className="w-full bg-[#FAFBFC] min-h-screen montserrat-page  space-y-24">
       {/* 1. HERO BANNER */}
-      <section className="relative w-full min-h-[92vh] lg:h-[92vh] lg:min-h-[700px] bg-[#0F2D4A] px-[3vw] py-3 lg:py-16 overflow-hidden flex justify-center" style={{overflowX:'hidden'}}>
+      <section className="relative w-full min-h-[92vh] lg:h-[92vh] bg-[#0F2D4A] px-[3vw] py-3 lg:py-16 overflow-hidden flex justify-center" style={{overflowX:'hidden'}}>
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -55,9 +55,9 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative z-10 w-full mx-auto flex flex-col justify-start">
+        <div className="relative z-10 w-full mx-auto flex flex-col justify-center">
           {/* Label — fades up */}
-          <div className="flex justify-start mb-6 md:mb-12 ab-label">
+          <div className="flex justify-start mb-8 md:mb-14 ab-label">
             <div className="inline-flex items-center gap-4 text-white font-bold text-2xl uppercase">
               <span className="relative w-7 h-7 flex-shrink-0">
                 <Image src="/images/AboutAs/sectionIcons/aboutAs.webp" alt="About Icon" fill className="object-contain" />
@@ -76,7 +76,7 @@ export default function AboutPage() {
           </h1>
 
           {/* Description — each line fades in white one by one */}
-          <div className="text-white text-md md:text-lg leading-relaxed mx-auto space-y-1.5 font-medium max-w-7xl text-center mt-8">
+          <div className="text-white text-md md:text-lg leading-relaxed mx-auto space-y-2 font-medium max-w-7xl text-center mt-10 md:mt-12">
             {[
               "Since 1997, Sri Mathurams Medical Engineering has been helping hospitals build better",
               "healthcare environments through dependable hospital furniture, advanced manufacturing, and",
@@ -94,7 +94,7 @@ export default function AboutPage() {
           </div>
 
           {/* Buttons — left from left, right from right */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-8 mt-2">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-10 mt-4">
             <Link href="#who-we-are" className="ab-btn-left group">
               <button className="relative overflow-hidden bg-[#E86D24] text-white font-semibold text-base sm:text-sm px-6 py-3.5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 inline-flex items-center gap-2.5">
                 {/* Glossy Sweep Shine */}
