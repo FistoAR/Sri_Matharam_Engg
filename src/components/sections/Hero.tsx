@@ -550,8 +550,11 @@ export function Hero() {
                   </div>
                   <span>{activeItem.badge}</span>
                 </div>
-                {/* Orange underline accent line */}
-                <div className="w-1/2 h-[4px] bg-[#E86D24] rounded-full" />
+                {/* Dynamic Category Color Underline Accent Line */}
+                <div
+                  className="w-1/2 h-[4px] rounded-full transition-colors duration-500"
+                  style={{ backgroundColor: titleColor }}
+                />
               </div>
 
               {/* Line 2: Title & Tagline */}

@@ -15,9 +15,10 @@ import {
   Menu,
   ChevronsDown,
   ChevronsUp,
+  X,
 } from "lucide-react";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function ProductsPage() {
   return (
@@ -50,14 +51,29 @@ function ProductsPageContent() {
     return counts;
   }, []);
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const categoryQuery = searchParams.get("category");
+  const searchQuery = searchParams.get("search") || searchParams.get("q") || "";
+
+  const [searchTerm, setSearchTerm] = useState(searchQuery);
   const [activeCategoryIndex, setActiveCategoryIndex] = useState<number>(0);
   const [isMobileCategoryOpen, setIsMobileCategoryOpen] = useState(false);
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
 
-  const searchParams = useSearchParams();
-  const categoryQuery = searchParams.get("category");
+  React.useEffect(() => {
+    const q = searchParams.get("search") || searchParams.get("q") || "";
+    setSearchTerm(q);
+  }, [searchParams]);
+
+  React.useEffect(() => {
+    const handleSyncSearch = (e: any) => {
+      setSearchTerm(e.detail || "");
+    };
+    window.addEventListener("productSearchChange", handleSyncSearch);
+    return () => window.removeEventListener("productSearchChange", handleSyncSearch);
+  }, []);
 
   React.useEffect(() => {
     setIsMounted(true);
@@ -100,7 +116,9 @@ function ProductsPageContent() {
       list = list.filter(
         (p) =>
           p.name.toLowerCase().includes(term) ||
-          p.description.toLowerCase().includes(term),
+          (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
+          p.description.toLowerCase().includes(term) ||
+          p.category.toLowerCase().includes(term),
       );
     }
 
@@ -185,16 +203,53 @@ function ProductsPageContent() {
         />
       </div>
 
+
       {/* Products Grid */}
       <div
         ref={productsStartRef}
         className="min-h-[calc(100vh-140px)] pb-12 space-y-8"
       >
         {filteredProducts.length === 0 ? (
-          <div className="text-center py-16 bg-slate-50 rounded-2xl border border-slate-200/60">
-            <p className="text-slate-500 font-bold text-sm">
-              No products found in this category matching "{searchTerm}".
-            </p>
+          <div className="text-center py-16 px-6 bg-slate-50 rounded-2xl border border-slate-200/60 space-y-4">
+            <div className="w-12 h-12 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto text-slate-400">
+              <Search className="w-6 h-6 stroke-[2]" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-slate-700 font-bold text-sm">
+                No products found matching "{searchTerm}".
+              </p>
+              <p className="text-slate-400 text-xs font-medium">
+                Try searching with a model code (e.g., "MF01") or a keyword (e.g., "trolley", "bed", "chair").
+              </p>
+            </div>
+            <div className="flex items-center justify-center gap-3 pt-2">
+              {currentCategory !== "All Products" && (
+                <button
+                  onClick={() => {
+                    setActiveCategoryIndex(0);
+                    const params = new URLSearchParams(searchParams.toString());
+                    params.delete("category");
+                    router.replace(`/products?${params.toString()}`, { scroll: false });
+                  }}
+                  className="px-4 py-2 bg-[#0B3C83] hover:bg-[#092D62] text-white text-xs font-bold rounded-xl shadow-xs transition-all"
+                >
+                  Search in All Products
+                </button>
+              )}
+              <button
+                onClick={() => {
+                  setSearchTerm("");
+                  window.dispatchEvent(new CustomEvent("productSearchChange", { detail: "" }));
+                  const params = new URLSearchParams(searchParams.toString());
+                  params.delete("search");
+                  params.delete("q");
+                  router.replace(`/products?${params.toString()}`, { scroll: false });
+                }}
+                className="px-4 py-2 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-bold rounded-xl shadow-2xs transition-all"
+              >
+                Clear Search
+              </button>
+            </div>
           </div>
         ) : currentCategory === "All Products" ? (
           // Grouped by Category layout
