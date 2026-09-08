@@ -3,13 +3,15 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import {
   ChevronRight,
   ChevronLeft,
   Menu,
   ChevronsDown,
   ChevronsUp,
+  Search,
+  X,
 } from "lucide-react";
 import { PRODUCTS, CATEGORIES, getCategoryTheme } from "@/lib/data";
 
@@ -32,6 +34,39 @@ function ProductsLayoutContent({
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams.get("search") || searchParams.get("q") || ""
+  );
+
+  useEffect(() => {
+    const query = searchParams.get("search") || searchParams.get("q") || "";
+    setSearchTerm(query);
+  }, [searchParams]);
+
+  const handleSearchChange = (val: string) => {
+    setSearchTerm(val);
+    window.dispatchEvent(new CustomEvent("productSearchChange", { detail: val }));
+
+    const params = new URLSearchParams(searchParams.toString());
+    if (val.trim()) {
+      params.set("search", val);
+    } else {
+      params.delete("search");
+      params.delete("q");
+    }
+
+    const pathParts = pathname.split("/");
+    const lastPart = pathParts[pathParts.length - 1];
+    const isDetail = pathParts.length > 2 && lastPart !== "products";
+
+    if (isDetail) {
+      router.push(`/products?${params.toString()}`);
+    } else {
+      router.replace(`/products?${params.toString()}`, { scroll: false });
+    }
+  };
+
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -141,6 +176,27 @@ function ProductsLayoutContent({
     });
     return counts;
   }, []);
+
+  // Calculate filtered counts per category when searching
+  const filteredCategoryCounts = useMemo(() => {
+    if (!searchTerm.trim()) return categoryCounts;
+    const term = searchTerm.toLowerCase().trim();
+    const counts: Record<string, number> = {};
+    let totalMatch = 0;
+    CATEGORIES.forEach((cat) => {
+      const count = PRODUCTS.filter(
+        (p) =>
+          p.category === cat.name &&
+          (p.name.toLowerCase().includes(term) ||
+            (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
+            p.description.toLowerCase().includes(term))
+      ).length;
+      counts[cat.name] = count;
+      totalMatch += count;
+    });
+    counts["All Products"] = totalMatch;
+    return counts;
+  }, [searchTerm, categoryCounts]);
 
   // Determine current active category based on URL pathname/searchParams
   const activeCategory = useMemo(() => {
@@ -390,6 +446,47 @@ function ProductsLayoutContent({
                 <Menu className="w-5 h-5 text-[#0B3C83]" />
               )}
             </div>
+
+            {/* Search Option below Product Categories Header */}
+            {isSidebarExpanded ? (
+              <div className="p-2.5 border-b border-slate-200/80 bg-white shrink-0">
+                <div className="relative flex items-center">
+                  <Search className="w-4 h-4 absolute left-3 text-slate-700 pointer-events-none stroke-[2.5]" />
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => handleSearchChange(e.target.value)}
+                    placeholder="Search products or model..."
+                    className="w-full pl-9 pr-8 py-2 bg-white text-[0.9vw] font-normal text-slate-900 placeholder-slate-400 rounded-xl border border-slate-700 focus:border-[#E87325] focus:ring-1 focus:ring-[#E87325] outline-none transition-all shadow-xs"
+                  />
+                  {searchTerm && (
+                    <button
+                      type="button"
+                      onClick={() => handleSearchChange("")}
+                      className="absolute right-2.5 p-0.5 rounded-full text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors"
+                      title="Clear search"
+                    >
+                      <X className="w-3.5 h-3.5 stroke-[2.5]" />
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="p-2 flex justify-center border-b border-slate-200/80 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSidebarExpanded(true);
+                    localStorage.setItem("sidebarExpanded", "true");
+                    window.dispatchEvent(new Event("sidebarToggle"));
+                  }}
+                  className="w-10 h-10 rounded-xl bg-white border border-slate-200 hover:border-[#E87325] hover:text-[#E87325] text-slate-500 flex items-center justify-center transition-all shadow-2xs"
+                  title="Search products"
+                >
+                  <Search className="w-4 h-4 stroke-[2.5]" />
+                </button>
+              </div>
+            )}
             
             <nav
               ref={sidebarNavRef}
@@ -403,8 +500,18 @@ function ProductsLayoutContent({
                 const isActive = activeCategory === catName;
                 const isExpanded = expandedCategory === catName;
                 const productsInCat = PRODUCTS.filter((p) => p.category === catName);
+                const displayedProductsInCat = productsInCat.filter((p) => {
+                  if (!searchTerm.trim()) return true;
+                  const term = searchTerm.toLowerCase().trim();
+                  return (
+                    p.name.toLowerCase().includes(term) ||
+                    (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
+                    p.description.toLowerCase().includes(term)
+                  );
+                });
                 const categoryObj = CATEGORIES.find((c) => c.name === catName);
                 const theme = getCategoryTheme(catName);
+                const countNumber = filteredCategoryCounts[catName] || 0;
 
                 return (
                   <div
@@ -482,7 +589,7 @@ function ProductsLayoutContent({
                               : undefined
                           }
                         >
-                          {categoryCounts[catName] || 0}
+                          {countNumber}
                         </span>
                       )}
 
@@ -491,19 +598,19 @@ function ProductsLayoutContent({
                         <div className="absolute left-16 bg-slate-900 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-[200] flex items-center gap-1.5">
                           <span>{catName}</span>
                           <span className="bg-white/20 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">
-                            {categoryCounts[catName] || 0}
+                            {countNumber}
                           </span>
                         </div>
                       )}
                     </Link>
 
                     {/* Accordion Dropdown Products List with Inside Scrolling */}
-                    {isSidebarExpanded && isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
+                    {isSidebarExpanded && isExpanded && catName !== "All Products" && displayedProductsInCat.length > 0 && (
                       <div 
                         className="pl-3 pr-2 py-2.5 bg-white border-x border-b rounded-b-xl -mt-1 shadow-2xs space-y-1.5 max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain"
                         style={{ borderColor: theme.border }}
                       >
-                        {productsInCat.map((prod, idx) => {
+                        {displayedProductsInCat.map((prod, idx) => {
                           const isProdActive = pathname.endsWith(`/${prod.slug}`);
                           return (
                             <Link
@@ -597,14 +704,48 @@ function ProductsLayoutContent({
             </button>
           </div>
 
+          {/* Search Box in Mobile Drawer below Product Categories */}
+          <div className="p-3 border-b border-slate-200/80 bg-white shrink-0">
+            <div className="relative flex items-center">
+              <Search className="w-4 h-4 absolute left-3 text-slate-700 pointer-events-none stroke-[2.5]" />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => handleSearchChange(e.target.value)}
+                placeholder="Search products or model..."
+                className="w-full pl-9 pr-8 py-2.5 bg-white text-xs font-semibold text-slate-900 placeholder-slate-400 rounded-xl border border-slate-700 focus:border-[#E87325] focus:ring-1 focus:ring-[#E87325] outline-none transition-all shadow-xs"
+              />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => handleSearchChange("")}
+                  className="absolute right-2.5 p-1 rounded-full text-slate-500 hover:text-slate-800 hover:bg-slate-100"
+                  title="Clear search"
+                >
+                  <X className="w-4 h-4 stroke-[2.5]" />
+                </button>
+              )}
+            </div>
+          </div>
+
           {/* Drawer Nav Category list */}
           <nav className="p-4 space-y-2.5 flex-1 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden bg-slate-50">
             {categoryList.map((catName) => {
               const isActive = activeCategory === catName;
               const isExpanded = expandedCategory === catName;
               const productsInCat = PRODUCTS.filter((p) => p.category === catName);
+              const displayedProductsInCat = productsInCat.filter((p) => {
+                if (!searchTerm.trim()) return true;
+                const term = searchTerm.toLowerCase().trim();
+                return (
+                  p.name.toLowerCase().includes(term) ||
+                  (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
+                  p.description.toLowerCase().includes(term)
+                );
+              });
               const categoryObj = CATEGORIES.find((c) => c.name === catName);
               const theme = getCategoryTheme(catName);
+              const countNumber = filteredCategoryCounts[catName] || 0;
 
               return (
                 <div key={catName} className="space-y-1.5 relative">
@@ -663,17 +804,17 @@ function ProductsLayoutContent({
                           : undefined
                       }
                     >
-                      {categoryCounts[catName] || 0}
+                      {countNumber}
                     </span>
                   </Link>
 
                   {/* Nested Products with Inside Scrolling */}
-                  {isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
+                  {isExpanded && catName !== "All Products" && displayedProductsInCat.length > 0 && (
                     <div 
                       className="pl-3 pr-2 py-2 bg-white border rounded-b-xl -mt-1 space-y-1.5 max-h-[260px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain"
                       style={{ borderColor: theme.border }}
                     >
-                      {productsInCat.map((prod, idx) => {
+                      {displayedProductsInCat.map((prod, idx) => {
                         const isProdActive = pathname.endsWith(`/${prod.slug}`);
                         return (
                           <Link

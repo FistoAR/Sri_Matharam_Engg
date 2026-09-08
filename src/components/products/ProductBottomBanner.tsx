@@ -63,6 +63,7 @@ export function ProductBottomBanner({
           >
             <use
               href="#image1_1081_1000"
+              xlinkHref="#image1_1081_1000"
               transform="matrix(0.0045231 0 0 0.00180924 -0.00274725 -0.138462)"
             />
           </pattern>
@@ -86,6 +87,7 @@ export function ProductBottomBanner({
             height="724"
             preserveAspectRatio="none"
             href="/images/ProductDetails/bannerBgRight.webp"
+            xlinkHref="/images/ProductDetails/bannerBgRight.webp"
           />
           <image
             id="image1_1081_1000"
@@ -93,6 +95,7 @@ export function ProductBottomBanner({
             height="724"
             preserveAspectRatio="none"
             href="/images/ProductDetails/bannerBgLeft.webp"
+            xlinkHref="/images/ProductDetails/bannerBgLeft.webp"
           />
         </defs>
 
@@ -104,14 +107,16 @@ export function ProductBottomBanner({
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <g>
+          <g clipPath="url(#clip0_1081_1000)">
             <rect width="1786" height="455" rx="24" fill="#04254B" />
-            <rect
+            <image
               x="394"
               y="-4"
               width="1392"
               height="464"
-              fill="url(#pattern0_1081_1000)"
+              preserveAspectRatio="none"
+              href="/images/ProductDetails/bannerBgRight.webp"
+              xlinkHref="/images/ProductDetails/bannerBgRight.webp"
             />
             <g filter="url(#filter0_f_1081_1000)">
               <path
