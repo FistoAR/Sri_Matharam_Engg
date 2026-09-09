@@ -252,7 +252,8 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf01-plain-bedside-locker",
     "slug": "mf01-plain-bedside-locker",
     "modelNumber": "MF01",
-    "name": "MF01 – Plain Bedside Locker (Cabin Only)",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Plain Bedside Locker",
     "category": "Ward Furniture",
     "description": "The Mathurams Plain Bedside Locker is a compact bedside storage unit designed to provide convenient access to essential patient belongings and bedside items. Its simple and functional design makes it suitable for hospital wards and patient rooms. The locker features one cupboard and one open shelf, with options for different top materials and mobility arrangements to suit hospital requirements.",
     "image": "/images/Product Assets/productsImage/MF01 – Plain Bedside Locker.webp",
@@ -284,7 +285,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Top": "MS / SS / Wood Top",
       "Mobility": "Bush / Wheels",
       "Finish": "Epoxy Powder Coating / SS Finish",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false
   },
@@ -292,7 +294,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf02-deluxe-bedside-locker",
     "slug": "mf02-deluxe-bedside-locker",
     "modelNumber": "MF02",
-    "name": "MF02 – Deluxe Bedside Locker (Cabin + Drawer)",
+    "name": "Deluxe Bedside Locker",
     "category": "Ward Furniture",
     "description": "The Mathurams Deluxe Bedside Locker is designed to provide organised bedside storage with a combination of enclosed cupboard space, an open shelf and an additional drawer for convenient access to frequently used items. Its practical design can be configured with different top materials and mobility options to suit the requirements of different hospital environments.",
     "image": "/images/Product Assets/productsImage/MF02 – Deluxe Bedside Locker.webp",
@@ -325,7 +327,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Top": "MS / SS / Wood / Granite Top",
       "Mobility": "Bush / Wheels",
       "Finish": "Epoxy Powder Coating / SS Finish",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false
   },
@@ -333,7 +336,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf03-granite-top-bedside-locker",
     "slug": "mf03-granite-top-bedside-locker",
     "modelNumber": "MF03",
-    "name": "MF03 – Granite Top Bedside Locker",
+    "name": "Granite Top Bedside Locker",
     "category": "Ward Furniture",
     "description": "The Mathurams Granite Top Bedside Locker is designed to provide organised and accessible bedside storage in hospital patient rooms. Its practical layout combines enclosed storage, drawer space and open storage for convenient access to frequently used patient items. The granite top provides a durable and easy-to-maintain surface, while the open storage arrangement provides additional accessible space.",
     "image": "/images/Product Assets/productsImage/MF03 – Granite Top Bedside Locker.webp",
@@ -366,7 +369,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Material": "MS/SS",
       "Mobility": "Bush / Wheels",
       "Finish": "Epoxy Powder Coating / SS Finish",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false
   },
@@ -374,7 +378,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf07-over-bed-table",
     "slug": "mf07-over-bed-table",
     "modelNumber": "MF07",
-    "name": "MF07 – Over Bed Table (Manual)",
+    "name": "Over Bed Table - Manual",
     "category": "Ward Furniture",
     "description": "The Mathurams Manual Over Bed Table is designed to provide a convenient and stable surface for patients during bedside activities such as meals, reading and personal use. Its height-adjustable design allows the table to be positioned comfortably over the bed, while the manual rotating knob enables smooth height adjustment.",
     "image": "/images/Product Assets/productsImage/MF07 – Over Bed Table.webp",
@@ -413,7 +417,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf08-over-bed-table",
     "slug": "mf08-over-bed-table",
     "modelNumber": "MF08",
-    "name": "MF08 – Over Bed Table (Gear Type)",
+    "name": "Over Bed Table - Gear Type",
     "category": "Ward Furniture",
     "description": "The Mathurams Gear Type Over Bed Table is designed to provide a convenient and stable surface for patients during bedside activities such as meals, reading and personal use. The gear-operated height adjustment allows the table to be positioned smoothly and precisely with controlled movement, making it easier to set the table to a comfortable working height. The gear mechanism provides better control during height adjustment and helps maintain the selected position, making it suitable for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF08 – Over Bed Table.webp",
@@ -445,7 +449,8 @@ export const PRODUCTS: MedicalProduct[] = [
     },
     "detailedSpec": {
       "Top": "Wood / Fibre / SS",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false
   },
@@ -453,7 +458,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf09-over-bed-table",
     "slug": "mf09-over-bed-table",
     "modelNumber": "MF09",
-    "name": "MF09 – Over Bed Table (Gas Spring)",
+    "name": "Over Bed Table - Gas Spring",
     "category": "Ward Furniture",
     "description": "The Mathurams Gas Spring Over Bed Table is designed to provide a convenient adjustable surface for patients to use while resting in hospital beds. The gas spring mechanism enables smooth and effortless height adjustment, allowing the tabletop to be positioned comfortably according to patient requirements. Its over-bed design allows the table to be conveniently positioned for meals, reading and other bedside activities.",
     "image": "/images/Product Assets/productsImage/MF09 – Over Bed Table.webp",
@@ -486,14 +491,15 @@ export const PRODUCTS: MedicalProduct[] = [
     "detailedSpec": {
       "Table Top": "Wood / Fibre / SS",
       "Finish": "Epoxy Powder Coating / SS Finish",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     }
   },
   {
     "id": "mf19-attender-cot",
     "slug": "mf19-attender-cot",
     "modelNumber": "MF19",
-    "name": "MF19 – Attender Cot (Plain)",
+    "name": "Plain Attender Cot",
     "category": "Ward Furniture",
     "description": "The Mathurams Plain Attender Cot provides a comfortable resting space for patient attendants in hospital rooms and wards. Its compact design makes efficient use of available space while providing a convenient sleeping surface alongside the patient's cot.",
     "image": "/images/Product Assets/productsImage/MF19 – Attender Cot.webp",
@@ -530,7 +536,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf20-attender-cot",
     "slug": "mf20-attender-cot",
     "modelNumber": "MF20",
-    "name": "MF20 – Attender Cot (Deluxe)",
+    "name": "Deluxe Attender Cot",
     "category": "Ward Furniture",
     "description": "The Mathurams Deluxe Attender Cot provides a comfortable resting space for patient attendants, with an additional lower shelf included in the Deluxe version for convenient storage.",
     "image": "/images/Product Assets/productsImage/MF20 – Attender Cot.webp",
@@ -568,7 +574,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf21-attender-cot",
     "slug": "mf21-attender-cot",
     "modelNumber": "MF21",
-    "name": "MF21 – Attender Cot (Single Shelf)",
+    "name": "Attender Cot (Single Shelf)",
     "category": "Ward Furniture",
     "description": "The Mathurams Single Shelf Attender Cot provides a comfortable resting space for patient attendants while offering a dedicated lower shelf for convenient storage.",
     "image": "/images/Product Assets/productsImage/MF21 – Attender Cot.webp",
@@ -607,7 +613,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf22-attender-cot",
     "slug": "mf22-attender-cot",
     "modelNumber": "MF22",
-    "name": "MF22 – Attender Cot (Double Shelf)",
+    "name": "Attender Cot With Shelf",
     "category": "Ward Furniture",
     "description": "The Mathurams Double Shelf Attender Cot provides a comfortable resting space for patient attendants with two lower storage shelves for convenient placement of personal belongings and essentials.",
     "image": "/images/Product Assets/productsImage/MF22 – Attender Cot.webp",
@@ -646,7 +652,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf35-semi-fowler-cot",
     "slug": "mf35-semi-fowler-cot",
     "modelNumber": "MF35",
-    "name": "MF35 – Semi Fowler Cot",
+    "name": "Semi Fowler Cot",
     "category": "Ward Furniture",
     "description": "The Mathurams Semi Fowler Cot is designed for general ward and patient care environments, providing adjustable backrest positioning for improved patient comfort and convenient bedside care. Its flexible configuration allows hospitals to select suitable arm, side railing and mobility options.",
     "image": "/images/Product Assets/productsImage/MF35 – Semi Fowler Cot.webp",
@@ -682,7 +688,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Mobility": "Fixed Legs / Castors",
       "Optional Accessories": "Pillow & Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false,
     "functions": [
@@ -693,7 +700,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf39-fowler-cot",
     "slug": "mf39-fowler-cot",
     "modelNumber": "MF39",
-    "name": "MF39 – Fowler Cot",
+    "name": "Fowler Cot",
     "category": "Ward Furniture",
     "description": "The Mathurams Fowler Cot is designed to provide enhanced patient positioning for general wards and recovery areas. Its adjustable back and knee sections allow patients to be positioned comfortably for rest, recovery, reading and routine bedside care.",
     "image": "/images/Product Assets/productsImage/MF39 – Fowler Cot.webp",
@@ -730,7 +737,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Mobility": "Fixed Legs / Castors",
       "Optional Accessories": "Pillow / Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false,
     "functions": [
@@ -742,7 +750,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf61-plain-cot",
     "slug": "mf61-plain-cot",
     "modelNumber": "MF61",
-    "name": "MF61 – Plain Cot (MS GH Type Leg)",
+    "name": "Plain Cot - MS Plain Type Leg",
     "category": "Ward Furniture",
     "description": "The Mathurams Plain Cot with MS GH Type Legs is a simple and durable hospital cot designed for general wards and routine patient accommodation. Its sturdy MS construction provides reliable support for everyday hospital use, while the straightforward design allows for easy cleaning and maintenance. The GH type leg construction provides a stable base, making this model a practical choice for general patient care areas.",
     "image": "/images/Product Assets/productsImage/MF61 – Plain Cot.webp",
@@ -787,7 +795,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf62-plain-cot",
     "slug": "mf62-plain-cot",
     "modelNumber": "MF62",
-    "name": "MF62 – Plain Cot (Deluxe – SS Arms)",
+    "name": "Plain Cot Deluxe",
     "category": "Ward Furniture",
     "description": "The Mathurams Plain Cot Delux is designed for general wards and patient rooms, combining a simple hospital cot design with SS or ABS arm options for enhanced appearance, durability and convenient everyday use. The SS arm variant offers corrosion resistance, easy cleaning and long-term durability, while the ABS arm option provides a smooth, easy-to-maintain surface suitable for modern hospital environments.",
     "image": "/images/Product Assets/productsImage/MF62 – Plain Cot.webp",
@@ -831,7 +839,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf79-attender-cum-chair",
     "slug": "mf79-attender-cum-chair",
     "modelNumber": "MF79",
-    "name": "MF79 – Attender Cum Chair (MS)",
+    "name": "Attender Cot Cum Chair – MS",
     "category": "Ward Furniture",
     "description": "The Mathurams MS Attender Cum Chair is a dual-purpose hospital furniture solution designed to function as a comfortable seating chair during the day and convert into a resting cot when required. It provides a practical solution for patient attendants, particularly in hospital rooms where efficient use of space is important. Its MS construction provides durability for regular hospital use, while the convertible design eliminates the need for separate seating and sleeping furniture.",
     "image": "/images/Product Assets/productsImage/MF79 – Attender Cum Chair.webp",
@@ -869,7 +877,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf24-icu-cot-manual",
     "slug": "mf24-icu-cot-manual",
     "modelNumber": "MF24",
-    "name": "MF24 – ICU Cot Manual (5 Function)",
+    "name": "ICU Cot Manual 5 Function",
     "category": "ICU & Critical Care",
     "description": "The Mathurams 5-Function Manual ICU Cot is designed for intensive care and critical care environments, providing comprehensive patient positioning through a reliable manual crank mechanism. Its robust construction and flexible configuration options make it suitable for varied hospital requirements.",
     "image": "/images/Product Assets/productsImage/MF24 – ICU Cot Manual.webp",
@@ -907,7 +915,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Side Railings": "MS Plain / SS Plain / ABS / Aluminium Collapsible / SS Collapsible",
       "Wheel Type": "Plain / Central Lock",
       "Optional Accessories": "Pillow & Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false,
     "functions": [
@@ -922,7 +931,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf27-icu-cot-3-function-manual",
     "slug": "mf27-icu-cot-3-function-manual",
     "modelNumber": "MF27",
-    "name": "MF27 – ICU Cot (3 Function Manual)",
+    "name": "3-Function ICU Cot Manual",
     "category": "ICU & Critical Care",
     "description": "The Mathurams 3-Function Manual ICU Cot is designed for intensive care and critical care environments, providing essential patient positioning through reliable manual crank operation. Its practical configuration supports comfortable patient care while allowing hospitals to select suitable arms, side rails and mobility options.",
     "image": "/images/Product Assets/productsImage/MF27 – ICU Cot 3 Function Manual.webp",
@@ -960,7 +969,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Side Railings": "MS Plain / SS Plain / ABS / Aluminium Collapsible / SS Collapsible",
       "Wheel Type": "Plain / Central Lock",
       "Optional Accessories": "Pillow & Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false,
     "functions": [
@@ -973,7 +983,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf30-icu-cot-remote",
     "slug": "mf30-icu-cot-remote",
     "modelNumber": "MF30",
-    "name": "MF30 – ICU Cot Remote",
+    "name": "ICU Cot Remote",
     "category": "ICU & Critical Care",
     "description": "The Mathurams Remote ICU Cot combines convenient electrically powered patient positioning with durable hospital-grade construction. It is available in 3-Function and 5-Function configurations, allowing hospitals to select the level of positioning control suited to their requirements.",
     "image": "/images/Product Assets/productsImage/MF30 – ICU Cot Remote.webp",
@@ -1017,16 +1027,17 @@ export const PRODUCTS: MedicalProduct[] = [
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Wheel Type": "Plain / Central Lock",
       "Optional Accessories": "Pillow & Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     }
   },
   {
-    "id": "mf38-trolley-cum-cot",
-    "slug": "mf38-trolley-cum-cot",
+    "id": "mf38-casualty-cot-cum-trolley",
+    "slug": "mf38-casualty-cot-cum-trolley",
     "modelNumber": "MF38",
-    "name": "MF38 – Trolley Cum Cot",
+    "name": "Casualty Cot Cum Trolley",
     "category": "Emergency & Patient Transfer",
-    "description": "The Mathurams Trolley Cum Cot",
+    "description": "The Mathurams Casualty Cot Cum Trolley is designed for versatile casualty, emergency, and patient transfer use.",
     "image": "/images/Product Assets/productsImage/MF38 – Trolley Cum Cot.webp",
     "features": [
       "Dual-purpose trolley and cot design",
@@ -1059,7 +1070,8 @@ export const PRODUCTS: MedicalProduct[] = [
       "Material": "MS / SS",
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Optional Accessories": "Pillow & Safety Bumpers",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     },
     "needsDetails": false,
     "functions": [
@@ -1071,7 +1083,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf43-stretcher-trolley",
     "slug": "mf43-stretcher-trolley",
     "modelNumber": "MF43",
-    "name": "MF43 – Stretcher Trolley (MS)",
+    "name": "Stretcher Trolley (MS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Stretcher Trolley is designed for convenient and stable patient transportation within hospitals, treatment areas and procedure rooms. Its sturdy construction provides reliable support during patient movement, while the detachable stretcher top allows practical handling during transfers. Available in MS and SS variants, the trolley can be configured with suitable side railing and accessory options according to hospital requirements.",
     "image": "/images/Product Assets/productsImage/MF43 – Stretcher Trolley.webp",
@@ -1119,7 +1131,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf44-stretcher-trolley",
     "slug": "mf44-stretcher-trolley",
     "modelNumber": "MF44",
-    "name": "MF44 – Stretcher Trolley (SS)",
+    "name": "Stretcher Trolley (SS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams SS Stretcher Trolley is constructed with surgical-grade stainless steel for safe, sterile and stable patient transportation within operating theatres, emergency wards and procedure rooms.",
     "image": "/images/Product Assets/productsImage/MF44 – Stretcher Trolley.webp",
@@ -1164,10 +1176,10 @@ export const PRODUCTS: MedicalProduct[] = [
     "needsDetails": false
   },
   {
-    "id": "mf45-stretcher-trolley",
-    "slug": "mf45-stretcher-trolley",
+    "id": "mf45-hi-low-stretcher",
+    "slug": "mf45-hi-low-stretcher",
     "modelNumber": "MF45",
-    "name": "MF45 – Stretcher Trolley (Hi-Lo)",
+    "name": "Hi-Low Stretcher",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Hi-Lo Stretcher is designed for patient transportation with the added advantage of height adjustment and backrest positioning, allowing caregivers to set the stretcher at a convenient level for patient handling and transfer. Its adjustable height provides greater flexibility during patient movement between beds, treatment areas and procedure rooms, while the backrest can be raised to support different patient positions.",
     "image": "/images/Product Assets/productsImage/MF45 – Stretcher Trolley.webp",
@@ -1215,7 +1227,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf49-wheel-chair",
     "slug": "mf49-wheel-chair",
     "modelNumber": "MF49",
-    "name": "MF49 – Wheel Chair (MS Foldable)",
+    "name": "MS Foldable Wheelchair",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams MS Foldable Wheelchair is designed to provide convenient mobility and patient transportation within hospitals, healthcare facilities and other care environments. Its foldable construction allows the wheelchair to be compactly stored and transported when not in use, while the MS frame provides a durable structure for regular use.",
     "image": "/images/Product Assets/productsImage/MF49 – Wheel Chair.webp",
@@ -1251,7 +1263,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf50-wheel-chair",
     "slug": "mf50-wheel-chair",
     "modelNumber": "MF50",
-    "name": "MF50 – Wheel Chair (MS)",
+    "name": "MS Wheelchair",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams MS Wheelchair is designed to provide reliable and comfortable patient mobility within hospitals and healthcare facilities. Its sturdy mild-steel frame with epoxy powder coating offers durability and dependable support for routine patient transport.",
     "image": "/images/Product Assets/productsImage/MF50 – Wheel Chair.webp",
@@ -1293,7 +1305,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf51-wheel-chair",
     "slug": "mf51-wheel-chair",
     "modelNumber": "MF51",
-    "name": "MF51 – Wheel Chair (SS)",
+    "name": "SS Wheelchair",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Wheelchair is designed to provide reliable and comfortable patient mobility within hospitals, healthcare facilities and other care environments. Available in MS, SS and SS Heavy variants, the wheelchair provides different construction choices to suit varying usage requirements. The SS variants offer enhanced corrosion resistance, easy maintenance and long-term durability, while the SS Heavy variant provides a heavier-duty construction for applications requiring additional structural strength.",
     "image": "/images/Product Assets/productsImage/MF51 – Wheel Chair.webp",
@@ -1335,7 +1347,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf52-wheel-chair",
     "slug": "mf52-wheel-chair",
     "modelNumber": "MF52",
-    "name": "MF52 – Wheel Chair (SS Heavy)",
+    "name": "SS Heavy Wheelchair",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams SS Heavy Wheelchair is a heavy-duty patient mobility solution constructed from reinforced stainless steel. Engineered for high load capacity and demanding clinical usage, it provides exceptional structural stability and long-term corrosion resistance.",
     "image": "/images/Product Assets/productsImage/MF52 – Wheel Chair.webp",
@@ -1377,7 +1389,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf66-transfer-trolley",
     "slug": "mf66-transfer-trolley",
     "modelNumber": "MF66",
-    "name": "MF66 – Transfer Trolley (MS)",
+    "name": "Transfer Trolley (MS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Transfer Trolley is designed for controlled patient transfer between sterile and non-sterile hospital areas. Its detachable and transferable stretcher top allows the patient-supporting section to move between trolley bases, helping maintain separation between different hospital zones during transfer. Available in MS and SS variants, hospitals can select the construction best suited to their requirements. The SS variant offers enhanced corrosion resistance, easier cleaning and long-term durability, particularly for areas requiring frequent cleaning.",
     "image": "/images/Product Assets/productsImage/MF66 – Transfer Trolley.webp",
@@ -1422,7 +1434,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf67-transfer-trolley",
     "slug": "mf67-transfer-trolley",
     "modelNumber": "MF67",
-    "name": "MF67 – Transfer Trolley (SS)",
+    "name": "Transfer Trolley (SS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams SS Transfer Trolley is designed for sterile-zone patient transfers in operating theatres and intensive care suites, featuring a full stainless-steel transferable stretcher top and chassis for maximum hygiene.",
     "image": "/images/Product Assets/productsImage/MF67 – Transfer Trolley.webp",
@@ -1464,10 +1476,10 @@ export const PRODUCTS: MedicalProduct[] = [
     "needsDetails": false
   },
   {
-    "id": "mf68-transfer-trolley",
-    "slug": "mf68-transfer-trolley",
+    "id": "mf68-hi-low-transfer-trolley",
+    "slug": "mf68-hi-low-transfer-trolley",
     "modelNumber": "MF68",
-    "name": "MF68 – Transfer Trolley (Hi-Lo MS)",
+    "name": "Hi-Low Transfer Trolley (MS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Hi-Lo Transfer Trolley combines controlled patient transfer with height-adjustable positioning, allowing caregivers to adjust the trolley height for better alignment with beds and other patient-support surfaces during transfers. Its detachable and transferable stretcher top supports movement between sterile and non-sterile hospital areas, while the Hi-Lo mechanism provides additional flexibility during patient handling. Available in MS and SS variants, with the SS version providing enhanced corrosion resistance, easier cleaning and long-term durability.",
     "image": "/images/Product Assets/productsImage/MF68 – Transfer Trolley.webp",
@@ -1514,10 +1526,10 @@ export const PRODUCTS: MedicalProduct[] = [
     ]
   },
   {
-    "id": "mf69-transfer-trolley",
-    "slug": "mf69-transfer-trolley",
+    "id": "mf69-hi-low-transfer-trolley",
+    "slug": "mf69-hi-low-transfer-trolley",
     "modelNumber": "MF69",
-    "name": "MF69 – Transfer Trolley (Hi-Lo SS)",
+    "name": "Hi-Low Transfer Trolley (SS)",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Hi-Lo Transfer Trolley (SS) provides height-adjustable patient alignment with beds and operating tables, built in full stainless steel for sterile environments requiring rigorous hygiene and frequent cleaning.",
     "image": "/images/Product Assets/productsImage/MF69 – Transfer Trolley.webp",
@@ -1567,7 +1579,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf115-patient-shifter",
     "slug": "mf115-patient-shifter",
     "modelNumber": "MF115",
-    "name": "MF115 – Patient Shifter (Aluminium)",
+    "name": "Patient Shifter",
     "category": "Emergency & Patient Transfer",
     "description": "The Mathurams Aluminium Patient Shifter is designed to assist caregivers in rolling and repositioning patients between beds, stretchers and other patient-support surfaces. Its smooth rolling mechanism helps facilitate patient transfers while reducing the need for direct lifting. The lightweight aluminium construction makes the shifter easy to handle while providing durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF115 – Patient Shifter.webp",
@@ -1603,7 +1615,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf36-baby-cradle",
     "slug": "mf36-baby-cradle",
     "modelNumber": "MF36",
-    "name": "MF36 – Baby Cradle (MS)",
+    "name": "MS Baby Cradle",
     "category": "Labour & Maternity",
     "description": "The Mathurams MS Baby Cradle is designed to provide a secure and comfortable resting space for newborns in hospital maternity and neonatal care areas. Its compact design makes it suitable for convenient placement beside the mother’s bed.",
     "image": "/images/Product Assets/productsImage/MF36 – Baby Cradle.webp",
@@ -1633,14 +1645,15 @@ export const PRODUCTS: MedicalProduct[] = [
     },
     "needsDetails": false,
     "detailedSpec": {
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     }
   },
   {
     "id": "mf37-baby-cradle",
     "slug": "mf37-baby-cradle",
     "modelNumber": "MF37",
-    "name": "MF37 – Baby Cradle (SS)",
+    "name": "SS Baby Cradle",
     "category": "Labour & Maternity",
     "description": "The Mathurams SS Baby Cradle is designed to provide a clean, secure and comfortable resting space for newborns in maternity and neonatal care areas. Stainless-steel construction offers excellent corrosion resistance, easy cleaning and long-term durability, making it particularly suitable for hospital environments where hygiene and frequent cleaning are important.",
     "image": "/images/Product Assets/productsImage/MF37 – Baby Cradle.webp",
@@ -1671,14 +1684,15 @@ export const PRODUCTS: MedicalProduct[] = [
     },
     "needsDetails": false,
     "detailedSpec": {
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
     }
   },
   {
-    "id": "mf70-ss-remote-labor-cot",
-    "slug": "mf70-ss-remote-labor-cot",
+    "id": "mf70-v-type-labour-cot",
+    "slug": "mf70-v-type-labour-cot",
     "modelNumber": "MF70",
-    "name": "MF70 – SS Remote Labor Cot (V-Type)",
+    "name": "V Type Labour Cot (Remote)",
     "category": "Labour & Maternity",
     "description": "The Mathurams SS Remote Labour Cot – V Type is designed to support patient positioning and caregiver access during labour and maternity procedures. Its V-type design provides a dedicated configuration for obstetric care, while remote-controlled adjustment allows convenient positioning without manual crank operation. The stainless-steel construction provides enhanced corrosion resistance, easy cleaning and long-term durability, making it well suited for maternity and labour care environments where hygiene and frequent cleaning are important.",
     "image": "/images/Product Assets/productsImage/MF70 – SS Remote Labor Cot.webp",
@@ -1725,10 +1739,10 @@ export const PRODUCTS: MedicalProduct[] = [
     ]
   },
   {
-    "id": "mf71-ss-remote-labor-cot",
-    "slug": "mf71-ss-remote-labor-cot",
+    "id": "mf71-height-adjustable-labour-cot",
+    "slug": "mf71-height-adjustable-labour-cot",
     "modelNumber": "MF71",
-    "name": "MF71 – SS Remote Labor Cot (Height Up & Down)",
+    "name": "Height Adjustable Labour Cot (Remote)",
     "category": "Labour & Maternity",
     "description": "The Mathurams SS Remote Labour Cot – Height Adjustable is designed for labour and maternity care, providing electrically controlled height adjustment to support convenient patient handling and caregiver access during procedures. The adjustable working height allows the cot to be positioned according to procedural and caregiver requirements. The stainless-steel construction offers enhanced corrosion resistance, easy cleaning and long-term durability, making it suitable for maternity environments requiring frequent cleaning and maintenance.",
     "image": "/images/Product Assets/productsImage/MF71 – SS Remote Labor Cot.webp",
@@ -1775,10 +1789,10 @@ export const PRODUCTS: MedicalProduct[] = [
     ]
   },
   {
-    "id": "mf72-manual-labor-cot-ss",
-    "slug": "mf72-manual-labor-cot-ss",
+    "id": "mf72-v-type-labour-cot",
+    "slug": "mf72-v-type-labour-cot",
     "modelNumber": "MF72",
-    "name": "MF72 – Manual Labor Cot SS (V-Type)",
+    "name": "V Type Labour Cot",
     "category": "Labour & Maternity",
     "description": "The Mathurams SS Manual Labour Cot – V Type is designed to support patient positioning and caregiver access during labour and maternity procedures. Its V-type design is configured for obstetric care, while the manual operating mechanism provides reliable positioning without dependence on electrical power. The stainless-steel construction offers enhanced corrosion resistance, easy cleaning and long-term durability, making it suitable for maternity and labour care environments.",
     "image": "/images/Product Assets/productsImage/MF72 – Manual Labor Cot SS.webp",
@@ -1825,10 +1839,10 @@ export const PRODUCTS: MedicalProduct[] = [
     ]
   },
   {
-    "id": "mf73-manual-labor-cot-ss",
-    "slug": "mf73-manual-labor-cot-ss",
+    "id": "mf73-height-adjustable-labour-cot",
+    "slug": "mf73-height-adjustable-labour-cot",
     "modelNumber": "MF73",
-    "name": "MF73 – Manual Labor Cot SS (Height Up & Down)",
+    "name": "Height Adjustable Labour Cot (Manual)",
     "category": "Labour & Maternity",
     "description": "The Mathurams SS Manual Labour Cot – Height Adjustable is designed for labour and maternity care, combining essential patient positioning with manual height adjustment for convenient patient handling and caregiver access during procedures. Its adjustable working height allows the cot to be positioned according to procedural requirements, while the retractable leg section and adjustable knee crutches support different stages of maternity care. The stainless-steel construction provides enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF73 – Manual Labor Cot SS.webp",
@@ -1877,7 +1891,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf90-pediatric-cot",
     "slug": "mf90-pediatric-cot",
     "modelNumber": "MF90",
-    "name": "MF90 – Pediatric Cot (MS)",
+    "name": "Pediatric Cot",
     "category": "Labour & Maternity",
     "description": "The Mathurams MS Pediatric Cot is designed specifically for the care and accommodation of children in hospital wards and pediatric care areas. Its compact dimensions are suited to younger patients, while the protective cot design provides a secure and comfortable resting environment during hospital stays. The MS construction provides durability for regular hospital use, with an epoxy powder-coated finish for easy cleaning and maintenance.",
     "image": "/images/Product Assets/productsImage/MF90 – Pediatric Cot.webp",
@@ -1917,7 +1931,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf114-pediatric-fowlers-cot",
     "slug": "mf114-pediatric-fowlers-cot",
     "modelNumber": "MF114",
-    "name": "MF114 – Pediatric Fowler's Cot (MS)",
+    "name": "Pediatric Fowler's Cot (MS)",
     "category": "Labour & Maternity",
     "description": "The Mathurams Pediatric Fowler's Cot is designed for pediatric patient care, featuring adjustable backrest and leg elevate positioning with child-protective safety side rails.",
     "image": "/images/Product Assets/productsImage/MF114 – Pediatric Fowler's Cot.webp",
@@ -1961,7 +1975,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf13-ss-revolving-stool",
     "slug": "mf13-ss-revolving-stool",
     "modelNumber": "MF13",
-    "name": "MF13 – SS Revolving Stool (Cushion)",
+    "name": "Cushion Top Revolving Stool (SS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams SS Revolving Stool is designed to provide comfortable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. Its soft cushioned seat and adjustable height allow users to set a comfortable working position.",
     "image": "/images/Product Assets/productsImage/MF13 – SS Revolving Stool.webp",
@@ -2001,7 +2015,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf14-ss-revolving-stool",
     "slug": "mf14-ss-revolving-stool",
     "modelNumber": "MF14",
-    "name": "MF14 – SS Revolving Stool (SS Top)",
+    "name": "SS Top Revolving Stool (SS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams SS Revolving Stool with SS Top is designed to provide stable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. Its stainless-steel top and height-adjustable revolving design offer a practical and easy-to-maintain seating solution for healthcare environments.",
     "image": "/images/Product Assets/productsImage/MF14 – SS Revolving Stool.webp",
@@ -2041,7 +2055,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf15-ss-revolving-stool",
     "slug": "mf15-ss-revolving-stool",
     "modelNumber": "MF15",
-    "name": "MF15 – SS Revolving Stool (With Backrest)",
+    "name": "Backrest Cushion Revolving Stool (SS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams SS Revolving Stool with Backrest Cushion provides comfortable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. The cushioned seat and backrest provide added comfort, while the height-adjustable revolving design allows convenient positioning during use.",
     "image": "/images/Product Assets/productsImage/MF15 – SS Revolving Stool.webp",
@@ -2082,7 +2096,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf16-ms-revolving-stool",
     "slug": "mf16-ms-revolving-stool",
     "modelNumber": "MF16",
-    "name": "MF16 – MS Revolving Stool (Cushion)",
+    "name": "Cushion Top Revolving Stool (MS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams MS Revolving Stool with Cushion is designed to provide comfortable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. Its cushioned seat and revolving design provide convenient seating while the MS construction offers durability for regular use.",
     "image": "/images/Product Assets/productsImage/MF16 – MS Revolving Stool.webp",
@@ -2122,7 +2136,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf17-ms-revolving-stool",
     "slug": "mf17-ms-revolving-stool",
     "modelNumber": "MF17",
-    "name": "MF17 – MS Revolving Stool (SS Top)",
+    "name": "SS Top Revolving Stool (MS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams MS Revolving Stool with SS Top is designed to provide stable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. The stainless-steel top offers a smooth, easy-to-clean seating surface, while the MS construction provides durability for regular use.",
     "image": "/images/Product Assets/productsImage/MF17 – MS Revolving Stool.webp",
@@ -2161,7 +2175,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf18-ms-revolving-stool",
     "slug": "mf18-ms-revolving-stool",
     "modelNumber": "MF18",
-    "name": "MF18 – MS Revolving Stool (With Backrest)",
+    "name": "Backrest Cushion Revolving Stool (MS)",
     "category": "Examination & Consultation",
     "description": "The Mathurams MS Revolving Stool with Backrest Cushion is designed to provide comfortable and flexible seating for healthcare professionals during examinations, procedures and routine clinical activities. The cushioned seat and backrest provide added comfort, while the revolving design allows convenient movement during use.",
     "image": "/images/Product Assets/productsImage/MF18 – MS Revolving Stool.webp",
@@ -2201,7 +2215,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf64-deluxe-examination-couch",
     "slug": "mf64-deluxe-examination-couch",
     "modelNumber": "MF64",
-    "name": "MF64 – Deluxe Examination Couch (Plain Cabinets)",
+    "name": "Examination Couch – Plain Cabinets",
     "category": "Examination & Consultation",
     "description": "The Mathurams Deluxe Examination Couch (Plain Cabinets) features an adjustable backrest, attached rectangular foot step, and spacious enclosed cabinet storage for clinical supplies.",
     "image": "/images/Product Assets/productsImage/MF64 – Deluxe Examination Couch.webp",
@@ -2247,7 +2261,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf65-deluxe-examination-couch",
     "slug": "mf65-deluxe-examination-couch",
     "modelNumber": "MF65",
-    "name": "MF65 – Deluxe Examination Couch (Cabinets + Drawers)",
+    "name": "Deluxe Examination Couch",
     "category": "Examination & Consultation",
     "description": "The Mathurams Delux Examination Couch combines a comfortable examination surface with integrated storage, allowing frequently required clinical supplies to be kept conveniently within reach. The adjustable backrest supports different patient positions during examinations, while the attached foot step provides convenient access to the couch. Available with plain cabinet storage or a combination of cabinets and drawers, the couch can be selected according to the storage requirements of the examination area.",
     "image": "/images/Product Assets/productsImage/MF65 – Deluxe Examination Couch.webp",
@@ -2293,7 +2307,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf80-examination-table",
     "slug": "mf80-examination-table",
     "modelNumber": "MF80",
-    "name": "MF80 – Examination Table (Plain)",
+    "name": "Examination Table – Plain",
     "category": "Examination & Consultation",
     "description": "The Mathurams Drug Trolley is designed for organised storage and convenient distribution of medicines across hospital wards and patient care areas. Its multiple-bin arrangement helps segregate and arrange medications systematically, allowing healthcare staff to access required medicines efficiently during routine rounds. Available in MS and SS Models, the trolley can be configured with single-side or double-side storage arrangements based on capacity requirements.",
     "image": "/images/Product Assets/productsImage/MF80 – Examination Table.webp",
@@ -2333,7 +2347,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf81-examination-table",
     "slug": "mf81-examination-table",
     "modelNumber": "MF81",
-    "name": "MF81 – Examination Table (Head Rise)",
+    "name": "Examination Table – Head Rise",
     "category": "Examination & Consultation",
     "description": "The Mathurams Examination Table – Head Rise is designed for routine patient examinations and clinical procedures, with an adjustable head section for comfortable patient positioning. The table also offers integrated bottom storage configurations for convenient access to frequently required clinical supplies.",
     "image": "/images/Product Assets/productsImage/MF81 – Examination Table.webp",
@@ -2376,7 +2390,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf82-examination-table",
     "slug": "mf82-examination-table",
     "modelNumber": "MF82",
-    "name": "MF82 – Examination Table (Single Door)",
+    "name": "Examination Table - Single Storage",
     "category": "Examination & Consultation",
     "description": "The Mathurams Single Storage Examination Table is designed for routine patient examinations and clinical procedures, featuring an adjustable head section and an enclosed single cabinet with shelf for organized clinical supply storage.",
     "image": "/images/Product Assets/productsImage/MF82 – Examination Table.webp",
@@ -2421,7 +2435,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf83-examination-table",
     "slug": "mf83-examination-table",
     "modelNumber": "MF83",
-    "name": "MF83 – Examination Table (Double Door + 2 Drawers)",
+    "name": "Examination Table - Storage",
     "category": "Examination & Consultation",
     "description": "The Mathurams Double Storage Examination Table combines a comfortable examination surface with comprehensive storage including two drawers and two cupboards, keeping diagnostic supplies and medical consumables organized and within reach.",
     "image": "/images/Product Assets/productsImage/MF83 – Examination Table.webp",
@@ -2466,7 +2480,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf93-gynec-examination-couch",
     "slug": "mf93-gynec-examination-couch",
     "modelNumber": "MF93",
-    "name": "MF93 – Gynec Examination Couch (MS)",
+    "name": "Gynec Examination Couch (Manual)",
     "category": "Examination & Consultation",
     "description": "The Mathurams Gynec Examination Couch is designed for gynaecological examinations and procedures, providing comfortable patient positioning along with integrated storage and examination support features. The couch includes lithotomy leg supports with belts, a removable basin, retractable foot step, three drawers and three cupboards, providing a practical all-in-one solution for gynaecological examination areas.",
     "image": "/images/Product Assets/productsImage/MF93 – Gynec Examination Couch.webp",
@@ -2517,7 +2531,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf94-gynec-examination-couch",
     "slug": "mf94-gynec-examination-couch",
     "modelNumber": "MF94",
-    "name": "MF94 – Gynec Examination Couch (MS Remote)",
+    "name": "Gynec Examination Couch (Remote)",
     "category": "Examination & Consultation",
     "description": "The Mathurams Gynec Examination Couch (Remote) is equipped with motorized remote positioning, lithotomy leg crutches, removable basin, integrated storage drawers, and cupboards for modern obstetric and gynecological suites.",
     "image": "/images/Product Assets/productsImage/MF94 – Gynec Examination Couch.webp",
@@ -2568,7 +2582,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf95-gynec-examination-table",
     "slug": "mf95-gynec-examination-table",
     "modelNumber": "MF95",
-    "name": "MF95 – Gynec Examination Table (MS)",
+    "name": "Gynec Examination Table",
     "category": "Examination & Consultation",
     "description": "The Mathurams Gynec Examination Table is designed for routine gynaecological examinations and procedures, providing a stable and comfortable patient platform with the necessary positioning support for examination. The table is equipped with lithotomy leg rests with belts, allowing appropriate leg positioning and support during gynaecological examinations.",
     "image": "/images/Product Assets/productsImage/MF95 – Gynec Examination Table.webp",
@@ -2608,7 +2622,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf96-scan-table",
     "slug": "mf96-scan-table",
     "modelNumber": "MF96",
-    "name": "MF96 – Scan Table (MS)",
+    "name": "Scan Couch",
     "category": "Examination & Consultation",
     "description": "The Mathurams Scan Table is designed for diagnostic and scanning procedures, providing a comfortable patient platform with electrically controlled positioning. The wired remote enables convenient height adjustment, while the adjustable backrest supports patient positioning during examinations.",
     "image": "/images/Product Assets/productsImage/MF96 – Scan Table.webp",
@@ -2654,7 +2668,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf101-blood-collection-chair",
     "slug": "mf101-blood-collection-chair",
     "modelNumber": "MF101",
-    "name": "MF101 – Blood Collection Chair",
+    "name": "Blood Collection Chair",
     "category": "Examination & Consultation",
     "description": "The Mathurams Blood Collection Chair is designed to provide comfortable and supportive seating for patients during blood collection and other short clinical procedures. Its ergonomic seating arrangement helps maintain a convenient patient position, while the integrated arm support provides a stable surface for blood collection.",
     "image": "/images/Product Assets/productsImage/MF101 – Blood Collection Chair.webp",
@@ -2692,7 +2706,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf106-ss-stool",
     "slug": "mf106-ss-stool",
     "modelNumber": "MF106",
-    "name": "MF106 – SS Stool",
+    "name": "Attendant Stool",
     "category": "Examination & Consultation",
     "description": "The Mathurams Attendant Stool provides simple and convenient seating for patient attendants in hospital wards and patient rooms. Its compact design allows easy placement beside hospital beds while occupying minimal floor space. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF106 – SS Stool.webp",
@@ -2730,7 +2744,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf110-x-ray-lobby",
     "slug": "mf110-x-ray-lobby",
     "modelNumber": "MF110",
-    "name": "MF110 – X-Ray Lobby (Double)",
+    "name": "X-Ray View Box (Double)",
     "category": "Examination & Consultation",
     "description": "The Mathurams X-Ray View Box is designed for clear and convenient viewing of X-ray films in hospitals, clinics and diagnostic centres. It provides a uniformly illuminated viewing surface to assist medical professionals in examining radiographic films. Available in Single, Double and Four View variants, allowing the required number of X-ray films to be viewed based on clinical requirements.",
     "image": "/images/Product Assets/productsImage/MF110 – X-Ray Lobby.webp",
@@ -2767,7 +2781,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf119-x-ray-lobby",
     "slug": "mf119-x-ray-lobby",
     "modelNumber": "MF119",
-    "name": "MF119 – X-Ray Lobby (Single)",
+    "name": "X-Ray View Box (Single)",
     "category": "Examination & Consultation",
     "description": "The Mathurams Single View X-Ray Lobby provides a uniform backlit LED viewing surface for examining individual radiographic films with optimal diagnostic clarity.",
     "image": "/images/Product Assets/productsImage/MF119 – X-Ray Lobby.webp",
@@ -2804,7 +2818,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf142-x-ray-lobby",
     "slug": "mf142-x-ray-lobby",
     "modelNumber": "MF142",
-    "name": "MF142 – X-Ray Lobby (Four)",
+    "name": "Horizontal Autoclave",
     "category": "Examination & Consultation",
     "description": "The Mathurams Four View X-Ray Lobby provides quad-panel uniform LED backlit illumination for simultaneously examining multiple radiographic and surgical films.",
     "image": "/images/Product Assets/productsImage/MF142 – X-Ray Lobby.webp",
@@ -2839,7 +2853,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf10-instrument-trolley",
     "slug": "mf10-instrument-trolley",
     "modelNumber": "MF10",
-    "name": "MF10 – Instrument Trolley (24 × 18)",
+    "name": "Instrument Trolley 24” × 18”",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Instrument Trolley is designed for convenient placement and organised handling of surgical and medical instruments during procedures. Its stainless-steel construction provides a durable, smooth and easy-to-clean surface suitable for healthcare environments.",
     "image": "/images/Product Assets/productsImage/MF10 – Instrument Trolley.webp",
@@ -2876,7 +2890,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf11-instrument-trolley",
     "slug": "mf11-instrument-trolley",
     "modelNumber": "MF11",
-    "name": "MF11 – Instrument Trolley (3 × 2)",
+    "name": "Instrument Trolley 3’ × 2’",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Instrument Trolley (3' × 2') provides a spacious stainless-steel working surface for organized surgical and clinical instrument handling during hospital procedures.",
     "image": "/images/Product Assets/productsImage/MF11 – Instrument Trolley.webp",
@@ -2913,7 +2927,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf12-instrument-trolley",
     "slug": "mf12-instrument-trolley",
     "modelNumber": "MF12",
-    "name": "MF12 – Instrument Trolley (4 × 2)",
+    "name": "Instrument Trolley 4’ × 2’",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Instrument Trolley is designed for convenient placement and organised handling of surgical and medical instruments during procedures. Its stainless-steel construction provides a durable, smooth and easy-to-clean surface suitable for healthcare environments.",
     "image": "/images/Product Assets/productsImage/MF12 – Instrument Trolley.webp",
@@ -2950,7 +2964,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf46-ss-mayos-trolley",
     "slug": "mf46-ss-mayos-trolley",
     "modelNumber": "MF46",
-    "name": "MF46 – SS Mayo's Trolley",
+    "name": "SS Mayo’s Trolley",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Mayo’s Trolley is a height-adjustable instrument trolley designed to position surgical instruments conveniently over the operating table during procedures. Its smooth stainless-steel tray provides an easy-to-clean working surface, while the adjustable height allows convenient positioning according to procedural requirements.",
     "image": "/images/Product Assets/productsImage/MF46 – SS Mayo's Trolley.webp",
@@ -2982,14 +2996,15 @@ export const PRODUCTS: MedicalProduct[] = [
     },
     "needsDetails": false,
     "detailedSpec": {
-      "Material": "SS 202 / SS 304"
+      "Material": "SS 202 / SS 304",
+      "Customization": "Size can be customised as per requirement."
     }
   },
   {
     "id": "mf47-drug-trolley",
     "slug": "mf47-drug-trolley",
     "modelNumber": "MF47",
-    "name": "MF47 – Drug Trolley (MS)",
+    "name": "Drug Trolley (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams Drug Trolley is designed for organised storage and convenient distribution of medicines across hospital wards and patient care areas. Its multiple-bin arrangement helps segregate and arrange medications systematically, allowing healthcare staff to access required medicines efficiently during routine rounds. Available in MS and SS variants, the trolley can be configured with single-side or double-side storage arrangements based on capacity requirements.",
     "image": "/images/Product Assets/productsImage/MF47 – Drug Trolley.webp",
@@ -3030,7 +3045,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf57-ss-dressing-trolley",
     "slug": "mf57-ss-dressing-trolley",
     "modelNumber": "MF57",
-    "name": "MF57 – SS Dressing Trolley (24 × 18)",
+    "name": "SS Dressing Trolley",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Dressing Trolley is designed for convenient organisation and handling of dressing materials during routine patient care. Its two-level stainless-steel construction provides dedicated working and storage surfaces, while non-fall three-sided railings help keep dressing materials securely positioned during movement. The trolley is provided with an SS basin and bucket, supporting convenient handling of materials during dressing procedures.",
     "image": "/images/Product Assets/productsImage/MF57 – SS Dressing Trolley.webp",
@@ -3069,7 +3084,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf58-ecg-trolley",
     "slug": "mf58-ecg-trolley",
     "modelNumber": "MF58",
-    "name": "MF58 – ECG Trolley (MS)",
+    "name": "ECG Trolley (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams ECG Trolley is designed for organised placement and convenient handling of ECG equipment, accessories and consumables during diagnostic procedures. Its three-shelf arrangement provides dedicated space for the ECG recorder and supporting items, while the integrated cable holder helps keep ECG lead cables organised and reduces tangling during use. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF58 – ECG Trolley.webp",
@@ -3112,7 +3127,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf59-ecg-trolley",
     "slug": "mf59-ecg-trolley",
     "modelNumber": "MF59",
-    "name": "MF59 – ECG Trolley (MS Z-Type)",
+    "name": "ECG Trolley (MS Z Type)",
     "category": "Medical Trolleys",
     "description": "The Mathurams Z Type ECG Trolley is designed for organised placement and convenient handling of ECG equipment during diagnostic procedures. Its distinctive Z-type frame provides a compact and practical structure for positioning the trolley alongside the patient, while dedicated shelves provide space for the ECG recorder, accessories and consumables. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF59 – ECG Trolley.webp",
@@ -3155,7 +3170,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf60-ecg-trolley",
     "slug": "mf60-ecg-trolley",
     "modelNumber": "MF60",
-    "name": "MF60 – ECG Trolley (SS)",
+    "name": "ECG Trolley (SS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS ECG Trolley provides organized 3-tier mobile storage for diagnostic ECG equipment and accessories, crafted in full stainless steel with integrated cable management.",
     "image": "/images/Product Assets/productsImage/MF60 – ECG Trolley.webp",
@@ -3198,7 +3213,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf75-cylinder-trolley",
     "slug": "mf75-cylinder-trolley",
     "modelNumber": "MF75",
-    "name": "MF75 – Cylinder Trolley (B Type MS)",
+    "name": "Cylinder Trolley B Type (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams B Type Cylinder Trolley is designed for the convenient handling and transportation of B-type medical gas cylinders within hospitals and healthcare facilities. Its compact structure securely supports the cylinder while allowing easy movement between wards, treatment areas and other clinical locations. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF75 – Cylinder Trolley.webp",
@@ -3236,7 +3251,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf76-cylinder-trolley",
     "slug": "mf76-cylinder-trolley",
     "modelNumber": "MF76",
-    "name": "MF76 – Cylinder Trolley (B Type SS)",
+    "name": "Cylinder Trolley B Type (SS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS B-Type Cylinder Trolley provides secure, corrosion-resistant transport for B-type medical gas cylinders in hospital wards and treatment units.",
     "image": "/images/Product Assets/productsImage/MF76 – Cylinder Trolley.webp",
@@ -3274,7 +3289,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf77-cylinder-trolley",
     "slug": "mf77-cylinder-trolley",
     "modelNumber": "MF77",
-    "name": "MF77 – Cylinder Trolley (A Type SS)",
+    "name": "D Type Cylinder Trolley (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams A Type Cylinder Trolley is designed for convenient and secure transportation of A-type medical gas cylinders within hospitals and healthcare facilities. Its compact construction supports easy handling of the cylinder between wards, treatment areas and other patient care locations. Available in MS and SS variants, the SS version provides enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF77 – Cylinder Trolley.webp",
@@ -3312,7 +3327,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf78-cylinder-trolley",
     "slug": "mf78-cylinder-trolley",
     "modelNumber": "MF78",
-    "name": "MF78 – Cylinder Trolley (D Type SS)",
+    "name": "D Type Cylinder Trolley (SS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams D Type Cylinder Trolley is designed for the secure and convenient transportation of D-type medical gas cylinders within hospitals and healthcare facilities. Its sturdy construction supports safe handling of the larger cylinder while allowing convenient movement between wards, treatment areas and other clinical locations. Available in MS and SS variants, the SS version provides enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF78 – Cylinder Trolley.webp",
@@ -3350,7 +3365,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf84-crash-cart",
     "slug": "mf84-crash-cart",
     "modelNumber": "MF84",
-    "name": "MF84 – Crash Cart (MS)",
+    "name": "Crash Cart (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams Crash Cart is designed to keep essential emergency medical supplies and accessories organised and readily accessible during critical situations. Its modular storage arrangement combines drawers, PVC bins and an SS tray, allowing different emergency supplies to be systematically arranged for quick access. Available in MS and SS variants, the SS version provides enhanced corrosion resistance, easy cleaning and long-term durability for demanding hospital environments.",
     "image": "/images/Product Assets/productsImage/MF84 – Crash Cart.webp",
@@ -3396,7 +3411,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf85-crash-cart",
     "slug": "mf85-crash-cart",
     "modelNumber": "MF85",
-    "name": "MF85 – Crash Cart (SS)",
+    "name": "Crash Cart (SS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams SS Crash Cart provides mobile, organized emergency medical storage constructed from surgical-grade stainless steel, ensuring rapid access to critical life-support consumables and emergency medications.",
     "image": "/images/Product Assets/productsImage/MF85 – Crash Cart.webp",
@@ -3442,7 +3457,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf86-crash-cart",
     "slug": "mf86-crash-cart",
     "modelNumber": "MF86",
-    "name": "MF86 – Crash Cart (Mini)",
+    "name": "Crash Cart Mini",
     "category": "Medical Trolleys",
     "description": "The Mathurams Mini Crash Cart is a compact emergency storage unit designed to keep essential medical supplies organised and readily accessible during critical situations. Its narrow, space-efficient design makes it particularly suitable for patient care areas where a full-size crash cart may occupy more space. Available in with-top and without-top variants, the Mini Crash Cart provides flexibility based on the storage and working-surface requirements of the healthcare facility.",
     "image": "/images/Product Assets/productsImage/MF86 – Crash Cart.webp",
@@ -3484,7 +3499,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf88-nebuliser-trolley",
     "slug": "mf88-nebuliser-trolley",
     "modelNumber": "MF88",
-    "name": "MF88 – Nebuliser Trolley (MS)",
+    "name": "Nebulizer Trolley (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams Nebulizer Trolley is a compact equipment trolley designed for the convenient placement and movement of nebulizer equipment and related accessories within hospitals and patient care areas. Its organised design keeps the nebulizer unit easily accessible while providing a dedicated platform for routine respiratory care. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF88 – Nebuliser Trolley.webp",
@@ -3522,7 +3537,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf91-linen-trolley",
     "slug": "mf91-linen-trolley",
     "modelNumber": "MF91",
-    "name": "MF91 – Linen Trolley (MS)",
+    "name": "Linen Trolley Plain",
     "category": "Medical Trolleys",
     "description": "The Mathurams Plain Linen Trolley is designed for convenient collection, storage and transportation of linen within hospitals and healthcare facilities. Its spacious design provides practical capacity for handling linen between wards, laundry areas and other hospital departments. Available in MS and SS variants, the SS version provides enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF91 – Linen Trolley.webp",
@@ -3559,7 +3574,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf92-linen-trolley",
     "slug": "mf92-linen-trolley",
     "modelNumber": "MF92",
-    "name": "MF92 – Linen Trolley (SS)",
+    "name": "Linen Trolley Door Type",
     "category": "Medical Trolleys",
     "description": "The Mathurams Door Type Linen Trolley is designed for the organised handling and transportation of linen within hospitals. Its dual-sided storage arrangement provides separate compartments for fresh linen and used linen, helping maintain clear segregation during collection and distribution. The enclosed door-type construction keeps linen contained during movement. Available in MS and SS variants, the SS version provides enhanced corrosion resistance, easy cleaning and long-term durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF92 – Linen Trolley.webp",
@@ -3598,7 +3613,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf107-biomedical-waste-bin-trolley",
     "slug": "mf107-biomedical-waste-bin-trolley",
     "modelNumber": "MF107",
-    "name": "MF107 – Biomedical Waste Bin Trolley (SS)",
+    "name": "Biomedical Waste Bin Trolley",
     "category": "Medical Trolleys",
     "description": "The Mathurams Biomedical Waste Bin Trolley is designed for the organised collection and segregation of biomedical waste within hospitals and healthcare facilities. The trolley accommodates separate colour-coded bins for different waste categories, supporting systematic waste segregation at the point of collection. Its stainless-steel construction provides corrosion resistance, easy cleaning and long-term durability, making it suitable for regular use in clinical environments.",
     "image": "/images/Product Assets/productsImage/MF107 – Biomedical Waste Bin Trolley.webp",
@@ -3638,7 +3653,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf111-laparoscopy-trolley",
     "slug": "mf111-laparoscopy-trolley",
     "modelNumber": "MF111",
-    "name": "MF111 – Laparoscopy Trolley (MS)",
+    "name": "Laparoscopy Trolley (MS)",
     "category": "Medical Trolleys",
     "description": "The Mathurams Laparoscopy Trolley is designed for organised placement and handling of laparoscopic equipment and accessories in operation theatres and procedure areas. Its multi-shelf arrangement provides dedicated space for equipment, while seven integrated power sockets allow convenient connectivity of devices through the trolley. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability for demanding clinical environments.",
     "image": "/images/Product Assets/productsImage/MF111 – Laparoscopy Trolley.webp",
@@ -3682,7 +3697,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf113-endoscopy-trolley",
     "slug": "mf113-endoscopy-trolley",
     "modelNumber": "MF113",
-    "name": "MF113 – Endoscopy Trolley (MS)",
+    "name": "Endoscopy Trolley",
     "category": "Medical Trolleys",
     "description": "The Mathurams Endoscopy Trolley is designed for the organised placement and handling of endoscopy equipment and accessories in procedure rooms and diagnostic areas. Its multi-shelf arrangement provides dedicated space for equipment, while the integrated power sockets allow convenient connection of devices directly through the trolley. A spacious lower drawer provides additional storage for accessories and consumables. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and long-term durability.",
     "image": "/images/Product Assets/productsImage/MF113 – Endoscopy Trolley.webp",
@@ -3723,7 +3738,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf129-ot-table",
     "slug": "mf129-ot-table",
     "modelNumber": "MF129",
-    "name": "MF129 – OT Table (SS)",
+    "name": "OT Table (SS)",
     "category": "OT Equipment",
     "description": "The Mathurams OT Table is designed for versatile patient positioning across a wide range of surgical procedures. The five-section stainless steel / C-Arm compatible tabletop, hydraulic height adjustment and precision gear mechanism provide controlled positioning, while the stainless steel construction supports easy cleaning in regular operation theatre use.",
     "image": "/images/Product Assets/productsImage/MF129 – OT Table.webp",
@@ -3775,7 +3790,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf130-ot-light",
     "slug": "mf130-ot-light",
     "modelNumber": "MF130",
-    "name": "MF130 – OT Light",
+    "name": "OT Table",
     "category": "OT Equipment",
     "description": "The Mathurams OT Light is a ceiling mounted LED surgical light designed to provide high intensity, shadow reduced illumination for operation theatres. The adjustable dome and arm movement allow convenient positioning of the light according to surgical requirements.",
     "image": "/images/Product Assets/productsImage/MF130 – OT Light.webp",
@@ -3830,7 +3845,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf131-anesthesia-machine",
     "slug": "mf131-anesthesia-machine",
     "modelNumber": "MF131",
-    "name": "MF131 – Anesthesia Machine",
+    "name": "Anesthesia Machine",
     "category": "OT Equipment",
     "description": "The Mathurams Anaesthesia Machine is designed for controlled delivery of medical gases and anaesthetic agents during surgical procedures. The system incorporates essential pressure regulation, flow control and oxygen safety mechanisms, with provisions for breathing circuits, vaporisers and ventilator connectivity.",
     "image": "/images/Product Assets/productsImage/MF131 – Anesthesia Machine.webp",
@@ -3880,7 +3895,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf132-autoclave",
     "slug": "mf132-autoclave",
     "modelNumber": "MF132",
-    "name": "MF132 – Autoclave",
+    "name": "Autoclave",
     "category": "OT Equipment",
     "description": "The Mathurams Medical Autoclave is engineered for heavy-duty steam sterilisation of surgical instruments, dressings and medical linen in hospitals and laboratories. Built with Argon Arc welded stainless steel 304/316, it provides automated temperature and pressure control with multi-level safety relief valves.",
     "image": "/images/Product Assets/productsImage/MF132 – Autoclave.webp",
@@ -3924,7 +3939,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf133-multiparameter-monitor",
     "slug": "mf133-multiparameter-monitor",
     "modelNumber": "MF133",
-    "name": "MF133 – Multiparameter Monitor",
+    "name": "OT Light",
     "category": "OT Equipment",
     "description": "The Mathurams Multiparameter Monitor is designed for continuous monitoring of essential patient vital parameters in operation theatres, intensive care units and recovery rooms. It provides high-contrast, real-time waveform and numeric display of physiological parameters for adult, pediatric and neonatal patients.",
     "image": "/images/Product Assets/productsImage/MF133 – Multiparameter Monitor.webp",
@@ -3962,7 +3977,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf143-suction-apparatus",
     "slug": "mf143-suction-apparatus",
     "modelNumber": "MF143",
-    "name": "MF143 – Suction Apparatus",
+    "name": "Anaesthesia Machine",
     "category": "OT Equipment",
     "description": "The Mathurams Suction Apparatus is designed for the controlled removal of fluids and secretions during medical and surgical procedures. Its compact, mobile trolley construction with high-capacity collection jars enables convenient use across operation theatres, intensive care units and patient wards.",
     "image": "/images/Product Assets/productsImage/MF143 – Suction Apparatus.webp",
@@ -4001,7 +4016,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf144-fogger",
     "slug": "mf144-fogger",
     "modelNumber": "MF144",
-    "name": "MF144 – Fogger",
+    "name": "Multiparameter Monitor",
     "category": "OT Equipment",
     "description": "The Mathurams Fogger is designed for the dispersion of disinfectant solution as an ultra-fine aerosol mist for whole-room and surface sterilization in healthcare environments. It ensures rapid, complete coverage of enclosed spaces including operation theatres, intensive care units and sterile compounding laboratories.",
     "image": "/images/Product Assets/productsImage/MF144 – Fogger.webp",
@@ -4038,7 +4053,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf04-iv-stand",
     "slug": "mf04-iv-stand",
     "modelNumber": "MF04",
-    "name": "MF04 – IV Stand (Full SS)",
+    "name": "Full SS IV Stand",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Full SS IV Stand is designed to provide convenient and stable support for intravenous fluid administration in hospital wards, treatment areas and patient care environments. Its stainless-steel construction offers durability and easy maintenance for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF04 – IV Stand.webp",
@@ -4075,7 +4090,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf05-iv-stand",
     "slug": "mf05-iv-stand",
     "modelNumber": "MF05",
-    "name": "MF05 – IV Stand (Fibre Base)",
+    "name": "Fibre Base IV Stand",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Fibre Base IV Stand is designed to provide stable and convenient support for intravenous fluid administration in hospital wards, treatment areas and patient care environments. Its fibre base provides a sturdy and practical foundation, while the stand is designed for easy positioning alongside the patient.",
     "image": "/images/Product Assets/productsImage/MF05 – IV Stand.webp",
@@ -4105,13 +4120,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "brand": "Sri Mathurams"
     },
     "needsDetails": false,
-    "detailedSpec": {}
+    "detailedSpec": {
+      "Customization": "Size can be customised as per requirement."
+    }
   },
   {
     "id": "mf06-iv-stand",
     "slug": "mf06-iv-stand",
     "modelNumber": "MF06",
-    "name": "MF06 – IV Stand (MS)",
+    "name": "MS IV Stand",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams MS IV Stand is designed to provide stable and convenient support for intravenous fluid administration in hospital wards, treatment areas and patient care environments. Its mild steel construction offers a durable and practical solution for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF06 – IV Stand.webp",
@@ -4148,7 +4165,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf53-single-foot-step",
     "slug": "mf53-single-foot-step",
     "modelNumber": "MF53",
-    "name": "MF53 – Single Foot Step (MS)",
+    "name": "Single Foot Step (MS)",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Single Foot Step (MS) provides a stable raised platform in epoxy powder-coated mild steel to assist patient stepping beside beds and couches.",
     "image": "/images/Product Assets/productsImage/MF53 – Single Foot Step.webp",
@@ -4186,7 +4203,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf54-single-foot-step",
     "slug": "mf54-single-foot-step",
     "modelNumber": "MF54",
-    "name": "MF54 – Single Foot Step (SS)",
+    "name": "Single Foot Step - SS",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Single Foot Step provides a stable raised platform to assist patients and healthcare professionals where additional stepping height is required. Available in MS and SS variants, its compact construction makes it suitable for use alongside examination couches, beds and other hospital furniture. The SS variant offers enhanced corrosion resistance and easy maintenance, making it well suited for areas requiring frequent cleaning.",
     "image": "/images/Product Assets/productsImage/MF54 – Single Foot Step.webp",
@@ -4224,7 +4241,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf55-double-foot-step",
     "slug": "mf55-double-foot-step",
     "modelNumber": "MF55",
-    "name": "MF55 – Double Foot Step (MS)",
+    "name": "Double Foot Step (MS)",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Double Foot Step (MS) provides a two-level gradual step platform in durable epoxy powder-coated mild steel.",
     "image": "/images/Product Assets/productsImage/MF55 – Double Foot Step.webp",
@@ -4262,7 +4279,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf56-double-foot-step",
     "slug": "mf56-double-foot-step",
     "modelNumber": "MF56",
-    "name": "MF56 – Double Foot Step (SS)",
+    "name": "Double Foot Step - SS",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Double Foot Step provides a stable two-level platform to assist patients and healthcare professionals where additional stepping support is required. Its two-step design provides gradual and convenient access to elevated hospital beds, examination couches and other medical furniture. Available in MS and SS variants, the SS version offers enhanced corrosion resistance, easy cleaning and durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF56 – Double Foot Step.webp",
@@ -4300,7 +4317,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf97-kick-bucket",
     "slug": "mf97-kick-bucket",
     "modelNumber": "MF97",
-    "name": "MF97 – Kick Bucket (SS)",
+    "name": "SS Kick Bucket",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams SS Kick Bucket is designed for convenient collection of used materials during surgical and clinical procedures. Its compact design allows easy positioning near the procedure area, while the stainless-steel construction provides corrosion resistance, easy cleaning and durability for regular hospital use.",
     "image": "/images/Product Assets/productsImage/MF97 – Kick Bucket.webp",
@@ -4337,7 +4354,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf98-wash-basin-stand",
     "slug": "mf98-wash-basin-stand",
     "modelNumber": "MF98",
-    "name": "MF98 – Wash Basin Stand (SS)",
+    "name": "SS Wash Basin Stand",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams SS Wash Basin Stand is designed to provide convenient access to a wash basin in hospital wards, examination areas and procedure rooms. Its compact freestanding design allows convenient placement wherever required. The stainless-steel construction provides corrosion resistance, easy cleaning and long-term durability, making it suitable for regular use in healthcare environments.",
     "image": "/images/Product Assets/productsImage/MF98 – Wash Basin Stand.webp",
@@ -4374,7 +4391,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf99-3-fold-screen",
     "slug": "mf99-3-fold-screen",
     "modelNumber": "MF99",
-    "name": "MF99 – 3 Fold Screen (MS)",
+    "name": "3 Fold Screen (MS)",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams 3 Fold Screen is designed to provide temporary privacy and separation between patient areas in hospitals, clinics and examination rooms. Its foldable three-panel design allows the screen to be extended when required and folded into a compact size for convenient positioning and storage.",
     "image": "/images/Product Assets/productsImage/MF99 – 3 Fold Screen.webp",
@@ -4414,7 +4431,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf100-3-fold-screen",
     "slug": "mf100-3-fold-screen",
     "modelNumber": "MF100",
-    "name": "MF100 – 3 Fold Screen (SS)",
+    "name": "3 Fold Screen (SS)",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams SS 3-Fold Screen provides mobile patient privacy partitions with a full stainless-steel folding frame, offering superior corrosion resistance and effortless cleaning.",
     "image": "/images/Product Assets/productsImage/MF100 – 3 Fold Screen.webp",
@@ -4454,7 +4471,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf108-ss-rack",
     "slug": "mf108-ss-rack",
     "modelNumber": "MF108",
-    "name": "MF108 – SS Rack (4 Shelf)",
+    "name": "SS Rack 4 Shelf",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams SS Rack – 4 Shelf is designed for organised storage of medical supplies, linen, equipment and other hospital essentials. Its four-tier arrangement provides ample storage while allowing convenient access to frequently required items. The stainless-steel construction provides excellent corrosion resistance, easy cleaning and long-term durability, making the rack suitable for regular use across hospital departments.",
     "image": "/images/Product Assets/productsImage/MF108 – SS Rack.webp",
@@ -4493,7 +4510,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf109-scrub",
     "slug": "mf109-scrub",
     "modelNumber": "MF109",
-    "name": "MF109 – Scrub (SS)",
+    "name": "OT Scrub",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Scrub is designed for hand and instrument washing in operation theatre and surgical preparation areas. Its stainless-steel construction provides a hygienic, corrosion-resistant and easy-to-clean surface, making it suitable for environments requiring frequent cleaning and maintenance. The unit can be configured with different tap arrangements and operating mechanisms according to hospital requirements.",
     "image": "/images/Product Assets/productsImage/MF109 – Scrub.webp",
@@ -4531,7 +4548,8 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf128-cylinder-storage",
     "slug": "mf128-cylinder-storage",
     "modelNumber": "MF128",
-    "name": "MF128 – Cylinder Storage (MS)",
+    "customizationNote": "Customisable according to cylinder requirements.",
+    "name": "Cylinder Storage",
     "category": "Stainless Steel Furniture & Ward Accessories",
     "description": "The Mathurams Cylinder Storage is designed to provide a dedicated and organised space for storing medical gas cylinders within hospitals and healthcare facilities. Its heavy-duty open frame construction allows cylinders to be positioned and accessed conveniently while maintaining an orderly and safe gas manifold area.",
     "image": "/images/Product Assets/productsImage/MF128 – Cylinder Storage.webp",
@@ -4560,14 +4578,16 @@ export const PRODUCTS: MedicalProduct[] = [
       "Material": "MS / SS",
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Cylinder Type": "A Type / B Type / D Type",
-      "Number of Cylinder Provisions": "1 / 2 / 3 / Multiple – As Required"
+      "Number of Cylinder Provisions": "1 / 2 / 3 / Multiple – As Required",
+      "Customization": "Customisable according to cylinder requirements."
     }
   },
   {
     "id": "mf102-mattress",
     "slug": "mf102-mattress",
     "modelNumber": "MF102",
-    "name": "MF102 – Mattress",
+    "customizationNote": "Customisable according to cot dimensions.",
+    "name": "Mattress",
     "category": "Accessories",
     "description": "The Mathurams Hospital Cot Mattress is designed for use with a wide range of hospital cots and beds, with multiple folding configurations available to accommodate plain, Fowler, Semi Fowler, and multi-function ICU beds. Encased in heavy-duty waterproof rexin, it provides ergonomic patient support and effortless cleaning.",
     "image": "/images/Product Assets/productsImage/MF102 – Mattress.webp",
@@ -4599,14 +4619,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "Cover Material": "Cloth Rexin / Rexin",
       "Mattress Thickness": "2\" / 3\" / 4\" / 5\"",
       "Size": "As per Cot / Customised",
-      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Customisable according to cot dimensions."
     }
   },
   {
     "id": "mf103-pillow",
     "slug": "mf103-pillow",
     "modelNumber": "MF103",
-    "name": "MF103 – Pillow",
+    "name": "Pillow",
     "category": "Accessories",
     "description": "The Mathurams Medical Pillow is designed for patient comfort across hospital cots, recovery couches and examination tables. Available with conjugated Recron fibre or resilient cut foam filling, it is enclosed in an impermeable, anti-microbial medical rexin cover for hygienic hospital use.",
     "image": "/images/Product Assets/productsImage/MF103 – Pillow.webp",
@@ -4642,7 +4663,8 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf120-aluminium-side-rails",
     "slug": "mf120-aluminium-side-rails",
     "modelNumber": "MF120",
-    "name": "MF120 – Aluminium Side Rails",
+    "customizationNote": "Size and mounting configuration can be customised according to cot requirements.",
+    "name": "Aluminium Side Rails",
     "category": "Accessories",
     "description": "The Mathurams Aluminium Side Rails are designed for hospital cots and beds to provide dependable patient fall protection along the sleeping platform. The intuitive collapsible mechanism allows the rails to be securely raised during rest and dropped flush with the cot frame for unrestricted patient transfer.",
     "image": "/images/Product Assets/productsImage/MF120 – Aluminium Side Rails.webp",
@@ -4672,13 +4694,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "brand": "Sri Mathurams"
     },
     "needsDetails": false,
-    "detailedSpec": {}
+    "detailedSpec": {
+      "Customization": "Size and mounting configuration can be customised according to cot requirements."
+    }
   },
   {
     "id": "mf121-2-1-bush",
     "slug": "mf121-2-1-bush",
     "modelNumber": "MF121",
-    "name": "MF121 – 2 × 1 Bush",
+    "name": "2 × 1 Bush",
     "category": "Accessories",
     "description": "The Mathurams 2\" × 1\" Rectangular Bush is a precision-moulded protective end-cap designed for hospital furniture and cot leg frames. Manufactured from durable nylon/synthetic polymer, it prevents floor scuffing, reduces transit vibration, and shields metal tubing from moisture ingress.",
     "image": "/images/Product Assets/productsImage/MF121 – 2 × 1 Bush.webp",
@@ -4714,7 +4738,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf122-1-1-bush",
     "slug": "mf122-1-1-bush",
     "modelNumber": "MF122",
-    "name": "MF122 – 1¼ × 1¼ Bush",
+    "name": "1¼ × 1¼ Bush",
     "category": "Accessories",
     "description": "The Mathurams 1¼\" × 1¼\" Square Bush provides a stable, non-marking foot buffer for square-tube hospital furniture, IV stands, overbed tables and foot steps. Its resilient moulded composition absorbs vibrations and protects hospital flooring.",
     "image": "/images/Product Assets/productsImage/MF122 – 1¼ × 1¼ Bush.webp",
@@ -4750,7 +4774,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf123-ss-collapsible",
     "slug": "mf123-ss-collapsible",
     "modelNumber": "MF123",
-    "name": "MF123 – SS Collapsible Side Rails",
+    "name": "SS Collapsible Side Rails",
     "category": "Accessories",
     "description": "The Mathurams SS Collapsible Side Rails provide robust, medical-grade patient containment for intensive care and general ward cots. Fabricated from stainless steel, they offer exceptional structural rigidity, easy single-hand drop operation, and uncompromised hygienic cleaning.",
     "image": "/images/Product Assets/productsImage/MF123 – SS Collapsible.webp",
@@ -4780,13 +4804,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "brand": "Sri Mathurams"
     },
     "needsDetails": false,
-    "detailedSpec": {}
+    "detailedSpec": {
+      "Customization": "Size and mounting configuration can be customised according to cot requirements."
+    }
   },
   {
     "id": "mf124-ss-arms",
     "slug": "mf124-ss-arms",
     "modelNumber": "MF124",
-    "name": "MF124 – SS Bow Arms",
+    "name": "SS Arms",
     "category": "Accessories",
     "description": "The Mathurams SS Arms feature a heavy-duty stainless steel tubular perimeter frame inset with a laminated plywood core and decorative mica finish. Designed as head and foot panels for hospital beds, they combine sterile durability with an attractive, warm ward aesthetic.",
     "image": "/images/Product Assets/productsImage/MF124 – SS Arms.webp",
@@ -4817,13 +4843,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "brand": "Sri Mathurams"
     },
     "needsDetails": false,
-    "detailedSpec": {}
+    "detailedSpec": {
+      "Customization": "Size and mounting configuration can be customised according to cot requirements."
+    }
   },
   {
     "id": "mf125-bins",
     "slug": "mf125-bins",
     "modelNumber": "MF125",
-    "name": "MF125 – Bins",
+    "name": "Bins",
     "category": "Accessories",
     "description": "The Mathurams Medical Plastic Bins provide color-coded, modular storage for medication vials, ampoules, dressings and surgical consumables. Designed for integration into pharmacy racks, crash carts and nursing station trolleys, they facilitate rapid visual identification and systematic inventory control.",
     "image": "/images/Product Assets/productsImage/MF125 – Bins.webp",
@@ -4859,7 +4887,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf126-ss-plain-side-rails",
     "slug": "mf126-ss-plain-side-rails",
     "modelNumber": "MF126",
-    "name": "MF126 – SS Plain Side Rails (SS)",
+    "name": "SS Plain Side Rails",
     "category": "Accessories",
     "description": "The Mathurams SS Plain Side Rails are fixed-style drop-down safety barriers constructed from heavy-gauge stainless steel. They deliver sturdy, dependable patient fall prevention along both sides of hospital cots while maintaining a streamlined, easy-to-clean profile.",
     "image": "/images/Product Assets/productsImage/MF126 – SS Plain Side Rails.webp",
@@ -4889,13 +4917,15 @@ export const PRODUCTS: MedicalProduct[] = [
       "brand": "Sri Mathurams"
     },
     "needsDetails": false,
-    "detailedSpec": {}
+    "detailedSpec": {
+      "Customization": "Size and mounting configuration can be customised according to cot requirements."
+    }
   },
   {
     "id": "mf134-actuator",
     "slug": "mf134-actuator",
     "modelNumber": "MF134",
-    "name": "MF134 – Actuator (100 / 150 mm)",
+    "name": "Actuator (100 / 150 mm)",
     "category": "Accessories",
     "description": "The Mathurams Medical Linear Actuator converts electrical power into precise, smooth mechanical linear motion for multi-function ICU beds, operating tables and examination couches. Engineered with high-torque gearboxes and integrated limit switches, it guarantees quiet, reliable patient positioning.",
     "image": "/images/Product Assets/productsImage/MF134 – Actuator.webp",
@@ -4931,7 +4961,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf135-control-box",
     "slug": "mf135-control-box",
     "modelNumber": "MF135",
-    "name": "MF135 – Control Box",
+    "name": "Control Box",
     "category": "Accessories",
     "description": "The Mathurams Medical Control Box is the intelligent central microprocessor unit coordinating electric hospital cots, recovery tables and motorized patient beds. It converts mains AC power into regulated DC voltage and synchronizes multi-channel actuator movements from remote handsets.",
     "image": "/images/Product Assets/productsImage/MF135 – Control Box.webp",
@@ -4966,7 +4996,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf136-wired-remote-handset",
     "slug": "mf136-wired-remote-handset",
     "modelNumber": "MF136",
-    "name": "MF136 – Wired Remote Handset",
+    "name": "Wired Remote Handset",
     "category": "Accessories",
     "description": "The Mathurams Wired Remote Handset gives caregivers and patients effortless push-button control over electric hospital cots and beds. Its ergonomic handheld casing features high-contrast graphic icons, tactile micro-switches and an optional nurse lockout panel.",
     "image": "/images/Product Assets/productsImage/MF136 – Wired Remote Handset.webp",
@@ -5000,7 +5030,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf137-castors",
     "slug": "mf137-castors",
     "modelNumber": "MF137",
-    "name": "MF137 – Castors (2 Inches)",
+    "name": "ABS Arms",
     "category": "Accessories",
     "description": "The Mathurams 2\" Hospital Castors are compact, smooth-rolling wheels designed for light hospital furniture, drip stands, waste bins and foot steps. Featuring non-marking synthetic treads and low rolling resistance, they protect hospital flooring while ensuring effortless maneuverability.",
     "image": "/images/Product Assets/productsImage/MF137 – Castors.webp",
@@ -5037,7 +5067,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf138-castors",
     "slug": "mf138-castors",
     "modelNumber": "MF138",
-    "name": "MF138 – Castors (3 Inches)",
+    "name": "ABS Side Rails",
     "category": "Accessories",
     "description": "The Mathurams 3\" Hospital Castors deliver reliable mobility for bedside lockers, dressing trolleys, mayo stands and diagnostic equipment. With heavy-duty polymer wheels and shielded swivel raceways, they roll smoothly over elevator thresholds and tile grout.",
     "image": "/images/Product Assets/productsImage/MF138 – Castors.webp",
@@ -5074,7 +5104,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf139-castors",
     "slug": "mf139-castors",
     "modelNumber": "MF139",
-    "name": "MF139 – Castors (4 Inches)",
+    "name": "Pharmacy Rack",
     "category": "Accessories",
     "description": "The Mathurams 4\" Hospital Castors are heavy-duty mobile wheels designed for general ward cots, recovery stretchers and linen transport trolleys. Their larger diameter effortlessly overcomes surface transitions, while the anti-static tread ensures patient safety.",
     "image": "/images/Product Assets/productsImage/MF139 – Castors.webp",
@@ -5111,7 +5141,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf140-castors",
     "slug": "mf140-castors",
     "modelNumber": "MF140",
-    "name": "MF140 – Castors (5 Inches)",
+    "name": "Castors (5 Inches)",
     "category": "Accessories",
     "description": "The Mathurams 5\" Hospital Castors are large-diameter, high-performance transport wheels engineered for ICU beds, emergency stretcher trolleys and heavy patient transfer units. They offer exceptional shock absorption, minimal push effort, and superior directional stability.",
     "image": "/images/Product Assets/productsImage/MF140 – Castors.webp",
@@ -5148,7 +5178,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf141-castors",
     "slug": "mf141-castors",
     "modelNumber": "MF141",
-    "name": "MF141 – Castors (Centre Locking)",
+    "name": "Vertical Autoclave",
     "category": "Accessories",
     "description": "The Mathurams Central Locking Castors are specialized ICU and critical care mobility wheels linked via an internal hexagonal cam rod mechanism. A single foot pedal at the bed's corner simultaneously controls all four castors for Total Lock, Steer (directional tracking), and Free Swivel.",
     "image": "/images/Product Assets/productsImage/MF141 – Castors.webp",
@@ -5185,7 +5215,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf104-3-seater-chair",
     "slug": "mf104-3-seater-chair",
     "modelNumber": "MF104",
-    "name": "MF104 – 3 Seater Chair",
+    "name": "3 Seater Chair",
     "category": "General Furniture",
     "description": "The Mathurams 3 Seater Chair is designed to provide comfortable and organised seating for hospital waiting areas, reception lobbies, corridors and consultation zones. Its heavy-duty beam structure withstands high-traffic public healthcare environments while maintaining a sleek, modern appearance.",
     "image": "/images/Product Assets/productsImage/MF104 – 3 Seater Chair.webp",
@@ -5223,7 +5253,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf105-4-seater-chair",
     "slug": "mf105-4-seater-chair",
     "modelNumber": "MF105",
-    "name": "MF105 – 4 Seater Chair",
+    "name": "4 Seater Chair",
     "category": "General Furniture",
     "description": "The Mathurams 4 Seater Chair provides high-density, durable public seating for high-traffic hospital waiting halls, outpatient departments and diagnostic reception lobbies. Built on a reinforced structural steel cross-beam, it offers stable multi-person support with easy-cleaning surfaces.",
     "image": "/images/Product Assets/productsImage/MF105 – 4 Seater Chair.webp",
@@ -5261,7 +5291,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf117-two-tier-cot",
     "slug": "mf117-two-tier-cot",
     "modelNumber": "MF117",
-    "name": "MF117 – Two Tier Cot (MS)",
+    "name": "Two Tier Cot",
     "category": "General Furniture",
     "description": "The Mathurams Two Tier Cot is designed to provide a practical and space-efficient resting solution for nursing staff and hospital personnel. Its two-level arrangement maximises available floor space while providing separate sleeping platforms in a compact footprint. The sturdy MS construction provides durability for regular use, while the integrated ladder allows convenient access to the upper berth.",
     "image": "/images/Product Assets/productsImage/MF117 – Two Tier Cot.webp",
@@ -5302,7 +5332,7 @@ export const PRODUCTS: MedicalProduct[] = [
     "id": "mf127-pharmacy-closed-trolley",
     "slug": "mf127-pharmacy-closed-trolley",
     "modelNumber": "MF127",
-    "name": "MF127 – Pharmacy Closed Trolley (SS)",
+    "name": "Pharmacy Closed Trolley (SS)",
     "category": "General Furniture",
     "description": "The Mathurams Pharmacy Closed Trolley is designed for secure, dust-free transport and storage of medications, surgical consumables and pharmacy supplies. Featuring a fully enclosed stainless steel cabinet with lockable double doors and adjustable internal shelving, it keeps valuable clinical supplies protected.",
     "image": "/images/Product Assets/productsImage/MF127 – Pharmacy Closed Trolley.webp",
@@ -5336,5 +5366,1026 @@ export const PRODUCTS: MedicalProduct[] = [
       "Finish": "Epoxy Powder Coating / SS Finish",
       "Storage Option": "Plain Shelves / Shelves with Bins"
     }
+  },
+  {
+    "id": "mf23-icu-cot-manual",
+    "slug": "mf23-icu-cot-manual",
+    "modelNumber": "MF23",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "ICU Cot Manual 5 Function (ABS Arms, SS Collapsible Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams 5-Function Manual ICU Cot is designed for intensive care and critical care environments, providing comprehensive patient positioning through a reliable manual crank mechanism. Its robust construction and flexible configuration options make it suitable for varied hospital requirements.",
+    "image": "/images/Product Assets/productsImage/MF24 – ICU Cot Manual.webp",
+    "features": [
+      "Five-function manual operation",
+      "Smooth manual crank mechanism",
+      "Multiple arm and side railing options",
+      "IV provision included",
+      "Durable hospital grade construction",
+      "Easy to clean surfaces"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Rise — 0°–45°",
+      "③ Trendelenburg — 3° - 25°",
+      "④ Reverse Trendelenburg — 3° to +25°",
+      "⑤ Height Adjustment — 24\"- 33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Manual Crank",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF23 - ABS Arms, SS Collapsible Rails / MF24 - ABS Arms, ABS Side Rails / MF25 - SS Arms, SS Collapsible Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Heavy-duty 5-function manual ICU hospital cot bed with ABS head/foot panels and collapsible SS safety rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Side Railings": "SS Collapsible",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf25-icu-cot-manual",
+    "slug": "mf25-icu-cot-manual",
+    "modelNumber": "MF25",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "ICU Cot Manual 5 Function (SS Arms, SS Collapsible Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams 5-Function Manual ICU Cot with stainless steel head and foot bows and collapsible SS side rails offers superior durability, hygienic maintenance, and reliable mechanical positioning for intensive care environments.",
+    "image": "/images/Product Assets/productsImage/MF24 – ICU Cot Manual.webp",
+    "features": [
+      "Five-function manual operation",
+      "Smooth manual crank mechanism",
+      "High-grade stainless steel head & foot arms",
+      "SS collapsible side safety rails",
+      "IV provision included",
+      "Easy to clean surfaces"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Rise — 0°–45°",
+      "③ Trendelenburg — 3° - 25°",
+      "④ Reverse Trendelenburg — 3° to +25°",
+      "⑤ Height Adjustment — 24\"- 33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Manual Crank",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF23 - ABS Arms, SS Collapsible Rails / MF24 - ABS Arms, ABS Side Rails / MF25 - SS Arms, SS Collapsible Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Stainless steel head/foot bow 5-function manual ICU cot with collapsible stainless steel safety side railings. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Side Railings": "SS Collapsible",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf26-icu-cot-3-function-manual",
+    "slug": "mf26-icu-cot-3-function-manual",
+    "modelNumber": "MF26",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "3-Function ICU Cot Manual (ABS Arms, SS Collapsible Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams 3-Function Manual ICU Cot is designed for intensive care and high-dependency units, offering smooth crank adjustments for backrest, knee rest, and bed height with moulded ABS head/foot panels and SS collapsible rails.",
+    "image": "/images/Product Assets/productsImage/MF27 – ICU Cot 3 Function Manual.webp",
+    "features": [
+      "Three-function manual crank operation",
+      "Backrest, knee rest and height adjustments",
+      "Durable hospital grade construction",
+      "Moulded ABS arms with SS collapsible side rails",
+      "IV pole provision included",
+      "Easy-to-clean construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Raise — 0°–45°",
+      "③ Height Adjustment — 24\"-33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Manual Crank",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF26 - ABS Arms, SS Collapsible Rails / MF27 - SS Arms, SS Collapsible Rails / MF28 - ABS Arms, ABS Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "3-function manual ICU cot with moulded ABS head/foot panels and collapsible stainless steel side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Side Railings": "SS Collapsible",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf28-icu-cot-3-function-manual",
+    "slug": "mf28-icu-cot-3-function-manual",
+    "modelNumber": "MF28",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "3-Function ICU Cot Manual (ABS Arms, ABS Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams 3-Function Manual ICU Cot featuring moulded ABS head and foot boards along with full tuck-away ABS side safety rails for comprehensive patient containment and modern hospital aesthetics.",
+    "image": "/images/Product Assets/productsImage/MF27 – ICU Cot 3 Function Manual.webp",
+    "features": [
+      "Three-function manual crank operation",
+      "Full ABS head/foot panels and tuck-away ABS side rails",
+      "Durable hospital grade MS framework",
+      "Smooth crank mechanics with fold-down handles",
+      "IV provision included",
+      "Easy-to-clean hygienic surfaces"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Raise — 0°–45°",
+      "③ Height Adjustment — 24\"-33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Manual Crank",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF26 - ABS Arms, SS Collapsible Rails / MF27 - SS Arms, SS Collapsible Rails / MF28 - ABS Arms, ABS Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "3-function manual ICU cot with moulded ABS head and foot boards and tuck-away ABS safety side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Side Railings": "ABS Rails",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf29-icu-cot-remote",
+    "slug": "mf29-icu-cot-remote",
+    "modelNumber": "MF29",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "ICU Cot Remote (ABS Arms, SS Collapsible Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams Remote ICU Cot combines electrically powered motorized patient positioning with ABS head/foot bows and collapsible stainless steel side rails, offering quiet linear actuator control via wired handset.",
+    "image": "/images/Product Assets/productsImage/MF30 – ICU Cot Remote.webp",
+    "features": [
+      "Wired handheld remote electric operation",
+      "Smooth electric motorized positioning",
+      "ABS head and foot end panels",
+      "SS collapsible side safety rails",
+      "IV provision and heavy-duty castors",
+      "Durable and easy-to-clean construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Raise — 0°–45°",
+      "③ Height Adjustment — 24\"-33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Wired Remote",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF29 - ABS Arms, SS Collapsible Rails / MF30 - ABS Arms, ABS Rails / MF31 - SS Arms, SS Collapsible Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Motorized electric ICU bed with wired remote controller, ABS head/foot panels, and collapsible stainless steel side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Functions": "3 Function / 5 Function",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf31-icu-cot-remote",
+    "slug": "mf31-icu-cot-remote",
+    "modelNumber": "MF31",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "ICU Cot Remote (SS Arms, SS Collapsible Rails)",
+    "category": "ICU & Critical Care",
+    "description": "The Mathurams Remote ICU Cot with stainless steel head and foot end panels and SS collapsible side rails provides heavy-duty motorized positioning for critical care wards with maximum structural strength.",
+    "image": "/images/Product Assets/productsImage/MF30 – ICU Cot Remote.webp",
+    "features": [
+      "Wired remote control electric motorized operation",
+      "Full stainless steel head & foot end boards",
+      "SS collapsible side safety rails",
+      "Multi-position articulation (backrest, knee, height)",
+      "IV pole mounts at all four corners",
+      "Easy-to-clean sterile design"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee/Leg Raise — 0°–45°",
+      "③ Height Adjustment — 24\"-33\""
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W",
+      "Height with Mattress": "24\"–33\"",
+      "Operation": "Wired Remote",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF29 - ABS Arms, SS Collapsible Rails / MF30 - ABS Arms, ABS Rails / MF31 - SS Arms, SS Collapsible Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Motorized electric ICU bed with stainless steel head and foot panels, collapsible SS side rails, and multi-actuator positioning. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Functions": "3 Function / 5 Function",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Wheel Type": "Plain / Central Lock",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf32-semi-fowler-cot",
+    "slug": "mf32-semi-fowler-cot",
+    "modelNumber": "MF32",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Semi Fowler Cot (SS Arms, SS Collapsible Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Semi Fowler Cot with SS Arms and SS Collapsible Rails is designed for general ward patient accommodation, featuring a single-crank backrest mechanism and collapsible side barriers for safety.",
+    "image": "/images/Product Assets/productsImage/MF35 – Semi Fowler Cot.webp",
+    "features": [
+      "Adjustable backrest positioning",
+      "Stainless steel head and foot panels",
+      "SS collapsible side railings",
+      "Smooth crank backrest operation",
+      "IV provision included",
+      "Durable hospital grade construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°"
+    ],
+    "specifications": {
+      "Dimension": "75\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF32 - SS Arms, SS Collapsible Rails / MF33 - ABS Arms, SS Plain Rails / MF34 - ABS Arms, SS Collapsible Rails / MF35 - SS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Single-crank semi fowler hospital bed with stainless steel head/foot bows and collapsible SS side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf33-semi-fowler-cot",
+    "slug": "mf33-semi-fowler-cot",
+    "modelNumber": "MF33",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Semi Fowler Cot (ABS Arms, SS Plain Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Semi Fowler Cot featuring lightweight moulded ABS head/foot end panels with fixed stainless steel plain side rails, offering dependable backrest positioning for patient recovery.",
+    "image": "/images/Product Assets/productsImage/MF35 – Semi Fowler Cot.webp",
+    "features": [
+      "Smooth manual backrest positioning",
+      "Moulded ABS head and foot boards",
+      "Fixed SS plain safety side rails",
+      "Epoxy powder coated mild steel body",
+      "Corner IV pole provision",
+      "Easy-to-clean hospital surfaces"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°"
+    ],
+    "specifications": {
+      "Dimension": "75\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF32 - SS Arms, SS Collapsible Rails / MF33 - ABS Arms, SS Plain Rails / MF34 - ABS Arms, SS Collapsible Rails / MF35 - SS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Semi fowler ward bed with ABS head/foot end panels and fixed plain stainless steel side railings. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf34-semi-fowler-cot",
+    "slug": "mf34-semi-fowler-cot",
+    "modelNumber": "MF34",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Semi Fowler Cot (ABS Arms, SS Collapsible Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Semi Fowler Cot configured with modern ABS head/foot panels and collapsible SS side rails for flexible patient access and dependable backrest elevation.",
+    "image": "/images/Product Assets/productsImage/MF35 – Semi Fowler Cot.webp",
+    "features": [
+      "Adjustable backrest positioning 0°–75°",
+      "Moulded ABS head and foot panels",
+      "SS collapsible side safety railings",
+      "Smooth manual crank mechanism",
+      "IV pole provision included",
+      "Durable hospital grade construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°"
+    ],
+    "specifications": {
+      "Dimension": "75\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF32 - SS Arms, SS Collapsible Rails / MF33 - ABS Arms, SS Plain Rails / MF34 - ABS Arms, SS Collapsible Rails / MF35 - SS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Semi fowler hospital cot with moulded ABS head and foot boards and collapsible stainless steel safety side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf40-fowler-cot",
+    "slug": "mf40-fowler-cot",
+    "modelNumber": "MF40",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Fowler Cot (SS Arms, SS Collapsible Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Two-Crank Full Fowler Cot with stainless steel head and foot panels and collapsible SS side rails. Provides independent dual adjustment for both backrest and knee rest sections.",
+    "image": "/images/Product Assets/productsImage/MF39 – Fowler Cot.webp",
+    "features": [
+      "Dual crank manual operation for back and knee rise",
+      "Stainless steel head and foot bows",
+      "SS collapsible side safety railings",
+      "Heavy-duty tubular mild steel base",
+      "Corner IV pole provision",
+      "Easy-to-clean hospital surfaces"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee / Leg Raise — 0° - 45°"
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF39 - ABS Arms, SS Collapsible Rails / MF40 - SS Arms, SS Collapsible Rails / MF41 - SS Arms, SS Plain Rails / MF42 - ABS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Two-crank fowler ward bed with stainless steel head/foot bows and collapsible SS side safety rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual Crank / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow / Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf41-fowler-cot",
+    "slug": "mf41-fowler-cot",
+    "modelNumber": "MF41",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Fowler Cot (SS Arms, SS Plain Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Full Fowler Cot with stainless steel head/foot end panels and fixed SS plain side rails, offering robust mechanical positioning for both backrest and knee rest.",
+    "image": "/images/Product Assets/productsImage/MF39 – Fowler Cot.webp",
+    "features": [
+      "Independent backrest and knee section adjustment",
+      "Full stainless steel head and foot end panels",
+      "Fixed SS plain safety side rails",
+      "Dual folding manual cranks",
+      "IV provision included",
+      "Durable hospital grade construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee / Leg Raise — 0° - 45°"
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF39 - ABS Arms, SS Collapsible Rails / MF40 - SS Arms, SS Collapsible Rails / MF41 - SS Arms, SS Plain Rails / MF42 - ABS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Two-crank fowler hospital bed with stainless steel head and foot boards and fixed plain SS side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual Crank / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow / Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf42-fowler-cot",
+    "slug": "mf42-fowler-cot",
+    "modelNumber": "MF42",
+    "customizationNote": "Size can be customised as per requirement.",
+    "name": "Fowler Cot (ABS Arms, SS Plain Rails)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Full Fowler Cot with modern moulded ABS head/foot end panels and fixed stainless steel side rails, providing dual manual crank adjustments for backrest and knee rest.",
+    "image": "/images/Product Assets/productsImage/MF39 – Fowler Cot.webp",
+    "features": [
+      "Adjustable backrest and knee sections",
+      "Moulded ABS head and foot boards",
+      "Fixed SS plain side safety rails",
+      "Smooth manual crank operation",
+      "Corner IV pole provision",
+      "Easy-to-clean hygienic construction"
+    ],
+    "functions": [
+      "① Backrest Rise — 0°–75°",
+      "② Knee / Leg Raise — 0° - 45°"
+    ],
+    "specifications": {
+      "Dimension": "78\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF39 - ABS Arms, SS Collapsible Rails / MF40 - SS Arms, SS Collapsible Rails / MF41 - SS Arms, SS Plain Rails / MF42 - ABS Arms, SS Plain Rails"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Two-crank fowler ward bed with moulded ABS head and foot boards and fixed stainless steel side rails. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Operation": "Manual Crank / Remote",
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Mobility": "Fixed Legs / Castors",
+      "Optional Accessories": "Pillow / Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size can be customised as per requirement."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf63-plain-cot",
+    "slug": "mf63-plain-cot",
+    "modelNumber": "MF63",
+    "name": "Plain Cot Deluxe (ABS Arms)",
+    "category": "Ward Furniture",
+    "description": "The Mathurams Plain Cot Deluxe with ABS Arms combines a sturdy mild-steel platform bed with lightweight moulded ABS head and foot boards for contemporary ward accommodation.",
+    "image": "/images/Product Assets/productsImage/MF62 – Plain Cot.webp",
+    "features": [
+      "Deluxe plain cot design with moulded ABS panels",
+      "Durable mild steel tubular frame",
+      "Epoxy powder coated finish",
+      "IV provision included",
+      "4\" mattress included",
+      "Easy-to-clean surfaces"
+    ],
+    "specifications": {
+      "Dimension": "72\" L × 36\" W × 24\" H with mattress",
+      "IV Provision": "Provided",
+      "Mattress": "4\" Mattress Provided",
+      "Models": "MF62 - SS Arms / MF63 - ABS Arms"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Deluxe plain general ward cot bed with moulded ABS head and foot boards. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Side Railings": "MS Plain / SS Plain / Aluminium Collapsible / SS Collapsible",
+      "Mobility": "Fixed Legs / Wheels",
+      "Optional Accessories": "Pillow & Safety Bumpers",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf48-drug-trolley",
+    "slug": "mf48-drug-trolley",
+    "modelNumber": "MF48",
+    "name": "Drug Trolley (SS)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams SS Drug Trolley is designed for organised storage and distribution of medicines across hospital wards. Fabricated in high-grade stainless steel with multiple large and small PVC bins for systematic medication segregation.",
+    "image": "/images/Product Assets/productsImage/MF47 – Drug Trolley.webp",
+    "features": [
+      "Full stainless steel construction for sterile environments",
+      "Large and small PVC bins for systematic drug segregation",
+      "Single side and double side bin configurations",
+      "Smooth mobile castors with brakes",
+      "Top push handle for easy maneuvering",
+      "Corrosion-resistant and easy to clean"
+    ],
+    "specifications": {
+      "Overall Dimension": "30\" L × 26\" W × 62\" H",
+      "Large PVC Bins": "8 Nos.",
+      "Small PVC Bins": "30 Nos. per side",
+      "Models": "MF47 - MS / MF48 - SS"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Stainless steel medication trolley with modular small and large PVC bins for systematic drug distribution. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "SS",
+      "Finish": "SS Finish",
+      "Storage Arrangement": "Single Side / Double Side"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf87-crash-cart",
+    "slug": "mf87-crash-cart",
+    "modelNumber": "MF87",
+    "name": "Crash Cart Mini (Imported)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams Mini Crash Cart Imported model offers high-efficiency emergency storage in a compact footprint, featuring specialized modular drawer arrangements and provisions for oxygen cylinder and IV pole.",
+    "image": "/images/Product Assets/productsImage/MF86 – Crash Cart.webp",
+    "features": [
+      "Imported compact resuscitation crash cart design",
+      "Narrow footprint ideal for tight clinical spaces",
+      "Keyed modular locking drawer system",
+      "Optional IV pole and oxygen cylinder holder",
+      "Corner bumpers to protect walls during rapid transit",
+      "Durable and easy-to-maintain construction"
+    ],
+    "specifications": {
+      "Overall Dimension": "13.25\" × 26\" × 60\" H",
+      "Modular Storage": "Provided",
+      "Models": "MF86 - Mini / MF87 - Imported"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Mini imported crash cart with modular drawer system and emergency cylinder mount. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS / SS",
+      "Finish": "Epoxy Powder Coating / SS Finish",
+      "Top": "With Top / Without Top",
+      "IV Provision": "Optional",
+      "Cylinder Provision": "Optional"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf89-nebuliser-trolley",
+    "slug": "mf89-nebuliser-trolley",
+    "modelNumber": "MF89",
+    "name": "Nebulizer Trolley (SS)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams SS Nebulizer Trolley provides a dedicated, sterile stainless-steel mobile platform for nebulizer machines and respiratory accessories in wards and ICUs.",
+    "image": "/images/Product Assets/productsImage/MF88 – Nebuliser Trolley.webp",
+    "features": [
+      "Full stainless steel construction",
+      "Compact and space-efficient mobile design",
+      "Dedicated equipment platform with retaining railings",
+      "Lower shelf for masks, tubes, and medication",
+      "Smooth swivel castors for effortless bedside transit",
+      "Corrosion-resistant and easy to sanitize"
+    ],
+    "specifications": {
+      "Overall Dimension": "16\" L × 16\" W × 32\" H",
+      "Models": "MF88 - MS / MF89 - SS"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Stainless steel mobile stand for nebulizer and respiratory apparatus. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "SS",
+      "Finish": "SS Finish"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf112-ss-laparoscopic-trolley",
+    "slug": "mf112-ss-laparoscopic-trolley",
+    "modelNumber": "MF112",
+    "name": "Laparoscopy Trolley (SS)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams SS Laparoscopy Trolley is designed for operation theatres and procedure rooms, featuring 5 heavy-duty stainless steel shelves, 7 integrated electrical power sockets, an accessory drawer, and cylinder storage.",
+    "image": "/images/Product Assets/productsImage/MF111 – Laparoscopy Trolley.webp",
+    "features": [
+      "Five spacious stainless steel equipment shelves",
+      "Seven integrated electrical power sockets for medical devices",
+      "Dedicated lockable accessory drawer",
+      "Integrated medical gas cylinder storage holder",
+      "Organised cable and cord management",
+      "Heavy-duty antistatic castors with brakes"
+    ],
+    "specifications": {
+      "Shelf Size": "30\" × 20\"",
+      "Overall Height": "58\"",
+      "Number of Shelves": "5",
+      "Power Sockets": "7 Nos.",
+      "Storage": "Accessory Drawer",
+      "Cylinder Provision": "Provided",
+      "Models": "MF111 - MS / MF112 - SS"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "All stainless steel endoscopy/laparoscopy cart with 5 levels, integrated 7 power sockets, drawer, and cylinder holder. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "SS",
+      "Finish": "SS Finish"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf156-cylinder-trolley-a-type",
+    "slug": "mf156-cylinder-trolley-a-type",
+    "modelNumber": "MF156",
+    "name": "Cylinder Trolley A Type (MS)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams A-Type Cylinder Trolley in mild steel provides stable, safe transport and positioning of small A-type medical gas cylinders across hospital wards and emergency rooms.",
+    "image": "/images/Product Assets/productsImage/MF75 – Cylinder Trolley.webp",
+    "features": [
+      "Designed specifically for A-type medical gas cylinders",
+      "Secure cylinder retaining ring and chain",
+      "Compact, maneuverable two-wheel trolley design",
+      "Sturdy mild steel construction",
+      "Durable epoxy powder coated finish"
+    ],
+    "specifications": {
+      "Cylinder Type": "A Type",
+      "Models": "MF156 - MS / MF157 - Aluminium"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Mild steel trolley for transporting A-type oxygen/gas cylinders. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "MS",
+      "Finish": "Epoxy Powder Coating"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf157-cylinder-trolley-a-type",
+    "slug": "mf157-cylinder-trolley-a-type",
+    "modelNumber": "MF157",
+    "name": "Cylinder Trolley A Type (Aluminium)",
+    "category": "Medical Trolleys",
+    "description": "The Mathurams A-Type Cylinder Trolley in stainless steel / aluminium offers lightweight handling and superior corrosion resistance for transporting A-type medical gas cylinders.",
+    "image": "/images/Product Assets/productsImage/MF75 – Cylinder Trolley.webp",
+    "features": [
+      "Lightweight aluminium / stainless steel construction",
+      "Secure cylinder holding bracket",
+      "Effortless movement between wards and treatment areas",
+      "Corrosion resistant for frequent clinical disinfection",
+      "Smooth rolling wheels for hospital flooring"
+    ],
+    "specifications": {
+      "Cylinder Type": "A Type",
+      "Models": "MF156 - MS / MF157 - Aluminium"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Stainless steel/aluminium trolley for transporting A-type oxygen cylinders. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "Aluminium / SS",
+      "Finish": "SS Finish / Aluminium Matt Finish"
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf158-ms-plain-side-rails",
+    "slug": "mf158-ms-plain-side-rails",
+    "modelNumber": "MF158",
+    "customizationNote": "Size and mounting configuration can be customised according to cot requirements.",
+    "name": "MS Plain Side Rails",
+    "category": "Accessories",
+    "description": "The Mathurams MS Plain Side Rails are designed for hospital cots and beds to provide reliable patient fall protection. Manufactured from sturdy mild steel with an epoxy powder-coated finish.",
+    "image": "/images/Product Assets/productsImage/MF126 – SS Plain Side Rails.webp",
+    "features": [
+      "Strong and durable MS construction",
+      "Provides dependable side protection for patients",
+      "Simple and practical fixed/drop design",
+      "Suitable for different hospital cots and beds",
+      "Epoxy powder-coated finish matching bed color"
+    ],
+    "specifications": {
+      "Material": "MS",
+      "Application": "Hospital Cots / Beds"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Mild steel plain safety side rails with epoxy powder coated finish for hospital beds. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Finish": "Epoxy Powder Coating",
+      "Colours": "Coffee Brown / Chocolate Brown / Light Blue / Dark Blue / Reliance Green / Pista Green / Parrot Green / DA Grey / Basalt Grey / Orange / Lemon Yellow / Black / Violet / Beige",
+      "Customization": "Size and mounting configuration can be customised according to cot requirements."
+    },
+    "needsDetails": false
+  },
+  {
+    "id": "mf74-labour-table",
+    "slug": "mf74-labour-table",
+    "modelNumber": "MF74",
+    "name": "Labour Table",
+    "category": "Labour & Maternity",
+    "description": "The Mathurams Labour Table is designed for labour, delivery and maternity procedures. Its V-cut tabletop provides convenient access during procedures, while the lithotomy support and basin arrangement assist in patient positioning and clinical use.",
+    "image": "/images/Product Assets/productsImage/MF70 – SS Remote Labor Cot.webp",
+    "features": [
+      "V-cut tabletop design",
+      "Full stainless-steel construction",
+      "Lithotomy support for patient positioning",
+      "Basin provided",
+      "Corrosion-resistant and easy-to-clean surfaces",
+      "Durable for hospital and maternity use"
+    ],
+    "specifications": {
+      "Material": "SS",
+      "Finish": "SS Finish",
+      "Tabletop": "V-Cut Design",
+      "Lithotomy Support": "Provided",
+      "Basin": "Basin Provided"
+    },
+    "price": "Ask for Price",
+    "materialDetails": "Stainless steel delivery labour table with V-cut top, lithotomy support, and clinical basin. Manufactured with high quality raw materials in our ISO certified facility.",
+    "moq": "1 Unit",
+    "tradeInfo": {
+      "moq": "1 Unit",
+      "paymentTerms": "L/C, T/T, Western Union",
+      "supplyAbility": "150-200 Units/Month",
+      "deliveryTime": "7-15 Days",
+      "market": "Tamil Nadu & Southern India",
+      "warranty": "1 Year Manufacturer Warranty",
+      "brand": "Sri Mathurams"
+    },
+    "detailedSpec": {
+      "Material": "SS",
+      "Finish": "SS Finish",
+      "Tabletop": "V-Cut Design",
+      "Accessories": "Lithotomy Support & Basin Provided"
+    },
+    "needsDetails": false
   }
 ];
+
+/**
+ * Robust and accurate product search matching function.
+ * Matches model numbers (e.g. "MF 72", "72", "mf-72"), multi-word tokens,
+ * product names, categories, descriptions, and features.
+ */
+export function matchesProductSearch(product: MedicalProduct, rawQuery: string): boolean {
+  if (!rawQuery || !rawQuery.trim()) return true;
+
+  const query = rawQuery.toLowerCase().trim();
+  const cleanQuery = query.replace(/[\s\-_]+/g, ''); // "mf 72" -> "mf72", "hi-lo" -> "hilo"
+
+  const model = product.modelNumber || '';
+  const cleanModel = model.toLowerCase().replace(/[\s\-_]+/g, '');
+
+  // 1. Direct model code match (e.g. "mf72", "mf 72", "72", "mf-72")
+  if (cleanModel) {
+    if (cleanModel === cleanQuery || cleanModel.includes(cleanQuery) || cleanQuery.includes(cleanModel)) {
+      return true;
+    }
+    // If the query is purely digits e.g. "72", match "MF72"
+    if (/^\d+$/.test(cleanQuery) && cleanModel.endsWith(cleanQuery)) {
+      return true;
+    }
+  }
+
+  // 2. Multi-token text matching across all fields
+  const tokens = query.split(/\s+/).filter(Boolean);
+  const searchableText = `${product.name} ${model} ${product.category} ${product.description} ${(product.features || []).join(' ')} ${(product.modelSpecifications || []).join(' ')}`.toLowerCase();
+
+  return tokens.every((token) => {
+    const cleanToken = token.replace(/[\s\-_]+/g, '');
+    if (cleanModel && cleanModel.includes(cleanToken)) return true;
+    // Allow alternate spelling for anesthesia / anaesthesia
+    if (token.includes('anaesth') || token.includes('anesth')) {
+      return searchableText.includes('anaesth') || searchableText.includes('anesth');
+    }
+    return searchableText.includes(token);
+  });
+}

@@ -17,6 +17,7 @@ export interface Product {
   features?: string[];
   applications?: string[];
   featured?: boolean;
+  customizationNote?: string;
 }
 
 export interface Category {
