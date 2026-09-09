@@ -284,9 +284,25 @@ export function ProductDetailClient({
                   </div>
                   <div className="w-16 h-[3px] bg-[#E87325] rounded-full" />
                 </div>
-                <h1 className="text-2xl md:text-[2rem] lg:text-[2.25rem] font-semibold text-[#0B3C83]  font-montserrat">
+                
+                <h1 className="text-2xl md:text-[2rem] lg:text-[2.25rem] font-bold text-[#0B3C83] font-montserrat tracking-tight leading-tight">
                   {product.name}
                 </h1>
+
+                {/* Product Code Tag */}
+                {product.modelNumber && (
+                  <div className="flex items-center pt-0.5">
+                    <div className="inline-flex items-stretch rounded-md border border-slate-200 bg-white overflow-hidden shadow-2xs text-xs font-mono">
+                      <span className="bg-[#0B3C83] text-white px-2.5 py-1 text-[10px] font-bold font-sans tracking-widest uppercase flex items-center">
+                        PRODUCT CODE
+                      </span>
+                      <span className="px-3 py-1 font-bold text-[#0B3C83] tracking-wider text-xs bg-slate-50 flex items-center border-l border-slate-200">
+                        {product.modelNumber}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {product.needsDetails && (
                   <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-800 border border-amber-200/80 px-3.5 py-1.5 rounded-lg font-bold text-xs uppercase tracking-wider my-2 font-montserrat w-fit">
                     <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shrink-0" />
@@ -595,6 +611,25 @@ export function ProductDetailClient({
             </FadeIn>
           )}
         </div>
+      )}
+
+      {/* Customization Callout Banner */}
+      {product.customizationNote && (
+        <FadeIn direction="up" duration={0.5} className="pb-6">
+          <div className="flex items-center gap-3.5 bg-gradient-to-r from-amber-50/90 via-amber-50/50 to-orange-50/60 border border-amber-200/90 text-[#092347] px-5 py-4 rounded-2xl shadow-2xs">
+            <div className="w-10 h-10 rounded-xl bg-[#E87325]/10 border border-[#E87325]/25 flex items-center justify-center shrink-0 shadow-2xs">
+              <Settings className="w-5 h-5 text-[#E87325] stroke-[2.5]" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <span className="text-[11px] font-black uppercase tracking-wider text-[#E87325] block leading-tight">
+                Customization Option Available
+              </span>
+              <p className="text-xs sm:text-sm font-bold text-slate-800 mt-0.5 leading-snug">
+                {product.customizationNote}
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       )}
 
       {/* Related Products Section */}

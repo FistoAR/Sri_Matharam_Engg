@@ -13,7 +13,7 @@ import {
   Search,
   X,
 } from "lucide-react";
-import { PRODUCTS, CATEGORIES, getCategoryTheme } from "@/lib/data";
+import { PRODUCTS, CATEGORIES, getCategoryTheme, matchesProductSearch } from "@/lib/data";
 
 export default function ProductsLayout({
   children,
@@ -35,35 +35,54 @@ function ProductsLayoutContent({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState(
-    searchParams.get("search") || searchParams.get("q") || ""
-  );
+  // Search is transient UI state — never initialized from URL so refresh always starts fresh
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const mobileSearchInputRef = useRef<HTMLInputElement>(null);
+  const isInputFocusedRef = useRef(false);
+  const searchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // On mount: strip any stale ?search= or ?q= params from the URL so refresh is always clean
   useEffect(() => {
-    const query = searchParams.get("search") || searchParams.get("q") || "";
-    setSearchTerm(query);
-  }, [searchParams]);
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("search") || params.has("q")) {
+      params.delete("search");
+      params.delete("q");
+      const q = params.toString();
+      window.history.replaceState(null, "", q ? `${window.location.pathname}?${q}` : window.location.pathname);
+    }
+  }, []);
+
+  // No need to sync searchTerm from URL — search is transient only
+  // We only listen for productSearchChange events from other components
+  useEffect(() => {
+    const handleSync = (e: any) => {
+      const val = typeof e.detail === "string" ? e.detail : "";
+      if (val !== searchTerm) {
+        setSearchTerm(val);
+      }
+    };
+    window.addEventListener("productSearchChange", handleSync);
+    return () => window.removeEventListener("productSearchChange", handleSync);
+  }, [searchTerm]);
 
   const handleSearchChange = (val: string) => {
     setSearchTerm(val);
     window.dispatchEvent(new CustomEvent("productSearchChange", { detail: val }));
+    // No URL update for search — search is transient (refresh clears it)
+  };
 
-    const params = new URLSearchParams(searchParams.toString());
-    if (val.trim()) {
-      params.set("search", val);
-    } else {
-      params.delete("search");
-      params.delete("q");
-    }
-
-    const pathParts = pathname.split("/");
-    const lastPart = pathParts[pathParts.length - 1];
-    const isDetail = pathParts.length > 2 && lastPart !== "products";
-
-    if (isDetail) {
-      router.push(`/products?${params.toString()}`);
-    } else {
-      router.replace(`/products?${params.toString()}`, { scroll: false });
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      const pathParts = pathname.split("/");
+      const lastPart = pathParts[pathParts.length - 1];
+      const isDetail = pathParts.length > 2 && lastPart !== "products";
+      // On Enter from a product detail page, go back to product listing
+      // Search is transient — don't put it in the URL
+      if (isDetail) {
+        router.push("/products");
+      }
     }
   };
 
@@ -166,6 +185,12 @@ function ProductsLayoutContent({
     return ["All Products", ...CATEGORIES.map((cat) => cat.name)];
   }, []);
 
+  const getCategoryHref = useCallback((catName: string) => {
+    // Search is transient — never put in URL
+    if (catName === "All Products") return "/products";
+    return `/products?category=${encodeURIComponent(catName)}`;
+  }, []);
+
   // Pre-calculate count for each category
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
@@ -180,16 +205,11 @@ function ProductsLayoutContent({
   // Calculate filtered counts per category when searching
   const filteredCategoryCounts = useMemo(() => {
     if (!searchTerm.trim()) return categoryCounts;
-    const term = searchTerm.toLowerCase().trim();
     const counts: Record<string, number> = {};
     let totalMatch = 0;
     CATEGORIES.forEach((cat) => {
       const count = PRODUCTS.filter(
-        (p) =>
-          p.category === cat.name &&
-          (p.name.toLowerCase().includes(term) ||
-            (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
-            p.description.toLowerCase().includes(term))
+        (p) => p.category === cat.name && matchesProductSearch(p, searchTerm)
       ).length;
       counts[cat.name] = count;
       totalMatch += count;
@@ -197,6 +217,30 @@ function ProductsLayoutContent({
     counts["All Products"] = totalMatch;
     return counts;
   }, [searchTerm, categoryCounts]);
+
+  // First category (in order) that has search results — used to auto-scroll it into center view
+  const firstMatchingCategory = useMemo(() => {
+    if (!searchTerm.trim()) return null;
+    return categoryList.find(
+      (catName) => catName !== "All Products" && (filteredCategoryCounts[catName] || 0) > 0
+    ) || null;
+  }, [searchTerm, categoryList, filteredCategoryCounts]);
+
+  // Auto-scroll first matching category into center when search changes
+  useEffect(() => {
+    if (!firstMatchingCategory) return;
+    const timer = setTimeout(() => {
+      const el = categoryItemRefs.current[firstMatchingCategory];
+      const navEl = sidebarNavRef.current;
+      if (!el || !navEl) return;
+      const elRect = el.getBoundingClientRect();
+      const navRect = navEl.getBoundingClientRect();
+      const relativeTop = elRect.top - navRect.top;
+      const targetScrollTop = navEl.scrollTop + relativeTop - navEl.clientHeight / 2 + elRect.height / 2;
+      navEl.scrollTo({ top: Math.max(0, targetScrollTop), behavior: "smooth" });
+    }, 80);
+    return () => clearTimeout(timer);
+  }, [firstMatchingCategory]);
 
   // Determine current active category based on URL pathname/searchParams
   const activeCategory = useMemo(() => {
@@ -453,11 +497,15 @@ function ProductsLayoutContent({
                 <div className="relative flex items-center">
                   <Search className="w-4 h-4 absolute left-3 text-slate-700 pointer-events-none stroke-[2.5]" />
                   <input
+                    ref={searchInputRef}
                     type="text"
                     value={searchTerm}
                     onChange={(e) => handleSearchChange(e.target.value)}
+                    onFocus={() => { isInputFocusedRef.current = true; }}
+                    onBlur={() => { isInputFocusedRef.current = false; }}
+                    onKeyDown={handleKeyDown}
                     placeholder="Search products or model..."
-                    className="w-full pl-9 pr-8 py-2 bg-white text-[0.9vw] font-normal text-slate-900 placeholder-slate-400 rounded-xl border border-slate-700 focus:border-[#E87325] focus:ring-1 focus:ring-[#E87325] outline-none transition-all shadow-xs"
+                    className="w-full pl-9 pr-8 py-2 bg-white text-xs sm:text-sm font-medium text-slate-900 placeholder-slate-400 rounded-xl border border-slate-700 focus:border-[#E87325] focus:ring-1 focus:ring-[#E87325] outline-none transition-all shadow-xs"
                   />
                   {searchTerm && (
                     <button
@@ -498,20 +546,18 @@ function ProductsLayoutContent({
             >
               {categoryList.map((catName) => {
                 const isActive = activeCategory === catName;
-                const isExpanded = expandedCategory === catName;
                 const productsInCat = PRODUCTS.filter((p) => p.category === catName);
-                const displayedProductsInCat = productsInCat.filter((p) => {
-                  if (!searchTerm.trim()) return true;
-                  const term = searchTerm.toLowerCase().trim();
-                  return (
-                    p.name.toLowerCase().includes(term) ||
-                    (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
-                    p.description.toLowerCase().includes(term)
-                  );
-                });
+                const displayedProductsInCat = productsInCat.filter((p) => matchesProductSearch(p, searchTerm));
+                const isExpanded = expandedCategory === catName || (searchTerm.trim() !== "" && displayedProductsInCat.length > 0);
                 const categoryObj = CATEGORIES.find((c) => c.name === catName);
                 const theme = getCategoryTheme(catName);
-                const countNumber = filteredCategoryCounts[catName] || 0;
+                const countNumber = filteredCategoryCounts[catName] ?? (catName === "All Products" ? PRODUCTS.length : 0);
+
+                // When searching: does this category have any matches?
+                const isSearching = searchTerm.trim() !== "";
+                const hasSearchMatch = isSearching && countNumber > 0;
+                const isSearchDimmed = isSearching && countNumber === 0 && catName !== "All Products";
+                const isSearchAllMatch = isSearching && catName === "All Products" && countNumber > 0;
 
                 return (
                   <div
@@ -519,14 +565,18 @@ function ProductsLayoutContent({
                     ref={(el) => { categoryItemRefs.current[catName] = el; }}
                     className="space-y-1 relative"
                   >
-                    <Link
-                      href={`/products?category=${encodeURIComponent(catName)}`}
+                  <Link
+                      href={getCategoryHref(catName)}
                       scroll={false}
                       onClick={() => handleCategoryClick(catName)}
                       className={`w-full flex items-center justify-between px-4 rounded-xl py-3 text-base font-bold transition-all text-left group relative border ${
                         isActive
                           ? "shadow-md"
-                          : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200/60 shadow-2xs"
+                          : hasSearchMatch || isSearchAllMatch
+                            ? "bg-white text-slate-800 border-slate-300 shadow-sm"
+                            : isSearchDimmed
+                              ? "bg-white/60 text-slate-400 border-slate-200/40 shadow-none"
+                              : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200/60 shadow-2xs"
                       } ${
                         isExpanded && catName !== "All Products" && isSidebarExpanded
                           ? "rounded-b-none border-b-0"
@@ -540,58 +590,78 @@ function ProductsLayoutContent({
                               color: theme.text,
                               boxShadow: `0 4px 14px ${theme.bg}40`,
                             }
-                          : undefined
+                          : hasSearchMatch || isSearchAllMatch
+                            ? {
+                                borderColor: theme.border,
+                                boxShadow: `0 0 0 2px ${theme.bg}33, 0 2px 8px ${theme.bg}22`,
+                              }
+                            : undefined
                       }
                     >
                       <div className="flex items-center gap-4 min-w-0 flex-1">
-                        <div className="relative w-6 h-6 shrink-0">
-                          {catName === "All Products" ? (
-                            <Image
-                              src={isActive ? "/images/Product Assets/selected.webp" : "/images/Product Assets/unselected.webp"}
-                              alt="All Products icon"
-                              fill
-                              className={`object-contain ${isActive ? (theme.isLight ? "brightness-0" : "brightness-0 invert") : ""}`}
-                            />
-                          ) : (
-                            <Image
-                              src={categoryObj?.icon || "/images/Product Assets/unselected.webp"}
-                              alt={`${catName} icon`}
-                              fill
-                              className={`object-contain transition-all duration-300 ${
-                                isActive
-                                  ? theme.isLight
-                                    ? "brightness-0"
-                                    : "brightness-0 invert"
-                                  : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
-                              }`}
-                            />
+                          <div className="relative w-6 h-6 shrink-0">
+                            {catName === "All Products" ? (
+                              <Image
+                                src={isActive ? "/images/Product Assets/selected.webp" : "/images/Product Assets/unselected.webp"}
+                                alt="All Products icon"
+                                fill
+                                className={`object-contain ${
+                                  isActive ? (theme.isLight ? "brightness-0" : "brightness-0 invert") : ""
+                                } ${isSearchDimmed ? "opacity-30" : ""}`}
+                              />
+                            ) : (
+                              <Image
+                                src={categoryObj?.icon || "/images/Product Assets/unselected.webp"}
+                                alt={`${catName} icon`}
+                                fill
+                                className={`object-contain transition-all duration-300 ${
+                                  isActive
+                                    ? theme.isLight
+                                      ? "brightness-0"
+                                      : "brightness-0 invert"
+                                    : hasSearchMatch
+                                      ? "opacity-90 grayscale-0"
+                                      : isSearchDimmed
+                                        ? "opacity-20 grayscale"
+                                        : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
+                                }`}
+                              />
+                            )}
+                          </div>
+                          {isSidebarExpanded && (
+                            <div className="relative min-w-0 flex-1">
+                              <span className="block pr-1">{catName}</span>
+                            </div>
                           )}
                         </div>
                         {isSidebarExpanded && (
-                          <div className="relative min-w-0 flex-1">
-                            <span className="block pr-1">{catName}</span>
-                          </div>
+                          <span
+                            className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0 transition-all ${
+                              isActive
+                                ? "shadow-xs font-black"
+                                : hasSearchMatch || isSearchAllMatch
+                                  ? "font-black"
+                                  : isSearchDimmed
+                                    ? "text-slate-300 bg-slate-100/50"
+                                    : "bg-slate-100 text-slate-600 group-hover:bg-slate-200"
+                            }`}
+                            style={
+                              isActive
+                                ? {
+                                    backgroundColor: theme.badgeBg,
+                                    color: theme.badgeText,
+                                  }
+                                : hasSearchMatch || isSearchAllMatch
+                                  ? {
+                                      backgroundColor: theme.bg,
+                                      color: theme.isLight ? "#1e293b" : "#ffffff",
+                                    }
+                                  : undefined
+                            }
+                          >
+                            {countNumber}
+                          </span>
                         )}
-                      </div>
-                      {isSidebarExpanded && (
-                        <span
-                          className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full shrink-0 transition-all ${
-                            isActive
-                              ? "shadow-xs font-black"
-                              : "bg-slate-100 text-slate-600 group-hover:bg-slate-200"
-                          }`}
-                          style={
-                            isActive
-                              ? {
-                                  backgroundColor: theme.badgeBg,
-                                  color: theme.badgeText,
-                                }
-                              : undefined
-                          }
-                        >
-                          {countNumber}
-                        </span>
-                      )}
 
                       {/* Hover Tooltip when collapsed */}
                       {!isSidebarExpanded && (
@@ -605,13 +675,22 @@ function ProductsLayoutContent({
                     </Link>
 
                     {/* Accordion Dropdown Products List with Inside Scrolling */}
-                    {isSidebarExpanded && isExpanded && catName !== "All Products" && displayedProductsInCat.length > 0 && (
+                    {isSidebarExpanded && isExpanded && catName !== "All Products" && productsInCat.length > 0 && (
                       <div 
                         className="pl-3 pr-2 py-2.5 bg-white border-x border-b rounded-b-xl -mt-1 shadow-2xs space-y-1.5 max-h-[300px] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden overscroll-contain"
                         style={{ borderColor: theme.border }}
                       >
-                        {displayedProductsInCat.map((prod, idx) => {
+                        {(searchTerm.trim()
+                          ? [
+                              ...productsInCat.filter((p) => matchesProductSearch(p, searchTerm)),
+                              ...productsInCat.filter((p) => !matchesProductSearch(p, searchTerm)),
+                            ]
+                          : productsInCat
+                        ).map((prod) => {
                           const isProdActive = pathname.endsWith(`/${prod.slug}`);
+                          const isSearching = searchTerm.trim() !== "";
+                          const isProductMatch = isSearching && matchesProductSearch(prod, searchTerm);
+                          const isProductDimmed = isSearching && !isProductMatch;
                           return (
                             <Link
                               key={prod.id}
@@ -620,34 +699,54 @@ function ProductsLayoutContent({
                               className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-bold transition-all text-left leading-normal border ${
                                 isProdActive
                                   ? "shadow-xs border-2"
-                                  : "bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                                  : isProductMatch
+                                    ? "bg-white text-slate-800 border shadow-sm"
+                                    : isProductDimmed
+                                      ? "bg-slate-50/60 text-slate-400 border-slate-100"
+                                      : "bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100 border-transparent"
                               }`}
                               style={{
-                                borderColor: theme.border,
                                 ...(isProdActive
                                   ? {
+                                      borderColor: theme.border,
                                       backgroundColor: `${theme.bg}1A`,
                                       color: theme.isLight ? theme.text : theme.bg,
                                     }
-                                  : {}),
+                                  : isProductMatch
+                                    ? {
+                                        borderColor: theme.border,
+                                        boxShadow: `0 0 0 1.5px ${theme.bg}44`,
+                                      }
+                                    : {}),
                               }}
                             >
                               <span
-                                className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-[11px] font-black ${
-                                  isProdActive ? "" : "bg-slate-200 text-slate-500"
+                                className={`px-2 py-0.5 shrink-0 rounded-md flex items-center justify-center text-[11px] font-black tracking-wide ${
+                                  isProdActive
+                                    ? "shadow-xs"
+                                    : isProductMatch
+                                      ? ""
+                                      : isProductDimmed
+                                        ? "bg-slate-100 text-slate-300"
+                                        : "bg-slate-200 text-slate-700"
                                 }`}
                                 style={
                                   isProdActive
                                     ? {
                                         backgroundColor: theme.bg,
-                                        color: theme.text,
+                                        color: theme.isLight ? theme.text : "#ffffff",
                                       }
-                                    : undefined
+                                    : isProductMatch
+                                      ? {
+                                          backgroundColor: theme.bg,
+                                          color: theme.isLight ? "#1e293b" : "#ffffff",
+                                        }
+                                      : undefined
                                 }
                               >
-                                {idx + 1}
+                                {prod.modelNumber}
                               </span>
-                              <span className="flex-1 whitespace-normal break-words">{prod.name}</span>
+                              <span className={`flex-1 whitespace-normal break-words ${isProductDimmed ? "opacity-50" : ""}`}>{prod.name}</span>
                             </Link>
                           );
                         })}
@@ -709,9 +808,13 @@ function ProductsLayoutContent({
             <div className="relative flex items-center">
               <Search className="w-4 h-4 absolute left-3 text-slate-700 pointer-events-none stroke-[2.5]" />
               <input
+                ref={mobileSearchInputRef}
                 type="text"
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e.target.value)}
+                onFocus={() => { isInputFocusedRef.current = true; }}
+                onBlur={() => { isInputFocusedRef.current = false; }}
+                onKeyDown={handleKeyDown}
                 placeholder="Search products or model..."
                 className="w-full pl-9 pr-8 py-2.5 bg-white text-xs font-semibold text-slate-900 placeholder-slate-400 rounded-xl border border-slate-700 focus:border-[#E87325] focus:ring-1 focus:ring-[#E87325] outline-none transition-all shadow-xs"
               />
@@ -732,17 +835,9 @@ function ProductsLayoutContent({
           <nav className="p-4 space-y-2.5 flex-1 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden bg-slate-50">
             {categoryList.map((catName) => {
               const isActive = activeCategory === catName;
-              const isExpanded = expandedCategory === catName;
               const productsInCat = PRODUCTS.filter((p) => p.category === catName);
-              const displayedProductsInCat = productsInCat.filter((p) => {
-                if (!searchTerm.trim()) return true;
-                const term = searchTerm.toLowerCase().trim();
-                return (
-                  p.name.toLowerCase().includes(term) ||
-                  (p.modelNumber && p.modelNumber.toLowerCase().includes(term)) ||
-                  p.description.toLowerCase().includes(term)
-                );
-              });
+              const displayedProductsInCat = productsInCat.filter((p) => matchesProductSearch(p, searchTerm));
+              const isExpanded = (searchTerm.trim() !== "" && displayedProductsInCat.length > 0) || expandedCategory === catName;
               const categoryObj = CATEGORIES.find((c) => c.name === catName);
               const theme = getCategoryTheme(catName);
               const countNumber = filteredCategoryCounts[catName] || 0;
@@ -750,7 +845,7 @@ function ProductsLayoutContent({
               return (
                 <div key={catName} className="space-y-1.5 relative">
                   <Link
-                    href={`/products?category=${encodeURIComponent(catName)}`}
+                    href={getCategoryHref(catName)}
                     scroll={false}
                     onClick={() => {
                       setExpandedCategory((prev) => (prev === catName ? null : catName));
@@ -838,21 +933,21 @@ function ProductsLayoutContent({
                             }}
                           >
                             <span
-                              className={`w-5 h-5 shrink-0 rounded-full flex items-center justify-center text-[10px] font-black ${
-                                isProdActive ? "" : "bg-slate-200 text-slate-500"
+                              className={`px-1.5 py-0.5 shrink-0 rounded-md flex items-center justify-center text-[10px] font-black tracking-wide ${
+                                isProdActive ? "shadow-xs" : "bg-slate-200 text-slate-700"
                               }`}
                               style={
                                 isProdActive
                                   ? {
                                       backgroundColor: theme.bg,
-                                      color: theme.text,
+                                      color: theme.isLight ? theme.text : "#ffffff",
                                     }
                                   : undefined
                               }
                             >
-                              {idx + 1}
+                              {prod.modelNumber}
                             </span>
-                            <span className="truncate flex-1">{prod.name}</span>
+                            <span className="flex-1 whitespace-normal break-words leading-tight">{prod.name}</span>
                           </Link>
                         );
                       })}
